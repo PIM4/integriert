@@ -73,3 +73,4 @@ C:\Users\User\source\repos\SmartUP\SmartUP\bin\pt-br\System.Web.Mvc.resources.dl
 C:\Users\User\source\repos\SmartUP\SmartUP\obj\Release\SmartUP.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\SmartUP\SmartUP\obj\Release\SmartUP.dll
 C:\Users\User\source\repos\SmartUP\SmartUP\obj\Release\SmartUP.pdb
+C:\Users\User\source\repos\SmartUP\SmartUP\obj\Release\SmartUP.csprojResolveAssemblyReference.cache

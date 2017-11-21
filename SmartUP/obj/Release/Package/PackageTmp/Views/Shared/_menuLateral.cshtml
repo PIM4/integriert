@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+
+<style type="text/css">
+
+</style>
+<div class="row" style="margin-bottom: 0; ">
+    <div class="col s12 compensa" style="">
+        <ul id="slide-out" class="side-nav fixed" style="overflow: scroll; height: 100%;">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="~/content/images/smartLogoW.jpg" width="300" style="right: 0px; position: absolute; filter: brightness(.5);">
+                    </div>
+                    <a href="#!user"><img class="circle" src="~/content/images/person1.jpg"></a>
+                    <a href="#!name"><span class="white-text name">Carlos Henrique</span></a>
+                    <a href="#!email"><span class="white-text email">carloshenriqueescouto@gmail.com</span></a>
+                </div>
+            </li>
+            <li>@Html.ActionLink("Home", "Dash", "Home", null, new { @class = "waves-effect" })</li> @{ /*<i class="material-icons">home</i>*/ }
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">menu</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header menus_drop"><i class="material-icons">domain</i>Condomínio<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="@Url.Action("Frm_buscar_condominio", "Forms_condominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Condomínio</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_bloco", "Forms_condominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Blocos</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_unidade", "Forms_condominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Unidades</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_area", "Forms_condominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Áreas</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_aviso", "Forms_condominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Aviso</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header menus_drop"><i class="material-icons">person</i>Moradores<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="@Url.Action("Frm_buscar_morador", "Forms_morador")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Moradores</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_evento", "Forms_morador")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Eventos</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_correspondencia", "Forms_morador")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Correspondências</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_enquete", "Forms_morador")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Enquetes</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_reclam_sugest", "Forms_morador")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Reclações & Sugestões</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header menus_drop"><i class="material-icons">group</i>Funcionários<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="@Url.Action("Frm_buscar_interno", "Forms_funcionario")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Internos</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_terceiro", "Forms_funcionario")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Terceiros</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header menus_drop"><i class="material-icons">transfer_within_a_station</i>Visitas<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="@Url.Action("Frm_buscar_visita", "Forms_visita")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitas</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_visitante", "Forms_visita")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitantes</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="no-padding" style="margin-bottom: 55px;">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header menus_drop"><i class="material-icons">attach_money</i>Finanças<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="@Url.Action("Frm_buscar_contas_a_pagar", "Forms_financas")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Contas a Pagar</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_contas_a_receber", "Forms_financas")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Contas a Receber</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_fornecedor", "Forms_financas")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Fornecedores</a></li>
+                                <li><a href="@Url.Action("Frm_buscar_obra", "Forms_financas")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Obras</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="#" style="z-index: 999999; color: #000; position: fixed; left: 20px; top: 20px;" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="font-size: 24px;">menu</i></a>
+        <!-- TESTE DE PADDING -->
+        <!-- <div class="col s12" style="background: #f00; height: 300px"></div> -->
+    </div>
+</div>
+

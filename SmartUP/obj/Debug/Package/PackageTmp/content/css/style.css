@@ -1,0 +1,152 @@
+/* Fundo */
+.fundo{filter: blur(6px) brightness(100%) opacity(.25); z-index: -1;  width: 100%; height: 100vh; position: fixed; top: 0px; left: 0; background-image: url("../images/city.jpg"); background-size: 100%; }
+.botao{background: #039be5}
+.botao:hover{background: #13abf5}
+
+
+/*.icon{position:relative;width:70px;height:96px;overflow:hidden}.campfire{position:absolute;left:50%;top:50%;-webkit-animation:fire 1s linear infinite;animation:fire 1s linear infinite}.fire-red{width:55px;height:55px;background:hsla(0,0%,100%,.5);top:-20px;left:-10px}.fire-red,.fire-yellow{border-radius:0 50% 50% 50%;-webkit-transform:rotate(45deg);transform:rotate(45deg);position:absolute}.fire-yellow{width:25px;height:25px;background:hsla(0,0%,100%,.8);left:5px;top:5px}.particle{width:7px;height:10px;position:absolute;-webkit-animation:particle 1s linear infinite;animation:particle 1s linear infinite}.particle:before{content:"";display:block;width:3px;height:3px;left:0;top:0;position:absolute;background:#fff}.flake:after,.flake:before{color:#fff;opacity:.4;font-size:35px;content:"\2744";position:absolute;margin:5px 0 0 10px;-webkit-animation:spin 8s linear infinite reverse;animation:spin 8s linear infinite reverse}.flake:after{opacity:.8;font-size:70px;margin:20px 0 0 28px;-webkit-animation:spin 12s linear infinite;animation:spin 12s linear infinite}.clock{top:20px;left:10px;width:60px;height:60px;opacity:.8;position:absolute;border-radius:50px;border:5px solid #3898ec;background:transparent}.clock .min{-webkit-animation:clock linear 8s infinite;animation:clock linear 8s infinite}.clock .hour,.clock .min{top:0;left:0;width:50px;height:50px;position:absolute}.clock .hour{-webkit-animation:clock linear 12s infinite;animation:clock linear 12s infinite}.clock .hour:before{top:6px;left:23px;height:22px}.clock .hour:before,.clock .min:before{width:5px;content:"";display:block;background:#3898ec;position:absolute}.clock .min:before{top:2px;left:22px;height:26px}.target{top:20px;left:22px;width:60px;height:60px;-webkit-animation:target linear 4s infinite;animation:target linear 4s infinite}.target,.target-circle{position:absolute;border-radius:50px;border:5px solid #fff;background:transparent}.target-circle{top:30px;left:33px;width:40px;height:40px;-webkit-animation:target linear 3s infinite;animation:target linear 3s infinite}.target-circle-final{top:40px;left:43px;width:20px;height:20px;position:absolute;border-radius:50px;background:#fff;-webkit-animation:target linear 2s infinite;animation:target linear 2s infinite}.money:after{color:#fff;opacity:.8;font-size:70px;content:"$";position:absolute;margin:10px 0 0 30px;-webkit-animation:tada linear 3s infinite;animation:tada linear 3s infinite}@-webkit-keyframes fire{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scaleY(1.1);transform:scaleY(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes fire{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scaleY(1.1);transform:scaleY(1.1)}to{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes particle{0%{top:0;opacity:1;-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{top:-50px;opacity:0;-webkit-transform:rotate(2turn);transform:rotate(2turn)}}@keyframes particle{0%{top:0;opacity:1;-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{top:-50px;opacity:0;-webkit-transform:rotate(2turn);transform:rotate(2turn)}}@-webkit-keyframes target{0%{opacity:.2}50%{opacity:.8}to{opacity:.2}}@keyframes target{0%{opacity:.2}50%{opacity:.8}to{opacity:.2}}@-webkit-keyframes min{0%{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes min{0%{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(-10px);transform:translateY(-10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes clock{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes clock{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes tada{0%{-webkit-transform:scaleX(1);transform:scaleX(1)}10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate(-3deg);transform:scale3d(.9,.9,.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(3deg);transform:scale3d(1.1,1.1,1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(-3deg);transform:scale3d(1.1,1.1,1.1) rotate(-3deg)}to{-webkit-transform:scaleX(1);transform:scaleX(1)}}@keyframes tada{0%{-webkit-transform:scaleX(1);transform:scaleX(1)}10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate(-3deg);transform:scale3d(.9,.9,.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(3deg);transform:scale3d(1.1,1.1,1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(-3deg);transform:scale3d(1.1,1.1,1.1) rotate(-3deg)}to{-webkit-transform:scaleX(1);transform:scaleX(1)}}*/
+
+
+/* Login */
+/*###############################################################*/
+.validate:focus{border-bottom: 1px solid #1091f7!important;-webkit-box-shadow: 0 1px 0 0 #1091f7!important;box-shadow: 0 1px 0 0 #1091f7!important;}
+.input-field .prefix.active{color: #1091f7 !important;}
+.validate:focus + label{color: #1091f7 !important;}
+.erro{display: none;  position: absolute; top: -50px; left: -110px; background: #f00; color: #fff; padding: 4px 8px; border-radius: 30px;}
+.errado::after{content: ""; display: block; opacity: 1; width: 0px; height: 0px; position: absolute; left: 77%;  border: 11px solid transparent; border-top-color: #f00;}
+.errado{display: block; }
+/*###############################################################*/
+
+
+
+/* Menu Lateral */
+/*###############################################################*/
+header, main, footer { padding-left: 300px; }
+div.compensa{padding-left: 302px !important; padding-right: 0px !important; transition: .4s;}
+div.compensa.fechado{padding-left: 0px !important; padding-right: 0px !important; transition: .4s;}
+div.compensa ul#slide-out{top: 65px;}
+
+.table_form::-webkit-scrollbar{ height: 1px; width: 0px; position: absolute;  }
+.table_form::-moz-scrollbar{ height: 1px; width: 0px; position: absolute; }
+
+div.compensa ul#slide-out::-webkit-scrollbar{ width: 2px; position: absolute; background:#e3e0d6; }
+div.compensa ul#slide-out::-moz-scrollbar{ width: 2px; position: absolute; background:#e3e0d6; }
+div.compensa ul#slide-out::-webkit-scrollbar-track, .table_form::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+div.compensa ul#slide-out::-moz-scrollbar-track, .table_form::-moz-scrollbar-track{ background: rgba(0,0,0,0.1); }
+div.compensa ul#slide-out::-webkit-scrollbar-thumb, .table_form::-webkit-scrollbar-thumb { border-radius:10px; background:#0496E7;}
+div.compensa ul#slide-out::-moz-scrollbar-thumb, .table_form::-moz-scrollbar-thumb{ border-radius:10px; background:#0496E7;}
+div.compensa ul#slide-out li .menus_drop{padding: 0 32px!important;}
+div.compensa ul#slide-out li .collapsible-body ul li a.waves-effect:first-of-type { padding: 0 0 0 45px!important; }
+div.compensa a.button-collapse{display: none}
+
+/*@media only screen and (max-width : 992px) {
+header, main, footer { padding-left: 0; }
+div.compensa{padding-left: 0 !important;}
+}*/
+
+@media(max-width: 720px){
+
+}
+/*###############################################################*/
+
+
+
+
+/* Menu Superior */
+/*###############################################################*/
+nav{background-color: #fff; position: fixed; z-index: 99;}
+nav div.nav-wrapper ul li a{color: #0293ec;}
+nav div.nav-wrapper ul li a{color: #0293ec;}
+nav div.abre_fecha_menu{position: absolute; top: 0px; left: 240px}
+nav div.abre_fecha_menu > a{background: #0496E7}
+nav div.abre_fecha_menu > a:hover{background: #14a6f7}
+nav div.abre_fecha_menu > a div{width: 20px; height: 4px;}
+nav div.abre_fecha_menu > a i{position: relative; top: -12px;}
+
+#selecao_mobile{display: none}
+/*###############################################################*/
+
+
+/* Tabs */
+/*###############################################################*/
+div.compensa{padding-left: 302px !important; padding-right: 0px !important;}
+div.compensa ul.tabs li a{color: #444;}
+div.compensa ul.tabs li a:hover{color: #0293ec;}
+div.compensa ul.tabs li a.active{color: #0293ec;}
+div.compensa ul .indicator{background-color: #0293ec !important;}
+
+
+
+section.content{ width: 100%; }
+section.content .modais{padding: 30px; }
+section.content .modais .conteudo{background: #ccc; box-shadow: -2px 2px 15px 0px #bbb;}
+section.content .modais .conteudo:hover{  }
+section.content .modais .conteudo h1{font-size: 22px; padding: 15px; margin: 0; color: #fff;padding-top: 5px;}
+section.content .modais .conteudo h1 i{position: relative; top: 8px;}
+section.content .modais .conteudo section{padding: 15px;}
+section.content .modais .conteudo1{background-color: #f5f5f5;}
+section.content .modais .conteudo1 h1{background-color: #7ED321;}
+section.content .modais .conteudo2{background-color: #f5f5f5;}
+section.content .modais .conteudo2 h1{background-color: #00BCC9;}
+section.content .modais .conteudo3{background-color: #f5f5f5;}
+section.content .modais .conteudo3 h1{background-color: #E5615C;}
+
+.column { width: 25%; float: left; padding-bottom: 100px; }
+.portlet { margin: 0 1em 1em 0; padding: 0.3em; }
+.portlet-header { padding: 0.2em 0.3em; margin-bottom: 0.5em; position: relative; cursor:move; }
+.portlet-header span{ cursor: pointer; position: absolute; width: 20px; height: 20px; right: 5px; background-color:;}
+.portlet-header span::before{content: ''; display: block; position: relative; top:calc(50% - 5px); left: calc(50% - 7px); width: 13px; height: 3px; background-color: #fff;}
+.portlet-header span::before{content: ''; display: block; position: relative; top:calc(50% - 5px); left: calc(50% - 7px); width: 13px; height: 3px; background-color: #fff;}
+.portlet-header span.ui-icon-minusthick::after{content: ''; display: block; position: relative; top:calc(50% - 13px); left: calc(50% - 2px);  height: 13px; width: 3px; background-color: #fff; }
+
+.portlet-toggle { position: absolute; top: 50%; right: 0; margin-top: -8px; }
+.portlet-content { padding: 0.4em; display: none;}
+.portlet-placeholder { border: 1px dotted black; margin: 0 1em 1em 0; height: 50px; }
+.tabs{margin-top: 20px;}
+/*###############################################################*/
+
+
+/*###############################################################*/
+/*Frm Busca*/
+.gutter_form{background-color: #f6f6f6; padding: 10px 5px; border-radius: 10px; margin-top: 22px; margin-left: 20px; margin-right: 20px;}
+/*###############################################################*/
+
+
+/*###############################################################*/
+/*Frm Cadastro*/
+.cadastroForm{background-color: #f3f3f3; border-radius: 10px; padding: 10px; position: relative;}
+.cadastroForm form h5{margin: 20px 10px; color: #333; background-color: #f4f4f4; padding: 10px 5px; border-radius: 10px;}
+.cadastroForm form div .input-field{top: 10px; position: relative;}
+
+/*###############################################################*/
+
+
+/*###############################################################*/
+/*Mobile*/
+@media only screen and (max-width : 992px) {
+	header, main, footer { padding-left: 0; }
+	.abre_fecha_menu{display: none;}
+	div.compensa{padding-left: 0 !important;}
+	div.compensa ul.side-nav{top: 0px;}
+	div.compensa a.button-collapse{display: block;}
+	.column { width: 33%; padding-bottom: 0px; }
+	#selecao_mobile{display: block}
+	.gutter_form{margin-left: 20px !important;}
+}
+
+@media only screen and (max-width : 767px) {
+	@media only screen and (max-width : 992px) {
+	.column { width: 50%; padding-bottom: 0;}
+}
+
+@media only screen and (max-width : 600px) {
+	.tabs{margin-top: 55px;}
+	div.compensa ul#slide-out{top: 57px;}
+}
+
+@media only screen and (max-width : 498px) {
+	@media only screen and (max-width : 992px) {
+	.column { width: 100%; }
+	.tabs{margin-top: 55px;}
+	
+}

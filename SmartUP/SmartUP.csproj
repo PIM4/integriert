@@ -108,6 +108,7 @@
     <Content Include="scripts\materialize.min.js" />
     <Content Include="scripts\script.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
+    <None Include="Properties\PublishProfiles\integriert - Web Deploy.pubxml" />
     <None Include="Views\Home\card_1.cshtml" />
     <None Include="Views\Home\card_2.cshtml" />
     <None Include="Views\Home\card_3.cshtml" />
@@ -177,11 +178,11 @@
     <Content Include="content\fonts\roboto\Roboto-Thin.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Dash.cshtml" />
-    <None Include="Properties\PublishProfiles\integried - Web Deploy.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_menuSuperior.cshtml" />
     <Content Include="Views\Shared\_menuLateral.cshtml" />
+    <Content Include="Views\Shared\err.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
