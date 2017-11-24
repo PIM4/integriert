@@ -1,6 +1,27 @@
 // Colapse do Menu Lateral
 $(".button-collapse").sideNav();
 
+// Controles das mascaras
+$('.date').mask('00/00/0000', { placeholder: "__/__/____" });
+$('.time').mask('00:00:00', { placeholder: "00:00:00" });
+$('.cep').mask('00000-000', { placeholder: "00000-000" });
+$('.phone_with_ddd').mask('(00) 0000-0000', { placeholder: "(xx) xxxx-xxxx" });
+$('.celphones_with_ddd').mask('(00) 00000-0000', { placeholder: "(xx) xxxxx-xxxx" });
+$('.cnpj').mask('00.000.000/0000-00', { reverse: true, placeholder: "00.000.000/0000-00" });
+$('.cpf').mask('000.000.000-00', { reverse: true, placeholder: "000.000.000-00" });
+$('.money').mask('#.##0,00', { reverse: true, placeholder: "R$ 0,00" });
+//Mascara especial para campo celular ou fixo
+var SPMaskBehavior = function (val) {
+    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+},
+spOptions = {
+    onKeyPress: function (val, e, field, options) {
+        field.mask(SPMaskBehavior.apply({}, arguments), options);
+    }
+};
+$('.sp_celphones').mask(SPMaskBehavior, spOptions);
+
+
 // Função da manipulação dos cards na DASH
 $( function() {
 	$( ".column" ).sortable({
@@ -48,14 +69,14 @@ close: 'Ok',
 closeOnSelect: false // Close upon selecting a date,
 });
 
-$("#novo_form").click(function(e){
-	e.preventDefault();
-	$("#cadastroForm, #cadastroForm_bg").show();
-});
+//$("#novo_form").click(function(e){
+//	e.preventDefault();
+//	$("#cadastroForm, #cadastroForm_bg").show();
+//});
 
-$("#cadastroForm_bg").click(function(){
-	$("#cadastroForm_bg, #cadastroForm").hide()
-})
+//$("#cadastroForm_bg").click(function(){
+//	$("#cadastroForm_bg, #cadastroForm").hide()
+//})
 
 $(document).ready(function(){
 	// switch () {

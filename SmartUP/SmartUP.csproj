@@ -107,6 +107,7 @@
     <Content Include="content\images\smartLogoW.jpg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\jquery-ui.js" />
+    <Content Include="scripts\jquery.mask.min.js" />
     <Content Include="scripts\materialize.js" />
     <Content Include="scripts\materialize.min.js" />
     <Content Include="scripts\script.js" />
