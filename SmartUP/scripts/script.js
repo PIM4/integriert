@@ -2,16 +2,16 @@
 $(".button-collapse").sideNav();
 
 // Controles das mascaras
-$('.date').mask('00/00/0000', { placeholder: "__/__/____" });
-$('.time').mask('00:00:00', { placeholder: "00:00:00" });
-$('.datetime').mask('00/00/0000 00:00:00', { placeholder: "00/00/0000 00:00:00" });
+$('.date').mask('00/00/0000');
+$('.time').mask('00:00:00');
+$('.datetime').mask('00/00/0000 00:00:00');
 $('.cep').mask('00000-000', { placeholder: "00000-000" });
-$('.phone_with_ddd').mask('(00) 0000-0000', { placeholder: "(xx) xxxx-xxxx" });
-$('.celphones_with_ddd').mask('(00) 00000-0000', { placeholder: "(xx) xxxxx-xxxx" });
-$('.cnpj').mask('00.000.000/0000-00', { reverse: true, placeholder: "00.000.000/0000-00" });
-$('.cpf').mask('000.000.000-00', { reverse: true, placeholder: "000.000.000-00" });
-$('.rg').mask('00.000.000-0', { reverse: true, placeholder: "00.000.000-0" });
-$('.money').mask('#.##0,00', { reverse: true, placeholder: "R$ 0,00" });
+$('.phone_with_ddd').mask('(00) 0000-0000');
+$('.celphones_with_ddd').mask('(00) 00000-0000');
+$('.cnpj').mask('00.000.000/0000-00', { reverse: true});
+$('.cpf').mask('000.000.000-00', { reverse: true});
+$('.rg').mask('00.000.000-0', { reverse: true});
+$('.money').mask('#.##0,00', { reverse: true});
 //Mascara especial para campo celular ou fixo
 var SPMaskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
