@@ -43,7 +43,14 @@ $( function() {
 		var icon = $( this );
 		icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
 		icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-	});
+    });
+
+    $("#module_dash").on("click", function (event) {
+        event.preventDefault();
+        var icon = $(".portlet-toggle"); 
+        icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
+        icon.closest(".portlet").find(".portlet-content").toggle();
+    });
 } );
 
 $("#fecha_menu").click(function(){
