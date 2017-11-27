@@ -137,12 +137,14 @@
     <None Include="Views\FormsMorador\frmBuscarEnquete.cshtml" />
     <None Include="Views\FormsMorador\frmBuscarEvento.cshtml" />
     <None Include="Views\FormsMorador\frmBuscarMorador.cshtml" />
-    <None Include="Views\FormsMorador\frmBuscarReclam_sugest.cshtml" />
+    <Content Include="Views\FormsMorador\frmBuscarReclamacao.cshtml" />
+    <None Include="Views\FormsMorador\frmBuscarSugestao.cshtml" />
     <None Include="Views\FormsMorador\frmCadastrarCorrespondencia.cshtml" />
     <None Include="Views\FormsMorador\frmCadastrarEnquete.cshtml" />
     <None Include="Views\FormsMorador\frmCadastrarEvento.cshtml" />
     <None Include="Views\FormsMorador\frmCadastrarMorador.cshtml" />
-    <None Include="Views\FormsMorador\frmCadastrarReclam_sugest.cshtml" />
+    <Content Include="Views\FormsMorador\frmCadastrarReclamacao.cshtml" />
+    <None Include="Views\FormsMorador\frmCadastrarSugestao.cshtml" />
     <None Include="Views\FormsVisita\frmBuscarVisita.cshtml" />
     <None Include="Views\FormsVisita\frmBuscarVisitante.cshtml" />
     <None Include="Views\FormsVisita\frmCadastrarVisita.cshtml" />
@@ -155,7 +157,7 @@
     <Compile Include="Controllers\FormsFinancasController.cs" />
     <Compile Include="Controllers\FormsFuncionarioController.cs" />
     <Compile Include="Controllers\FormsMoradorController.cs" />
-    <Compile Include="Controllers\FormsVisitaController.cs" />
+    <Compile Include="Controllers\FormsEntradaESaidaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

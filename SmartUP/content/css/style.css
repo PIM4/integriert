@@ -29,8 +29,8 @@ div.compensa ul#slide-out{top: 65px;}
 .table_form::-webkit-scrollbar{ height: 1px; width: 0px; position: absolute;  }
 .table_form::-moz-scrollbar{ height: 1px; width: 0px; position: absolute; }
 
-div.compensa ul#slide-out::-webkit-scrollbar{ width: 2px; position: absolute; background:#e3e0d6; }
-div.compensa ul#slide-out::-moz-scrollbar{ width: 2px; position: absolute; background:#e3e0d6; }
+div.compensa ul#slide-out::-webkit-scrollbar{ width: 4px; position: absolute; background:#e3e0d6; }
+div.compensa ul#slide-out::-moz-scrollbar{ width: 4px; position: absolute; background:#e3e0d6; }
 div.compensa ul#slide-out::-webkit-scrollbar-track, .table_form::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
 div.compensa ul#slide-out::-moz-scrollbar-track, .table_form::-moz-scrollbar-track{ background: rgba(0,0,0,0.1); }
 div.compensa ul#slide-out::-webkit-scrollbar-thumb, .table_form::-webkit-scrollbar-thumb { border-radius:10px; background:#0496E7;}

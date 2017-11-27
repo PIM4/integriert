@@ -6,25 +6,25 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class FormsVisitaController : Controller
+    public class FormsEntradaESaidaController : Controller
     {
         // GET: Forms_visita
-        public ActionResult Frm_buscar_visita()
+        public ActionResult FrmBuscarVisita()
         {
             return View();
         }
 
-        public ActionResult Frm_buscar_visitante()
+        public ActionResult FrmBuscarVisitante()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_visita()
+        public ActionResult FrmCadastrarVisita()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_visitante()
+        public ActionResult FrmCadastrarVisitante()
         {
             return View();
         }

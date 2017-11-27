@@ -9,42 +9,42 @@ namespace SmartUP.Controllers
     public class FormsFinancasController : Controller
     {
         // GET: Forms_financas
-        public ActionResult Frm_buscar_contas_a_pagar()
+        public ActionResult FrmBuscarContasAPagar()
         {
             return View();
         }
 
-        public ActionResult Frm_buscar_contas_a_receber()
+        public ActionResult FrmBuscarContasAReceber()
         {
             return View();
         }
 
-        public ActionResult Frm_buscar_fornecedor()
+        public ActionResult FrmBuscarFornecedor()
         {
             return View();
         }
 
-        public ActionResult Frm_buscar_obra()
+        public ActionResult FrmBuscarObra()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_contas_a_pagar()
+        public ActionResult FrmCadastrarContasAPagar()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_contas_a_receber()
+        public ActionResult FrmCadastrarContasAReceber()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_fornecedor()
+        public ActionResult FrmCadastrarFornecedor()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_obra()
+        public ActionResult FrmCadastrarObra()
         {
             return View();
         }
