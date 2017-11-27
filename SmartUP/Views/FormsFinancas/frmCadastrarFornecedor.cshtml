@@ -13,12 +13,12 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="?<?php echo $login ?>&page=frm_buscar_area">
-							<span class="span_forms">Buscar correspondência</span>
+						<a class="" href="@url.action("frmBuscarFornecedor","FormsFinancas")">
+							<span class="span_forms">Buscar fornecedor</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar correspondência</span>
+							<span class="span_forms">Cadastrar fornecedor</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,23 +27,29 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de correspondência</h5>
+						<h5 style="">Cadastro de fornecedor</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Descrição</label>
+								<label for="icon_prefix">Nome da empresa</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Unidade</label>
+								<label for="icon_prefix">Ramo</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="date" class="validate datetime">
-								<label for="icon_prefix">Data/horario de recebimento</label>
+								<input id="icon_prefix" type="tel" class="validate cnpj">
+								<label for="icon_prefix">CNPJ</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="date" class="validate datetime">
-								<label for="icon_prefix">Data/horario de entrada</label>
+								<input id="icon_prefix" type="tel" class="validate sp_celphones">
+								<label for="icon_prefix">Telefone</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12 m3" >
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Endereço</label>
 							</div>
 						</div>
 						<div class="row">

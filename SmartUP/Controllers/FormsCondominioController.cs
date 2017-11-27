@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_condominioController : Controller
+    public class FormsCondominioController : Controller
     {
         // GET: Forms_condominio
-        public ActionResult Frm_buscar_area()
+        public ActionResult FrmBuscarArea()
         {
             return View();
         }

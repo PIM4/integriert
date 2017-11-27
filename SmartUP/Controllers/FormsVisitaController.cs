@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_visitaController : Controller
+    public class FormsVisitaController : Controller
     {
         // GET: Forms_visita
         public ActionResult Frm_buscar_visita()

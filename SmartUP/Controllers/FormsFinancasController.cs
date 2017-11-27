@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_financasController : Controller
+    public class FormsFinancasController : Controller
     {
         // GET: Forms_financas
         public ActionResult Frm_buscar_contas_a_pagar()

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_funcionarioController : Controller
+    public class FormsFuncionarioController : Controller
     {
         // GET: Forms_funcionario
         public ActionResult Frm_buscar_interno()

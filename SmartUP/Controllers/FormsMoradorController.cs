@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_moradorController : Controller
+    public class FormsMoradorController : Controller
     {
         // GET: Forms_morador
         public ActionResult Frm_buscar_morador()
