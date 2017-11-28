@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartUP", "SmartUP\SmartUP.csproj", "{C1B43977-3B40-45DB-9AEC-E7F06B9F16F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dllModelo", "dllModelo\dllModelo.csproj", "{894B639A-14B8-4C2A-AC5A-BA96160A4CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dllModelo", "dllModelo\dllModelo.csproj", "{894B639A-14B8-4C2A-AC5A-BA96160A4CAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F3A84D95-5E67-449F-8CB3-9D142806C98B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,22 @@ Global
 		{894B639A-14B8-4C2A-AC5A-BA96160A4CAE}.Release|x64.Build.0 = Release|Any CPU
 		{894B639A-14B8-4C2A-AC5A-BA96160A4CAE}.Release|x86.ActiveCfg = Release|Any CPU
 		{894B639A-14B8-4C2A-AC5A-BA96160A4CAE}.Release|x86.Build.0 = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|x64.Build.0 = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Debug|x86.Build.0 = Debug|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|ARM.Build.0 = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|x64.ActiveCfg = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|x64.Build.0 = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|x86.ActiveCfg = Release|Any CPU
+		{F3A84D95-5E67-449F-8CB3-9D142806C98B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
