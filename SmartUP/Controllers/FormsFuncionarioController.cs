@@ -6,25 +6,25 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_funcionarioController : Controller
+    public class FormsFuncionarioController : Controller
     {
         // GET: Forms_funcionario
-        public ActionResult Frm_buscar_interno()
+        public ActionResult FrmBuscarInterno()
         {
             return View();
         }
 
-        public ActionResult Frm_buscar_terceiro()
+        public ActionResult FrmBuscarTerceiro()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_interno()
+        public ActionResult FrmCadastrarInterno()
         {
             return View();
         }
 
-        public ActionResult Frm_cadastrar_terceiro()
+        public ActionResult FrmCadastrarTerceiro()
         {
             return View();
         }

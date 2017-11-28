@@ -13,12 +13,12 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="?<?php echo $login ?>&page=frm_buscar_area">
-							<span class="span_forms">Buscar internos</span>
+						<a class="" href="@url.action("frmBuscarMorador","FormsMorador")">
+							<span class="span_forms">Buscar morador</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar internos</span>
+							<span class="span_forms">Cadastrar morador</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,7 +27,7 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de internos</h5>
+						<h5 style="">Cadastro de morador</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
@@ -42,18 +42,18 @@
 								<label for="icon_prefix">CPF</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate sp_celphones">
-								<label for="icon_prefix">Telefone</label>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Unidade</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Endereço</label>
+								<input id="icon_prefix" type="tel" class="validate sp_celphones">
+								<label for="icon_prefix">Telefone</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Cargo</label>
+								<label for="icon_prefix">Endereço</label>
 							</div>
 						</div>						
 						<div class="row">

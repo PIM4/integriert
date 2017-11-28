@@ -13,12 +13,12 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="?<?php echo $login ?>&page=frm_buscar_area">
-							<span class="span_forms">Buscar enquetes</span>
+						<a class="" href="@url.action("frmBuscarContasAPagar","FormsFinancas")">
+							<span class="span_forms">Buscar contas a pagar</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar enquetes</span>
+							<span class="span_forms">Cadastrar contas a pagar</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,23 +27,23 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de enquetes</h5>
+						<h5 style="">Cadastro de contas a pagar</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Pergunta</label>
+								<label for="icon_prefix">Tipo de conta</label>
+							</div>
+							<div class="input-field col s12 m3" >
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Fornecedor</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="date" class="validate date">
-								<label for="icon_prefix">Data de inicio</label>
+								<label for="icon_prefix">Data</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="date" class="validate date">
-								<label for="icon_prefix">Data de encerramento</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="number" class="validate">
-								<label for="icon_prefix">Opções de voto</label>
+								<input id="icon_prefix" type="tel" class="validate money">
+								<label for="icon_prefix">Valor</label>
 							</div>
 						</div>
 						<div class="row">

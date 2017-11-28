@@ -6,46 +6,46 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class Forms_condominioController : Controller
+    public class FormsCondominioController : Controller
     {
         // GET: Forms_condominio
-        public ActionResult Frm_buscar_area()
+        public ActionResult FrmBuscarArea()
         {
             return View();
         }
-        public ActionResult Frm_buscar_bloco()
+        public ActionResult FrmBuscarBloco()
         {
             return View();
         }
-        public ActionResult Frm_buscar_condominio()
+        public ActionResult FrmBuscarCondominio()
         {
             return View();
         }
-        public ActionResult Frm_buscar_unidade()
+        public ActionResult FrmBuscarUnidade()
         {
             return View();
         }
-        public ActionResult Frm_buscar_aviso()
+        public ActionResult FrmBuscarAviso()
         {
             return View();
         }
-        public ActionResult Frm_cadastrar_area()
+        public ActionResult FrmCadastrarArea()
         {
             return View();
         }
-        public ActionResult Frm_cadastrar_aviso()
+        public ActionResult FrmCadastrarAviso()
         {
             return View();
         }
-        public ActionResult Frm_cadastrar_bloco()
+        public ActionResult FrmCadastrarBloco()
         {
             return View();
         }
-        public ActionResult Frm_cadastrar_condominio()
+        public ActionResult FrmCadastrarCondominio()
         {
             return View();
         }
-        public ActionResult Frm_cadastrar_unidade()
+        public ActionResult FrmCadastrarUnidade()
         {
             return View();
         }

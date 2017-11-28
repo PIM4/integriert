@@ -13,12 +13,12 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="?<?php echo $login ?>&page=frm_buscar_area">
-							<span class="span_forms">Buscar obras</span>
+						<a class="" href="@url.action("frmBuscarEnquete","FormsMorador")">
+							<span class="span_forms">Buscar enquetes</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar obras</span>
+							<span class="span_forms">Cadastrar enquetes</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,23 +27,23 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de obras</h5>
+						<h5 style="">Cadastro de enquetes</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Tipo de obra</label>
+								<label for="icon_prefix">Pergunta</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
+								<input id="icon_prefix" type="date" class="validate date">
 								<label for="icon_prefix">Data de inicio</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
-								<label for="icon_prefix">Previsão de termino</label>
+								<input id="icon_prefix" type="date" class="validate date">
+								<label for="icon_prefix">Data de encerramento</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
-								<label for="icon_prefix">Data de termino</label>
+								<input id="icon_prefix" type="number" class="validate">
+								<label for="icon_prefix">Opções de voto</label>
 							</div>
 						</div>
 						<div class="row">
