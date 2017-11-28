@@ -5,3 +5,9 @@ C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\ConsoleApp1.exe
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache

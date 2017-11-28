@@ -18,42 +18,21 @@ namespace Model.DAO.Especifico
             List<Area> lstArea = new List<Area>();
             try
             {
+                
                 if (dr.HasRows)
                 {
-                    while (dr.Read())
+                    
+                    while (dr.Read() == true)
                     {
                         obj.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
                         obj.seAluga = Convert.ToBoolean(dr["RESERVA"].ToString());
                         obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.capacMax = Convert.ToInt32(dr["CAPACIDADE_MAX"].ToString());
+
                         lstArea.Add(obj);
                     }
                 }
-
-                //for (int idx = 0; idx < dr.FieldCount; idx++)
-                //{
-                    //dr.GetName(idx).ToString();
-
-                    //switch (dr.GetName(idx).ToUpper())
-                    //{
-                    //    case "ID_AREA":
-                    //        obj.id_area = Convert.ToInt32(dr[idx]);
-                    //        break;
-                    //    case "DESCRICAO":
-                    //        obj.descricao = Convert.ToString(dr[idx]);
-                    //        break;
-                    //    case "RESERVA":
-                    //        obj.seAluga = Convert.ToBoolean(dr[idx]);
-                    //        break;
-                    //    case "NOME":
-                    //        obj.nome = Convert.ToString(dr[idx]);
-                    //        break;
-                    //    case "CAPACIDADE_MAX":
-                    //        obj.capacMax = Convert.ToInt32(dr[idx]);
-                    //        break;
-                    //}
-                //}
             }
 
             catch(Exception ex)
@@ -88,10 +67,11 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO AREA (DESCRICAO, RESERVA, NOME, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
-                                + area.descricao + "', " + (area.seAluga).ToString() + ", '" + area.nome + "', "
-                                + (area.capacMax).ToString() + ", 1)";
+                query = "INSERT INTO AREA (NOME, DESCRICAO, RESERVA, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
+                                + area.nome + "', '" + area.descricao + "', " + Convert.ToInt32(area.seAluga) + ", "
+                                + (area.capacMax).ToString() + ", " + Convert.ToInt32(area.ativo) + ");";
                 banco.MetodoNaoQuery(query);
+                Console.WriteLine("convulsao");
                 return true;
             }
 
@@ -143,7 +123,7 @@ namespace Model.DAO.Especifico
             List<Area> lstArea = new List<Area>();
             try
             {
-                query = "SELECT NOME, DESCRICAO, CAPACIDADE_MAX, RESERVA FROM AREA WHERE STS_ATIVO = 1 ORDER BY NOME;";
+                query = "SELECT ID_AREA, NOME, DESCRICAO, CAPACIDADE_MAX, RESERVA FROM AREA WHERE STS_ATIVO = 1 ORDER BY NOME;";
                 lstArea = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -160,9 +140,10 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "UPDATE AREA SET DESCRICAO = '" + area.descricao + "', RESERVA = " + (area.seAluga).ToString() + ", NOME = '"
+                query = "UPDATE AREA SET DESCRICAO = '" + area.descricao + "', RESERVA = " + Convert.ToInt32(area.seAluga) + ", NOME = '"
                         + area.nome + "', CAPACIDADE_MAX = " + (area.capacMax).ToString() + ", STS_ATIVO = 1 "
                         + " WHERE ID_AREA = " + (area.id_area).ToString() + ";";
+                Console.WriteLine(query);
                 banco.MetodoNaoQuery(query);
                 return true;
             }

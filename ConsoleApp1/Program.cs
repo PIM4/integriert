@@ -26,10 +26,12 @@ namespace ConsoleApp1
             };
             Area ar = new Area
             {
-                nome = "Piscina",
-                descricao = "Area da piscina",
-                capacMax = 20,
-                seAluga = false
+                id_area = 1,
+                nome = "Recepção",
+                descricao = "Recebe as pessoa tudo",
+                capacMax = 10,
+                seAluga = true,
+                ativo = true
             };
             Aviso av = new Aviso
             {
@@ -66,8 +68,8 @@ namespace ConsoleApp1
             AreaDAO areaDAO = new AreaDAO();
             dbBancos teste = new dbBancos();
 
-            String leTeste = teste.TesteConexao();
-            areaDAO.cadastra(ar);
+            //String leTeste = teste.TesteConexao();
+            
 
             //List<string> lista = new List<string>();
             //lista.Add("Carlos");
@@ -75,16 +77,19 @@ namespace ConsoleApp1
 
             List<Area> listaArea = new List<Area>();
 
-            foreach(Area area in listaArea)
+            
+            areaDAO.altera(ar);
+            listaArea = areaDAO.busca();
+            foreach (Area area in listaArea)
             {
-                Console.WriteLine(area.nome);
+                Console.WriteLine(area.id_area + " " + area.nome + " " + area.capacMax.ToString() + " " + area.descricao + " " + area.seAluga.ToString());
             }
 
 
 
 
             Console.WriteLine(
-               // leTeste+"\n"+
+                //leTeste+"\n"
                 //"Condominio: "+cond.nome+"\n"+
                 //"Bloco: "+bl.nome+"\n"+
                 //"Unidade: "+uni.identificacao+"\n"

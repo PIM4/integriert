@@ -27,11 +27,12 @@ namespace Model.DAO.Generico
             try
             {
                 SqlConnection conexao = new SqlConnection(strConexao);
+                conexao.Open();
                 return "funfo";
             }
             catch
             {
-                return "Não fufo";
+                return "Não funfo";
             }
             
         }
@@ -39,7 +40,7 @@ namespace Model.DAO.Generico
         public SqlDataReader MetodoSelect(string QuerySQL)
 		{
             SqlConnection conexao = new SqlConnection(strConexao);
-            SqlCommand cmd = new SqlCommand(QuerySQL);
+            SqlCommand cmd = new SqlCommand(QuerySQL, conexao);
 			try
 			{
                 conexao.Open();
@@ -50,14 +51,14 @@ namespace Model.DAO.Generico
 			{
                 throw ex;
 			}
-            finally
-            {
-                if (conexao != null)
-                {
-                    conexao.Close();
-                }
-                cmd.Dispose();
-            }
+            //finally
+            //{
+            //    if (conexao != null)
+            //    {
+            //        conexao.Close();
+            //    }
+            //    cmd.Dispose();
+            //}
 		}
 
 		public bool MetodoNaoQuery(string QuerySQL)
@@ -67,7 +68,7 @@ namespace Model.DAO.Generico
             SqlCommand cmd = null;
 			try
 			{
-               // Console.WriteLine(strConexao);
+                Console.WriteLine(QuerySQL);
 				conexao = new SqlConnection(strConexao);
                 cmd = new SqlCommand(QuerySQL, conexao);
 				conexao.Open();
