@@ -11,12 +11,7 @@ namespace Model.Entity
 		public DateTime dtfinal{get;set;}
 		public Fornecedor fornecedor{set; get;}
 
-		public Obra(string tipo, Area area, DateTime dtIn, Fornecedor fornecedor)
-		{
-            this.fornecedor = fornecedor;
-
-
-		}
+        public Obra() { }
 
 		public void fechamentoObra(DateTime dtfinal)
 		{

@@ -26,7 +26,6 @@ namespace ConsoleApp1
             };
             Area ar = new Area
             {
-                id_area = 1,
                 nome = "Recepção",
                 descricao = "Recebe as pessoa tudo",
                 capacMax = 10,
@@ -66,19 +65,16 @@ namespace ConsoleApp1
             };
 
             AreaDAO areaDAO = new AreaDAO();
-            dbBancos teste = new dbBancos();
-
-            //String leTeste = teste.TesteConexao();
-            
-
-            //List<string> lista = new List<string>();
-            //lista.Add("Carlos");
-            //lista.Add("Henrique");
 
             List<Area> listaArea = new List<Area>();
 
-            
-            areaDAO.altera(ar);
+            /*CRIA*/
+            //areaDAO.cadastra(ar);
+
+            /*ALTERA*/
+            //areaDAO.altera(ar);
+
+            /*BUSCA*/
             listaArea = areaDAO.busca();
             foreach (Area area in listaArea)
             {

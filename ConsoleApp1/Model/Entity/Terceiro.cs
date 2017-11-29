@@ -8,10 +8,7 @@ namespace Model.Entity
 	{
 		public string servico{get;set;}
 
-		public Terceiro(string servico, string nome, string rg, string documento, List<Endereco> endereco, List<Telefone> telefone)
-		{
 
-		}
 
 	}
 

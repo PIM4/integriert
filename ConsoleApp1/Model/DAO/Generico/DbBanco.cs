@@ -11,30 +11,10 @@ namespace Model.DAO.Generico
 	{
         public string strConexao { get; set; }
 
-        //public dbBancos()
-        //{
-
-        //}
-
         public dbBancos()
         {
             Configuracoes configuracao = new Configuracoes();
             this.strConexao = configuracao.LeStringConexao();
-        }
-
-        public string TesteConexao()
-        {
-            try
-            {
-                SqlConnection conexao = new SqlConnection(strConexao);
-                conexao.Open();
-                return "funfo";
-            }
-            catch
-            {
-                return "Não funfo";
-            }
-            
         }
 
         public SqlDataReader MetodoSelect(string QuerySQL)
@@ -68,7 +48,6 @@ namespace Model.DAO.Generico
             SqlCommand cmd = null;
 			try
 			{
-                Console.WriteLine(QuerySQL);
 				conexao = new SqlConnection(strConexao);
                 cmd = new SqlCommand(QuerySQL, conexao);
 				conexao.Open();

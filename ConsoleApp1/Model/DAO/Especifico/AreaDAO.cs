@@ -71,7 +71,6 @@ namespace Model.DAO.Especifico
                                 + area.nome + "', '" + area.descricao + "', " + Convert.ToInt32(area.seAluga) + ", "
                                 + (area.capacMax).ToString() + ", " + Convert.ToInt32(area.ativo) + ");";
                 banco.MetodoNaoQuery(query);
-                Console.WriteLine("convulsao");
                 return true;
             }
 
@@ -143,7 +142,6 @@ namespace Model.DAO.Especifico
                 query = "UPDATE AREA SET DESCRICAO = '" + area.descricao + "', RESERVA = " + Convert.ToInt32(area.seAluga) + ", NOME = '"
                         + area.nome + "', CAPACIDADE_MAX = " + (area.capacMax).ToString() + ", STS_ATIVO = 1 "
                         + " WHERE ID_AREA = " + (area.id_area).ToString() + ";";
-                Console.WriteLine(query);
                 banco.MetodoNaoQuery(query);
                 return true;
             }

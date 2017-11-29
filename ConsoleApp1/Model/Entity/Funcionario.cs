@@ -7,12 +7,9 @@ namespace Model.Entity
 {
 	public class Funcionario : Pessoa
 	{
-		public Funcionario cargo{get;set;}
+		public Cargo cargo{get;set;}
 
-		public Funcionario(Cargo cargo, string nome, string rg, string documento, List<Endereco> endereco, List<Telefone> telefone)
-		{
-			
-		}
+
 	}
 
 }
