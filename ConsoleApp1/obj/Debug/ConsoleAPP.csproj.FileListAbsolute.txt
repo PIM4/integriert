@@ -8,3 +8,5 @@ C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ConsoleAPP.csprojResolv
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ConsoleAPP.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ModelDll.exe
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ModelDll.pdb
+C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\Modelo.dll
+C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\Modelo.pdb

@@ -81,9 +81,6 @@ namespace ConsoleApp1
                 Console.WriteLine(area.id_area + " " + area.nome + " " + area.capacMax.ToString() + " " + area.descricao + " " + area.seAluga.ToString());
             }
 
-
-
-
             Console.WriteLine(
                 //leTeste+"\n"
                 //"Condominio: "+cond.nome+"\n"+

@@ -41,62 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\DAO\Configuracao\Configuracoes.cs" />
-    <Compile Include="Model\DAO\Especifico\AreaDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\AvisoDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\BlocoDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\CondominioDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\ContaPagarDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\ContaReceberDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\CorrespondenciaDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\EnderecoDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\EnquetesDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\EventoDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\FornecedorDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\FuncionarioDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\LoginDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\MoradorDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\ObraDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\PessoaDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\ReclamSugestDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\TelefoneDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\TerceiroDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\UnidadeDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\VeiculoDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\VisitaDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\VisitanteDAO.cs" />
-    <Compile Include="Model\DAO\Generico\DbBanco.cs" />
-    <Compile Include="Model\DAO\Generico\Log.cs" />
-    <Compile Include="Model\Entity\Area.cs" />
-    <Compile Include="Model\Entity\Aviso.cs" />
-    <Compile Include="Model\Entity\Bloco.cs" />
-    <Compile Include="Model\Entity\Cargo.cs" />
-    <Compile Include="Model\Entity\Condominio.cs" />
-    <Compile Include="Model\Entity\Morador.cs" />
-    <Compile Include="Model\Entity\ContaPagar.cs" />
-    <Compile Include="Model\Entity\ContaReceber.cs" />
-    <Compile Include="Model\Entity\Correspondencia.cs" />
-    <Compile Include="Model\Entity\Endereco.cs" />
-    <Compile Include="Model\Entity\Enquete.cs" />
-    <Compile Include="Model\Entity\Evento.cs" />
-    <Compile Include="Model\Entity\Fornecedor.cs" />
-    <Compile Include="Model\Entity\Funcionario.cs" />
-    <Compile Include="Model\Entity\Login.cs" />
-    <Compile Include="Model\Entity\Obra.cs" />
-    <Compile Include="Model\Entity\Pessoa.cs" />
-    <Compile Include="Model\Entity\ReclamSugest.cs" />
-    <Compile Include="Model\Entity\Telefone.cs" />
-    <Compile Include="Model\Entity\Terceiro.cs" />
-    <Compile Include="Model\Entity\Unidade.cs" />
-    <Compile Include="Model\Entity\Veiculo.cs" />
-    <Compile Include="Model\Entity\Visita.cs" />
-    <Compile Include="Model\Entity\Visitante.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{400d08e4-7edd-4fed-a56c-6f43b1c51890}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
