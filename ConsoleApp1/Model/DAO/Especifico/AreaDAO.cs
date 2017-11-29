@@ -14,25 +14,24 @@ namespace Model.DAO.Especifico
 
         public List<Area> setarObjeto(SqlDataReader dr)
         {
-            Area obj = new Area();
+            
             List<Area> lstArea = new List<Area>();
             try
             {
-                
                 if (dr.HasRows)
                 {
-                    
                     while (dr.Read() == true)
                     {
+                        Area obj = new Area();
                         obj.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
                         obj.seAluga = Convert.ToBoolean(dr["RESERVA"].ToString());
                         obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.capacMax = Convert.ToInt32(dr["CAPACIDADE_MAX"].ToString());
-
                         lstArea.Add(obj);
                     }
                 }
+
             }
 
             catch(Exception ex)

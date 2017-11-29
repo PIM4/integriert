@@ -301,3 +301,5 @@ C:\Users\bruna\Documents\GitHub\integriert\SmartUP\obj\Debug\SmartUP.pdb
 C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.csprojResolveAssemblyReference.cache
 C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.dll
 C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.pdb
+C:\Users\User\source\repos\SmartUP\SmartUP\bin\Modelo.dll
+C:\Users\User\source\repos\SmartUP\SmartUP\bin\Modelo.pdb

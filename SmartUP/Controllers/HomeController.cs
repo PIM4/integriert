@@ -1,4 +1,5 @@
-﻿using SmartUP.Models;
+﻿using Model.Entity;
+using SmartUP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,9 @@ namespace SmartUP.Controllers
 {
     public class HomeController : Controller
     {
-    // GET: Index
-    public ActionResult Dash()
+        // GET: Index
+        public ActionResult Dash()
         {
-            Area ar = new Area();
             return View();
         }
     }

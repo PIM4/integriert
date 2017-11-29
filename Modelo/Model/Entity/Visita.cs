@@ -10,7 +10,7 @@ namespace Model.Entity
 		public DateTime dtChegada{get;set;}
 		public DateTime dtSaida{get;set;}
 
-		public Visita(Visitante visitante, Unidade uni, DateTime dtChegada)
+		public Visita()
 		{
 
 		}

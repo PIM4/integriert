@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.DAO.Especifico;
+using Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,10 @@ namespace SmartUP.Controllers
         // GET: Forms_condominio
         public ActionResult FrmBuscarArea()
         {
+            Area area = new Area();
+            AreaDAO areaDAO = new AreaDAO();
+            ViewBag.lstArea = areaDAO.busca();
+            ViewBag.ar = area;
             return View();
         }
         public ActionResult FrmBuscarBloco()

@@ -1,8 +1,0 @@
-C:\Users\User\source\repos\SmartUP\dllModelo\bin\Debug\netcoreapp1.1\dllModelo.deps.json
-C:\Users\User\source\repos\SmartUP\dllModelo\bin\Debug\netcoreapp1.1\dllModelo.dll
-C:\Users\User\source\repos\SmartUP\dllModelo\bin\Debug\netcoreapp1.1\dllModelo.pdb
-C:\Users\User\source\repos\SmartUP\dllModelo\obj\Debug\netcoreapp1.1\dllModelo.csprojResolveAssemblyReference.cache
-C:\Users\User\source\repos\SmartUP\dllModelo\obj\Debug\netcoreapp1.1\dllModelo.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\SmartUP\dllModelo\obj\Debug\netcoreapp1.1\dllModelo.AssemblyInfo.cs
-C:\Users\User\source\repos\SmartUP\dllModelo\obj\Debug\netcoreapp1.1\dllModelo.dll
-C:\Users\User\source\repos\SmartUP\dllModelo\obj\Debug\netcoreapp1.1\dllModelo.pdb

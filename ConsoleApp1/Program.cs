@@ -26,10 +26,10 @@ namespace ConsoleApp1
             };
             Area ar = new Area
             {
-                nome = "Recepção",
-                descricao = "Recebe as pessoa tudo",
-                capacMax = 10,
-                seAluga = true,
+                nome = "Piscina",
+                descricao = "Banhar-se",
+                capacMax = 30,
+                seAluga = false,
                 ativo = true
             };
             Aviso av = new Aviso

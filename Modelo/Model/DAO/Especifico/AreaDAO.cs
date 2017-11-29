@@ -14,25 +14,24 @@ namespace Model.DAO.Especifico
 
         public List<Area> setarObjeto(SqlDataReader dr)
         {
-            Area obj = new Area();
+            
             List<Area> lstArea = new List<Area>();
             try
             {
-                
                 if (dr.HasRows)
                 {
-                    
                     while (dr.Read() == true)
                     {
+                        Area obj = new Area();
                         obj.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
                         obj.seAluga = Convert.ToBoolean(dr["RESERVA"].ToString());
                         obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.capacMax = Convert.ToInt32(dr["CAPACIDADE_MAX"].ToString());
-
                         lstArea.Add(obj);
                     }
                 }
+
             }
 
             catch(Exception ex)
@@ -71,7 +70,6 @@ namespace Model.DAO.Especifico
                                 + area.nome + "', '" + area.descricao + "', " + Convert.ToInt32(area.seAluga) + ", "
                                 + (area.capacMax).ToString() + ", " + Convert.ToInt32(area.ativo) + ");";
                 banco.MetodoNaoQuery(query);
-                Console.WriteLine("convulsao");
                 return true;
             }
 
@@ -143,7 +141,6 @@ namespace Model.DAO.Especifico
                 query = "UPDATE AREA SET DESCRICAO = '" + area.descricao + "', RESERVA = " + Convert.ToInt32(area.seAluga) + ", NOME = '"
                         + area.nome + "', CAPACIDADE_MAX = " + (area.capacMax).ToString() + ", STS_ATIVO = 1 "
                         + " WHERE ID_AREA = " + (area.id_area).ToString() + ";";
-                Console.WriteLine(query);
                 banco.MetodoNaoQuery(query);
                 return true;
             }

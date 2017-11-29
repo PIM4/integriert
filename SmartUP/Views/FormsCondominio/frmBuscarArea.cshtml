@@ -48,16 +48,13 @@
 							<thead>
 								<tr>
 									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Descrição</th>
+									<th>Capacidade Max</th>
+									<th>Reserva</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								@*<tr>
 									<td>Bouna Vitta</td>
 									<td>Julio Buono</td>
 									<td>1</td>
@@ -65,7 +62,18 @@
 									<td>12/06/2001</td>
 									<td>ASK</td>
 									<td>27.948.894.00001</td>
-								</tr>
+								</tr>*@
+                                
+                                    @foreach (var area in ViewBag.lstArea)
+                                    {
+                                    <tr>
+                                        <td>@area.nome</td>
+                                        <td>@area.descricao</td>
+                                        <td>@area.capacMax</td>
+                                        <td>@area.seAluga</td>
+                                    </tr>
+                                    }
+                                
 							</tbody>
 						</table>
 					</div>
