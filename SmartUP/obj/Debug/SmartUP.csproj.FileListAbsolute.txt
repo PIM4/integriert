@@ -298,3 +298,6 @@ C:\Users\bruna\Documents\GitHub\integriert\SmartUP\bin\pt-br\System.Web.Mvc.reso
 C:\Users\bruna\Documents\GitHub\integriert\SmartUP\obj\Debug\SmartUP.csprojResolveAssemblyReference.cache
 C:\Users\bruna\Documents\GitHub\integriert\SmartUP\obj\Debug\SmartUP.dll
 C:\Users\bruna\Documents\GitHub\integriert\SmartUP\obj\Debug\SmartUP.pdb
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.csprojResolveAssemblyReference.cache
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.dll
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\SmartUP\obj\Debug\SmartUP.pdb

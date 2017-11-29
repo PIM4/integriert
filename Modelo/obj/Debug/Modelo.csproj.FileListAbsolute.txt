@@ -1,0 +1,5 @@
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\Modelo\bin\Debug\Modelo.dll
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\Modelo\bin\Debug\Modelo.pdb
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\Modelo\obj\Debug\Modelo.dll
+C:\Users\bruna\Documents\Visual Studio 2013\Projects\integriert\Modelo\obj\Debug\Modelo.pdb

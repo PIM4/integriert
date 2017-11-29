@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3A84D95-5E67-449F-8CB3-9D142806C98B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ModelDll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DAO\Configuracao\Configuracoes.cs" />
+    <Compile Include="Model\DAO\Especifico\AreaDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\AvisoDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\BlocoDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\CondominioDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\ContaPagarDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\ContaReceberDAO.cs" />
+    <Compile Include="Model\DAO\Generico\DbBanco.cs" />
+    <Compile Include="Model\DAO\Generico\Log.cs" />
+    <Compile Include="Model\Entity\Area.cs" />
+    <Compile Include="Model\Entity\Aviso.cs" />
+    <Compile Include="Model\Entity\Bloco.cs" />
+    <Compile Include="Model\Entity\Cargo.cs" />
+    <Compile Include="Model\Entity\Condominio.cs" />
+    <Compile Include="Model\Entity\Condomino.cs" />
+    <Compile Include="Model\Entity\ContaPagar.cs" />
+    <Compile Include="Model\Entity\ContaReceber.cs" />
+    <Compile Include="Model\Entity\Correspondencia.cs" />
+    <Compile Include="Model\Entity\Endereco.cs" />
+    <Compile Include="Model\Entity\Enquete.cs" />
+    <Compile Include="Model\Entity\Evento.cs" />
+    <Compile Include="Model\Entity\Fornecedor.cs" />
+    <Compile Include="Model\Entity\Funcionario.cs" />
+    <Compile Include="Model\Entity\Login.cs" />
+    <Compile Include="Model\Entity\Obra.cs" />
+    <Compile Include="Model\Entity\Pessoa.cs" />
+    <Compile Include="Model\Entity\ReclamSugest.cs" />
+    <Compile Include="Model\Entity\Telefone.cs" />
+    <Compile Include="Model\Entity\Terceiro.cs" />
+    <Compile Include="Model\Entity\Unidade.cs" />
+    <Compile Include="Model\Entity\Veiculo.cs" />
+    <Compile Include="Model\Entity\Visita.cs" />
+    <Compile Include="Model\Entity\Visitante.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -12,6 +12,7 @@ namespace SmartUP.Controllers
     // GET: Index
     public ActionResult Dash()
         {
+            Area ar = new Area();
             return View();
         }
     }
