@@ -42,8 +42,13 @@ namespace Model.DAO.Especifico
             }
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
+            return true;
+        }
+
+        public bool altera(Funcionario funcionario)
+        {
             return true;
         }
 

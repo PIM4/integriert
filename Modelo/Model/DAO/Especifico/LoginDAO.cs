@@ -17,12 +17,17 @@ namespace Model.DAO.Especifico
             return obj;
         }
 
-		public bool remove(Login login)
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Login login)
+        {
+            return true;
+        }
+
+    }
 
 }
 

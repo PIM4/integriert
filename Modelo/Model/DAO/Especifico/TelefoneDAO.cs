@@ -12,7 +12,7 @@ namespace Model.DAO.Especifico
             return true;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
 		}
@@ -20,9 +20,14 @@ namespace Model.DAO.Especifico
 		public List<Telefone> listaTelefone()
 		{
             return this.lstTelefone;
-		}		
+		}
 
-	}
+        public bool altera(Telefone tel)
+        {
+            return true;
+        }
+
+    }
 
 }
 

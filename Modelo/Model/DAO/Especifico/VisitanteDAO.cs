@@ -11,13 +11,13 @@ namespace Model.DAO.Especifico
             return true;
 		}
 
-		public List<Visitante> buscarVisitantePorNome(string nome)
+		public List<Visitante> buscaPorNome(string nome)
 		{
             return lstVisitante;
 
         }
 
-		public List<Visitante> buscarVisitantePorRg(string rg)
+		public List<Visitante> buscaPorRg(string rg)
 		{
             return lstVisitante;
 
@@ -29,12 +29,17 @@ namespace Model.DAO.Especifico
 
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
 		}
 
-	}
+        public bool altera(Visitante visitante)
+        {
+            return true;
+        }
+
+    }
 
 }
 

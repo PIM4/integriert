@@ -12,12 +12,12 @@ namespace Model.DAO.Especifico
             return true; 
         }
 
-		public List<Obra> buscarObraPorArea(Area area)
+		public List<Obra> buscaPorArea(Area area)
 		{
             return lstObra;
         }
 
-		public List<Obra> buscarObraPorTipo(string tipo)
+		public List<Obra> buscaPorTipo(string tipo)
 		{
             return lstObra;
         }	
@@ -27,12 +27,12 @@ namespace Model.DAO.Especifico
             return lstObra;
         }
 
-		public List<Obra> buscarObraPorAbertas()
+		public List<Obra> buscaPorAbertas()
 		{
             return lstObra;
         }	
 
-		public List<Obra> buscarObraPorFechadas()
+		public List<Obra> buscaPorFechadas()
 		{
             return lstObra;
         }						
@@ -42,12 +42,17 @@ namespace Model.DAO.Especifico
             return lstObra;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Obra obra)
+        {
+            return true;
+        }
+
+    }
 
 }
 

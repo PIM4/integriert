@@ -18,27 +18,32 @@ namespace Model.DAO.Especifico
             return reclamSugest;
         }
 
-		public List<ReclamSugest> buscarReclamPorTitulo(string titulo)
+		public List<ReclamSugest> buscaPorTitulo(string titulo)
 		{
             return reclamSugest;
         }
 
-		public List<ReclamSugest> buscarReclamPorTitulo(Pessoa pessoa)
+		public List<ReclamSugest> buscaPorTitulo(Pessoa pessoa)
 		{
             return reclamSugest;
         }		
 
-		public List<ReclamSugest> buscarSugestPorData(DateTime dtInicio, DateTime dtFinal)
+		public List<ReclamSugest> buscaPorData(DateTime dtInicio, DateTime dtFinal)
 		{
             return reclamSugest;
         }
 
-		public bool remove(ReclamSugest RS)
+		public bool remove(int id)
 		{
             return true;
 		}
 
-	}
+        public bool remove(ReclamSugest RS)
+        {
+            return true;
+        }
+
+    }
 
 }
 
