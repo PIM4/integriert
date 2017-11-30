@@ -145,10 +145,10 @@
     <None Include="Views\FormsMorador\frmCadastrarMorador.cshtml" />
     <Content Include="Views\FormsMorador\frmCadastrarReclamacao.cshtml" />
     <None Include="Views\FormsMorador\frmCadastrarSugestao.cshtml" />
-    <None Include="Views\FormsVisita\frmBuscarVisita.cshtml" />
-    <None Include="Views\FormsVisita\frmBuscarVisitante.cshtml" />
-    <None Include="Views\FormsVisita\frmCadastrarVisita.cshtml" />
-    <None Include="Views\FormsVisita\frmCadastrarVisitante.cshtml" />
+    <None Include="Views\FormsEntradaESaida\frmBuscarVisita.cshtml" />
+    <None Include="Views\FormsEntradaESaida\frmBuscarVisitante.cshtml" />
+    <None Include="Views\FormsEntradaESaida\frmCadastrarVisita.cshtml" />
+    <None Include="Views\FormsEntradaESaida\frmCadastrarVisitante.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartUP", "SmartUP\SmartUP.csproj", "{C1B43977-3B40-45DB-9AEC-E7F06B9F16F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAPP", "ConsoleApp1\ConsoleAPP.csproj", "{F3A84D95-5E67-449F-8CB3-9D142806C98B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{400D08E4-7EDD-4FED-A56C-6F43B1C51890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartOP", "SmartOP\SmartOP.csproj", "{E6A2676B-D9BF-4746-9472-C61B8682D172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,22 @@ Global
 		{400D08E4-7EDD-4FED-A56C-6F43B1C51890}.Release|ARM.ActiveCfg = Release|Any CPU
 		{400D08E4-7EDD-4FED-A56C-6F43B1C51890}.Release|x64.ActiveCfg = Release|Any CPU
 		{400D08E4-7EDD-4FED-A56C-6F43B1C51890}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|ARM.Build.0 = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Debug|x86.Build.0 = Debug|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|ARM.Build.0 = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|x64.ActiveCfg = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|x64.Build.0 = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6A2676B-D9BF-4746-9472-C61B8682D172}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

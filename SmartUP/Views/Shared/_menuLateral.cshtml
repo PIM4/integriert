@@ -19,7 +19,7 @@
                     <a href="#!email"><span class="white-text email">carloshenriqueescouto@gmail.com</span></a>
                 </div>
             </li>
-            <li>@Html.ActionLink("Home", "Dash", "Home", null, new { @class = "waves-effect" })</li> @{ /*<i class="material-icons">home</i>*/ }
+            <li><a><i class="material-icons">home</i>Home</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader">menu</a></li>
             <li class="no-padding">
@@ -29,7 +29,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="@Url.Action("FrmBuscarCondominio", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Condomínio</a></li>
-                                <li><a href="@Url.Action("FrmBuscarBloco", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Blocos</a></li>
+                                <li><a href="@Url.Action("FrmBuscarBloco", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Blocãos</a></li>
                                 <li><a href="@Url.Action("FrmBuscarUnidade", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Unidades</a></li>
                                 <li><a href="@Url.Action("FrmBuscarArea", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Áreas</a></li>
                                 <li><a href="@Url.Action("FrmBuscarAviso", "FormsCondominio")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Aviso</a></li>
@@ -75,8 +75,8 @@
                         <a class="collapsible-header menus_drop"><i class="material-icons">transfer_within_a_station</i>Entrada & Saída<i class="material-icons right">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="@Url.Action("FrmBuscarVisita", "FormsVisita")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitas</a></li>
-                                <li><a href="@Url.Action("FrmBuscarVisitante", "FormsVisita")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitantes</a></li>
+                                <li><a href="@Url.Action("FrmBuscarVisita", "FormsEntradaESaida")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitas</a></li>
+                                <li><a href="@Url.Action("FrmBuscarVisitante", "FormsEntradaESaida")" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Visitantes</a></li>
                             </ul>
                         </div>
                     </li>
