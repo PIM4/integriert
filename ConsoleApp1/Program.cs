@@ -27,9 +27,9 @@ namespace ConsoleApp1
             Area ar = new Area
             {
                 nome = "Piscina",
-                descricao = "Banhar-se",
-                capacMax = 30,
-                seAluga = false,
+                descricao = "Piscina Infantil",
+                capacMax = 10,
+                seAluga = true,
                 ativo = true
             };
             Aviso av = new Aviso
@@ -67,7 +67,7 @@ namespace ConsoleApp1
             AreaDAO areaDAO = new AreaDAO();
 
             List<Area> listaArea = new List<Area>();
-
+            List<Area> listaArea2 = new List<Area>();
             /*CRIA*/
             //areaDAO.cadastra(ar);
 
@@ -75,10 +75,18 @@ namespace ConsoleApp1
             //areaDAO.altera(ar);
 
             /*BUSCA*/
-            listaArea = areaDAO.busca();
-            foreach (Area area in listaArea)
+            listaArea = areaDAO.buscaPorNome("Piscina");
+            listaArea2 = areaDAO.buscaPorAlugaveis(false);
+            foreach (Area area2 in listaArea)
             {
-                Console.WriteLine(area.id_area + " " + area.nome + " " + area.capacMax.ToString() + " " + area.descricao + " " + area.seAluga.ToString());
+                foreach (Area area in listaArea2)
+                {
+                    if (area2.id_area == area.id_area)
+                    {
+
+                        Console.WriteLine(area.id_area + " " + area.nome + " " + area.capacMax.ToString() + " " + area.descricao + " " + area.seAluga.ToString());
+                    }
+                }
             }
 
             Console.WriteLine(
