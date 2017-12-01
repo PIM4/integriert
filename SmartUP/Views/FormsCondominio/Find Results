@@ -1,0 +1,98 @@
+Searching 53 files for "style="top:80px; p"
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsCondominio\frmCadastrarArea.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsCondominio\frmCadastrarAviso.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsCondominio\frmCadastrarBloco.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsCondominio\frmCadastrarCondominio.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsCondominio\frmCadastrarUnidade.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsEntradaESaida\frmCadastrarVisita.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsEntradaESaida\frmCadastrarVisitante.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFinancas\frmCadastrarContasAPagar.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFinancas\frmCadastrarContasAReceber.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFinancas\frmCadastrarFornecedor.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFinancas\frmCadastrarObra.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFuncionario\frmCadastrarInterno.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsFuncionario\frmCadastrarTerceiro.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarCorrespondencia.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarEnquete.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarEvento.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarMorador.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarReclamacao.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+C:\Users\User\source\repos\SmartUP\SmartUP\Views\FormsMorador\frmCadastrarSugestao.cshtml:
+    1: <section class="content" style="top:80px; position: relative;">
+    2  	<div class="row">
+    3  		<div class="col s12 compensa">
+
+19 matches across 19 files

@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\SmartOP.exe.config
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\SmartOP.exe
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\SmartOP.pdb
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\DotNetBrowser.dll
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\DotNetBrowser.Chromium.dll
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Release\DotNetBrowser.xml
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\MainWindow.baml
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\MainWindow.g.cs
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\App.g.cs
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP_MarkupCompile.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.g.resources
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.Properties.Resources.resources
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.csproj.GenerateResource.Cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.exe
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Release\SmartOP.pdb

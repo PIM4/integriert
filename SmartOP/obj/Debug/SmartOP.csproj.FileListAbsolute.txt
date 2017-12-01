@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\SmartOP.exe.config
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\SmartOP.exe
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\SmartOP.pdb
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\DotNetBrowser.dll
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\DotNetBrowser.Chromium.dll
+C:\Users\User\source\repos\SmartUP\SmartOP\bin\Debug\DotNetBrowser.xml
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\MainWindow.g.cs
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\App.g.cs
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP_MarkupCompile.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\MainWindow.baml
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.g.resources
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.Properties.Resources.resources
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.csproj.GenerateResource.Cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.exe
+C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\SmartOP.pdb

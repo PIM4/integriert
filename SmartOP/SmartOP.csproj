@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E6A2676B-D9BF-4746-9472-C61B8682D172}</ProjectGuid>
+    <ProjectGuid>{275D08DA-A76E-43BF-B4C1-A28308F51729}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SmartOP</RootNamespace>
     <AssemblyName>SmartOP</AssemblyName>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetBrowser">
+      <HintPath>..\Library\DotNetBrowser.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -93,10 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{400d08e4-7edd-4fed-a56c-6f43b1c51890}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="teamdev.licenses" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
