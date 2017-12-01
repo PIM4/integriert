@@ -81,12 +81,17 @@ namespace Model.DAO.Especifico
             return this.lstEvento;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Evento evento)
+        {
+            return true;
+        }
+
+    }
 
 }
 

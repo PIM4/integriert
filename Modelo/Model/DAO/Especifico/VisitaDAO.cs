@@ -12,13 +12,13 @@ namespace Model.DAO.Especifico
             return true;
 		}
 
-		public List<Visita> buscaVisitaPorData(DateTime dt1, DateTime dt2)
+		public List<Visita> buscaPorData(DateTime dt1, DateTime dt2)
 		{
             return this.lstVisita;
 
         }
 
-		public List<Visita> buscaVisitaPorUnidade(Unidade unidade)
+		public List<Visita> buscaPorUnidade(Unidade unidade)
 		{
             return this.lstVisita;
         }
@@ -28,12 +28,17 @@ namespace Model.DAO.Especifico
             return this.lstVisita;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
 		}
 
-	}
+        public bool altera(Visita visita)
+        {
+            return true;
+        }
+
+    }
 
 }
 

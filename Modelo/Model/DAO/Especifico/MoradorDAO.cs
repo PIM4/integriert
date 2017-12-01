@@ -10,12 +10,17 @@ namespace Model.DAO.Especifico
             return true;
         }
 
-		public bool remove(Morador morador)
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Morador morador)
+        {
+            return true;
+        }
+
+    }
 
 }
 

@@ -4,16 +4,21 @@
 winexe
 C#
 .cs
-C:\Users\User\source\repos\SmartUP\SmartOP\obj\Debug\
+C:\Users\Matheus\Documents\integriert\SmartOP\obj\Debug\
 SmartOP
 none
 false
 DEBUG;TRACE
-C:\Users\User\source\repos\SmartUP\SmartOP\App.xaml
+C:\Users\Matheus\Documents\integriert\SmartOP\App.xaml
 11151548125
 
+<<<<<<< HEAD
 9-2064396197
 14-273575274
+=======
+9-773465729
+14-1069941451
+>>>>>>> 6bc1bdc2c3e1ca4dd9db78f7712c05db4450e615
 MainWindow.xaml;
 
 False

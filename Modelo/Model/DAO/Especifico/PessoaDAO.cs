@@ -114,6 +114,11 @@ namespace Model.DAO.Especifico
             }
         }
 
+        public bool altera(Pessoa pessoa)
+        {
+            return true;
+        }
+
         #endregion
 
         #region Métodos

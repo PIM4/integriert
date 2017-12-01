@@ -24,7 +24,17 @@ namespace Model.DAO.Especifico
 
         }
 
-	}
+        public bool remove(int id)
+        {
+            return true;
+        }
+
+        public bool altera(Veiculo veic)
+        {
+            return true;
+        }
+
+    }
 
 }
 

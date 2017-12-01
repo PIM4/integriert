@@ -12,17 +12,17 @@ namespace Model.DAO.Especifico
             return true;
         }
 
-		public List<Fornecedor> buscarFornecedorPorNome(string nome)
+		public List<Fornecedor> buscaPorNome(string nome)
 		{
             return lstFornecedor;
         }		
 
-		public List<Fornecedor> buscarFornecedorPorRamo(string ramo)
+		public List<Fornecedor> buscaPorRamo(string ramo)
 		{
             return lstFornecedor;
         }		
 
-		public List<Fornecedor> buscarFornecedorPorCNPJ(string cnpj)
+		public List<Fornecedor> buscaPorCNPJ(string cnpj)
 		{
 	        return lstFornecedor;
         }
@@ -32,12 +32,17 @@ namespace Model.DAO.Especifico
             return lstFornecedor;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Fornecedor fornecedor)
+        {
+            return true;
+        }
+
+    }
 
 }
 

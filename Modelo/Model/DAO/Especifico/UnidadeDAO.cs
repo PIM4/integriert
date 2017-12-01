@@ -21,12 +21,17 @@ namespace Model.DAO.Especifico
             return lstUnidade;
         }
 
-		public bool remove()
+		public bool remove(int id)
 		{
             return true;
         }
 
-	}
+        public bool altera(Unidade unidade)
+        {
+            return true;
+        }
+
+    }
 
 }
 
