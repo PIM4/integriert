@@ -9,7 +9,7 @@ using Modelo.Model.DAO.Especifico;
 
 namespace Model.DAO.Especifico
 {
-	public class AreaDAO : IFacede
+	public class AreaDAO 
     {
         #region Métodos
 

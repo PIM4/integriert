@@ -7,7 +7,7 @@ namespace Model.DAO.Especifico
 	public class FornecedorDAO
 	{
         List<Fornecedor> lstFornecedor = new List<Fornecedor>();
-		public bool salva(Fornecedor fornecedor)
+		public bool cadastra(Fornecedor fornecedor)
 		{
             return true;
         }
@@ -27,7 +27,7 @@ namespace Model.DAO.Especifico
 	        return lstFornecedor;
         }
 
-		public List<Fornecedor> listaFornecedor()
+		public List<Fornecedor> busca()
 		{
             return lstFornecedor;
         }

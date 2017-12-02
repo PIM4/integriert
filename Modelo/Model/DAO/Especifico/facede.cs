@@ -9,7 +9,7 @@ namespace Modelo.Model.DAO.Especifico
 {
     interface IFacede
     {
-        bool cadastra(Area area);
+        bool cadastra(Area obj);
         bool altera();
         bool remove();
     }

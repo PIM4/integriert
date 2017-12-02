@@ -22,7 +22,7 @@ namespace Model.DAO.Especifico
             return lstObra;
         }	
 		
-		public List<Obra> buscarObraPorData(DateTime data)
+		public List<Obra> buscaPorData(DateTime data)
 		{
             return lstObra;
         }
@@ -37,7 +37,7 @@ namespace Model.DAO.Especifico
             return lstObra;
         }						
 
-		public List<Obra> listar()
+		public List<Obra> busca()
 		{
             return lstObra;
         }

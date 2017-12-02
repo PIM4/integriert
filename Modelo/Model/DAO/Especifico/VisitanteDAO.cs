@@ -6,7 +6,7 @@ namespace Model.DAO.Especifico
 	public class VisitanteDAO
 	{
         List<Visitante> lstVisitante = new List<Visitante>();
-        public bool salva(Visitante visitante)
+        public bool cadastra(Visitante visitante)
 		{
             return true;
 		}
@@ -23,7 +23,7 @@ namespace Model.DAO.Especifico
 
         }
 
-		public List<Visitante> listaVisitante()
+		public List<Visitante> busca()
 		{
             return lstVisitante;
 

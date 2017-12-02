@@ -17,7 +17,7 @@ namespace Model.DAO.Especifico
             return true;
 		}
 
-		public List<Telefone> listaTelefone()
+		public List<Telefone> busca()
 		{
             return this.lstTelefone;
 		}

@@ -5,9 +5,15 @@ namespace Model.DAO.Especifico
 {
 	public class MoradorDAO
 	{
+        List<Morador> lstMorador = new List<Morador>();
 		public bool cadastra(Morador morador)
 		{
             return true;
+        }
+
+        public List<Morador> busca()
+        {
+            return lstMorador;
         }
 
 		public bool remove(int id)
@@ -19,6 +25,7 @@ namespace Model.DAO.Especifico
         {
             return true;
         }
+
 
     }
 

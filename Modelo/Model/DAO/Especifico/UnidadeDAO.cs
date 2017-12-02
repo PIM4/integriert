@@ -16,7 +16,7 @@ namespace Model.DAO.Especifico
 		//	reutnr 
 		//}
 
-		public List<Unidade> listaUnidade()
+		public List<Unidade> busca()
 		{
             return lstUnidade;
         }

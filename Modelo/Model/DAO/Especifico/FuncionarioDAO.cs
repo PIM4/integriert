@@ -3,6 +3,7 @@ using System;
 using Model.DAO.Generico;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace Model.DAO.Especifico
 {
@@ -17,7 +18,7 @@ namespace Model.DAO.Especifico
         #endregion
 
         #region Objetos
-
+        List<Funcionario> lstFuncionario = new List<Funcionario>();
         dbBancos banco = new dbBancos();
         string query = null;
 
@@ -42,7 +43,12 @@ namespace Model.DAO.Especifico
             }
         }
 
-		public bool remove(int id)
+        public List<Funcionario> busca()
+        {
+            return lstFuncionario;
+        }
+
+		public bool remove(Funcionario funcionario)
 		{
             return true;
         }

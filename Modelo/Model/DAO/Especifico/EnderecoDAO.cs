@@ -120,7 +120,7 @@ namespace Model.DAO.Especifico
             return lstEndereco;	
         }
 
-		public List<Endereco> busca(int id_pessoa)
+		public List<Endereco> busca()
 		{
             query = null;
             List<Endereco> lstEndereco = new List<Endereco>();

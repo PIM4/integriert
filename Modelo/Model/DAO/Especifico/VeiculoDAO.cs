@@ -12,13 +12,13 @@ namespace Model.DAO.Especifico
             return true;
         }
 
-		//public Veiculo buscarVeiculoPorPlaca(string placa)
+		//public Veiculo buscaPlaca(string placa)
 		//{
   //          return lstVeiculo;
 
   //      }
 
-		public List<Veiculo> listarVeiculos()
+		public List<Veiculo> busca()
 		{
             return this.lstVeiculo;
 

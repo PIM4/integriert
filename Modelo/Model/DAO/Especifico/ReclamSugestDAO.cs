@@ -8,12 +8,12 @@ namespace Model.DAO.Especifico
 	{
         List<ReclamSugest> reclamSugest = new List<ReclamSugest>();
 
-        public bool cadastrar(ReclamSugest RS)
+        public bool cadastra(ReclamSugest RS)
 		{
             return true;
 		}
 
-		public List<ReclamSugest> listaReclamSugest(int vefiricador)
+		public List<ReclamSugest> busca()
 		{
             return reclamSugest;
         }
@@ -32,11 +32,6 @@ namespace Model.DAO.Especifico
 		{
             return reclamSugest;
         }
-
-		public bool remove(int id)
-		{
-            return true;
-		}
 
         public bool remove(ReclamSugest RS)
         {

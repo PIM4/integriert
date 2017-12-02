@@ -7,7 +7,7 @@ namespace Model.DAO.Especifico
 	public class VisitaDAO
 	{
         List<Visita> lstVisita = new List<Visita>();
-		public bool salva(Visita visita)
+		public bool cadastra(Visita visita)
 		{
             return true;
 		}
@@ -23,7 +23,7 @@ namespace Model.DAO.Especifico
             return this.lstVisita;
         }
 
-		public List<Visita> listaVisita()
+		public List<Visita> busca()
 		{
             return this.lstVisita;
         }
