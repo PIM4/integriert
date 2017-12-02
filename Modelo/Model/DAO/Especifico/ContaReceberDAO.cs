@@ -26,13 +26,15 @@ namespace Model.DAO.Especifico
         #region CRUD
 
         public bool cadastra(ContaReceber cr)
-		{//verificar no banco se existe o campo OBSERVACAO. Se nao, adicionar.
+		{
             query = null;
             try
             {
                 query = "INSERT INTO CONTA_RECEBER (DT_CONTA_RECEBER, VALOR, ID_COND, ID_UNIDADE, STS_ATIVO) VALUES ('"
-                        + (cr.data).ToShortDateString() + "', " + (cr.valor).ToString() + ", " 
-                        + (cr.condominio.id_cond).ToString()  + ", " + (cr.unidade.id_unidade).ToString() + ", 1;";
+                        + (cr.data).ToShortDateString() + "', " 
+                        + (cr.valor).ToString() + ", " 
+                        + (cr.condominio.id_cond).ToString()  + ", " 
+                        + (cr.unidade.id_unidade).ToString() + ", 1;";
                 banco.MetodoNaoQuery(query);
                 return true;
             }

@@ -30,8 +30,11 @@ namespace Model.DAO.Especifico
 
             try
             {
-                query = "INSERT INTO AVISO (TITULO, DESCRICAO, DATA, ID_COND, STS_ATIVO) VALUES ('" + aviso.titulo + "', '"
-                        + aviso.descricao + "', '" + (aviso.data).ToString() + "', "+ (aviso.cond.id_cond).ToString() + ", 1);";
+                query = "INSERT INTO AVISO (TITULO, DESCRICAO, DATA, ID_COND, STS_ATIVO) VALUES ('" 
+                        + aviso.titulo + "', '"
+                        + aviso.descricao + "', '" 
+                        + (aviso.data).ToString() + "', " 
+                        + (aviso.cond.id_cond).ToString() + ", 1);";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -129,8 +132,10 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {   
-                query = "UPDATE AVISO SET TITULO = '" + aviso.titulo + "', DESCRICAO = '" + aviso.descricao + "' WHERE ID_AVISO = " 
-                        + (aviso.id_aviso).ToString() + ";";
+                query = "UPDATE AVISO " 
+                        + " SET TITULO = '" + aviso.titulo 
+                        + "', DESCRICAO = '" + aviso.descricao 
+                        + "' WHERE ID_AVISO = " + (aviso.id_aviso).ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -165,7 +170,6 @@ namespace Model.DAO.Especifico
 
         public List<Aviso> setarObjeto(SqlDataReader dr)
         {
-            Aviso obj = new Aviso();
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
@@ -173,6 +177,7 @@ namespace Model.DAO.Especifico
                 {
                     while (dr.Read())
                     {
+                        Aviso obj = new Aviso();
                         obj.id_aviso = Convert.ToInt32(dr["ID_AVISO"].ToString());
                         obj.titulo = Convert.ToString(dr["TITULO"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
@@ -184,33 +189,8 @@ namespace Model.DAO.Especifico
                         lstAviso.Add(obj);
                     }
                 }
-                    //for (int idx = 0; idx < dr.FieldCount; idx++)
-                    //{
-                    //    dr.GetName(idx).ToString();
-
-                    //    switch (dr.GetName(idx).ToUpper())
-                    //    {
-                    //        case "TITULO":
-                    //            obj.titulo = Convert.ToString(dr[idx]);
-                    //            break;
-                    //        case "DESCRICAO":
-                    //            obj.descricao = Convert.ToString(dr[idx]);
-                    //            break;
-                    //        case "DATA":
-                    //            obj.data = Convert.ToDateTime(dr[idx]);
-                    //            break;
-                    //        case "ID_AVISO":
-                    //            obj.id_aviso = Convert.ToInt32(dr[idx]);  
-                    //            break;
-                    //        case "NOME_COND":
-                    //            obj.cond.nome = Convert.ToString(dr[idx]);
-                    //            break;
-                    //        case "ID_COND":
-                    //            obj.cond.id_cond = Convert.ToInt32(dr[idx]);
-                    //            break;
-                    //    }
-                    //}
             }
+
             catch (Exception ex)
             {
                 dr.Dispose();
