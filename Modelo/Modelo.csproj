@@ -50,6 +50,7 @@
     <Compile Include="Model\DAO\Especifico\EnderecoDAO.cs" />
     <Compile Include="Model\DAO\Especifico\EnquetesDAO.cs" />
     <Compile Include="Model\DAO\Especifico\EventoDAO.cs" />
+    <Compile Include="Model\DAO\Especifico\facede.cs" />
     <Compile Include="Model\DAO\Especifico\FornecedorDAO.cs" />
     <Compile Include="Model\DAO\Especifico\FuncionarioDAO.cs" />
     <Compile Include="Model\DAO\Especifico\LoginDAO.cs" />

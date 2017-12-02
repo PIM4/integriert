@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using Model.DAO;
 using Model.DAO.Generico;
 using System.Data.SqlClient;
+using Modelo.Model.DAO.Especifico;
 
 namespace Model.DAO.Especifico
 {
-	public class AreaDAO        
+	public class AreaDAO : IFacede
     {
         #region Métodos
 
