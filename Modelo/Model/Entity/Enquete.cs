@@ -18,6 +18,8 @@ namespace Model.Entity
 
         public Condominio condominio { get; set; }
 
+        public int enq_ativo { get; set; }
+
         #endregion
 
         #region ENQUETE_ALTERNATIVAS

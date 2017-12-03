@@ -36,10 +36,13 @@ namespace Model.Entity
 
         public DateTime data { get; set; }
 
+        public int ativo { get; set; }
+
         #endregion
 
         #region AREA_EVENTO
 
+        public int id_area_evento { get; set; }
 
 
         #endregion

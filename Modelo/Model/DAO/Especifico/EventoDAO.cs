@@ -2,6 +2,7 @@ using Model.Entity;
 using System.Collections.Generic;
 using System;
 using Model.DAO.Generico;
+using System.Data.SqlClient;
 
 namespace Model.DAO.Especifico
 {
@@ -21,14 +22,18 @@ namespace Model.DAO.Especifico
 
         #endregion
 
-		public bool cadastraEvento(Evento ev)
+        #region CRUD
+
+        public bool cadastraEvento(Evento ev)
 		{
             query = null;
             try
             {
-                query = "INSERT INTO EVENTO (TITULO, ID_UNIDADE, STS_ATIVO) VALUES ('"
-                        + ev.descEvento + "', " + ev.unidade.id_unidade.ToString() 
-                        + ", 1;";
+                query = "INSERT INTO EVENTO (TITULO, ID_UNIDADE, STS_ATIVO, DT_EVENTO) VALUES ('"
+                        + ev.descEvento + "', " 
+                        + ev.unidade.id_unidade.ToString()
+                        + ", 1, '"
+                        + ev.data.ToShortDateString() + "';";
                 return true;
             }
 
@@ -44,8 +49,10 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO AREA_EVENTO (ID_EVENTO, ID_AREA, STS_ATIVO) VALUES ("
-                        + ev.id_evento.ToString() + ", " + ev.area.id_area.ToString() + ", 1;";
+                query = "INSERT INTO AREA_EVENTO (ID_EVENTO, ID_AREA, STS_ATIVO, DT_EVENTO) VALUES ("
+                        + ev.id_evento.ToString() + ", "
+                        + ev.area.id_area.ToString() 
+                        + ", 1;";
                 return true;
             }
 
@@ -58,17 +65,63 @@ namespace Model.DAO.Especifico
 
 		public List<Evento> buscaPorData(DateTime dt1, DateTime dt2)
 		{
-            return this.lstEvento;
+            query = null;
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                query = "SELECT E.DT_EVENTO, E.TITULO, U.IDENTIFICACAO FROM EVENTO AS E "
+                        + "INNER JOIN UNIDADE AS U ON E.ID_UNIDADE = U.ID_UNIDADE "
+                        + "WHERE E.DT_EVENTO BETWEEN '" + dt1.ToString() 
+                        + "' AND '" + dt2.ToString() + "' AND E.STS_ATIVO = 1;";
+                lstEvento = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstEvento;
         }		
 
-		public List<Evento> buscaPorArea(Area area)
+		public List<Evento> buscaPorArea(Area area)     //Verificaar
 		{
-            return this.lstEvento;
+            query = null;
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                query = "SELECT E.DT_EVENTO, E.TITULO, U.IDENTIFICACAO FROM EVENTO AS E "
+                        + "INNER JOIN UNIDADE AS U ON E.ID_UNIDADE = U.ID_UNIDADE "
+                        + "";
+                lstEvento = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstEvento;
         }
 
 		public List<Evento> buscaPorResponsavel(string resp)
 		{
-            return this.lstEvento;
+            query = null;
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                query = "SELECT E.DT_EVENTO, E.TITULO, U.IDENTIFICACAO FROM EVENTO AS E "
+                        + "INNER JOIN UNIDADE AS U ON E.ID_UNIDADE = U.ID_UNIDADE "
+                        + "WHERE U.IDENTIFICACAO = '" + resp + "';";
+                lstEvento = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstEvento;
         }	
 
 		public List<Evento> buscaPorUnidade(Unidade unidade)
@@ -90,6 +143,48 @@ namespace Model.DAO.Especifico
         {
             return true;
         }
+
+        #endregion
+
+        #region Métodos
+
+        public List<Evento> setarObjeto(SqlDataReader dr)
+        {
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Evento obj = new Evento();
+
+                        obj.id_evento = Convert.ToInt32(dr["ID_EVENTO"].ToString());
+                        obj.descEvento = Convert.ToString(dr["TITULO"].ToString());
+                        obj.data = Convert.ToDateTime(dr["DT_EVENTO"].ToString());
+                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());        //verificar
+
+                        obj.id_area_evento = Convert.ToInt32(dr["ID_AREA_EVENTO"].ToString());
+
+                        obj.unidade.id_unidade = Convert.ToInt32(dr["ID_UNIDADE"].ToString());
+                        obj.unidade.identificacao = Convert.ToString(dr["IDENTIFICACAO"].ToString());
+
+                        obj.area.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
+                        obj.area.nome = Convert.ToString(dr["NOME"].ToString());
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                dr.Dispose();
+                throw ex;
+            }
+
+            return lstEvento;
+        }
+
+        #endregion
 
     }
 
