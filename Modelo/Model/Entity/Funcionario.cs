@@ -7,6 +7,13 @@ namespace Model.Entity
 {
 	public class Funcionario : Pessoa
 	{
+        public Funcionario()
+        {
+
+        }
+
+        public int id_funcionario { get; set; }
+
 		public Cargo cargo{get;set;}
 
 

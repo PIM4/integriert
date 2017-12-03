@@ -32,7 +32,9 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO FUNCIONARIO (ID_CARGO, ID_PESSOA, STS_ATIVO) VALUES ("
-                        + (funcionario.cargo).ToString() + ", " + (funcionario.id_pessoa).ToString() + ", 1)";
+                        + (funcionario.cargo).ToString() + ", " 
+                        + (funcionario.id_pessoa).ToString() 
+                        + ", 1)";
                 return true;
             }
 
@@ -43,52 +45,123 @@ namespace Model.DAO.Especifico
             }
         }
 
+        public List<Funcionario> buscaPorNome(string nome)
+        {
+            query = null;
+            List<Funcionario> lstFuncionarios = new List<Funcionario>();
+            try
+            {
+                query = "SELECT P.NOME, C.DESCRICAO FROM PESSOA AS P " +
+                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_PESSOA " +
+                        "INNER JOIN CARGO ON F.ID_CARGO = C.ID_CARGO " +
+                        "WHERE P.NOME LIKE '%" + nome + "%' AND F.STS_ATIVO = 1;";
+                lstFuncionarios = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstFuncionarios;
+        }
+
+        public List<Funcionario> buscaPorCargo(string cargo)
+        {
+            query = null;
+            List<Funcionario> lstFuncionarios = new List<Funcionario>();
+            try
+            {
+                query = "SELECT P.NOME, C.DESCRICAO FROM PESSOA AS P " +
+                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_PESSOA " +
+                        "INNER JOIN CARGO ON F.ID_CARGO = C.ID_CARGO " +
+                        "WHERE C.DESCRICAO LIKE '%" + cargo + "%' AND F.STS_ATIVO = 1;";
+                lstFuncionarios = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstFuncionarios;
+        }
+
         public List<Funcionario> busca()
         {
-            return lstFuncionario;
+            query = null;
+            List<Funcionario> lstFuncionarios = new List<Funcionario>();
+            try
+            {
+                query = "SELECT P.NOME, C.DESCRICAO FROM PESSOA AS P " +
+                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_PESSOA " +
+                        "INNER JOIN CARGO ON F.ID_CARGO = C.ID_CARGO " +
+                        "WHERE F.STS_ATIVO = 1;";
+                lstFuncionarios = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstFuncionarios;
         }
 
-		public bool remove(Funcionario funcionario)
-		{
-            return true;
-        }
-
-        public bool altera(Funcionario funcionario)
+        public bool altera(Funcionario funcionario) //VERIFICAR
         {
-            return true;
+            query = null;
+            try
+            {
+                query = "UPDATE FUNCIONARIO SET ";
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
         }
 
+        public bool remove(int id)
+		{
+            query = null;
+            try
+            {
+                query = "UPDATE FUNCIONARIO SET STS_ATIVO = 0 WHERE ID_FUNCIONARIO = " + id.ToString() + ";";
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+        
         #endregion
 
         #region Métodos
 
-        public Pessoa setarObjeto(SqlDataReader dr)
+        public List<Funcionario> setarObjeto(SqlDataReader dr)
         {
-            Pessoa obj = new Pessoa();
+            List<Funcionario> lstFunc = new List<Funcionario>();
 
             try
             {
-                for (int idx = 0; idx < dr.FieldCount; idx++)
+                if (dr.HasRows)
                 {
-                    dr.GetName(idx).ToString();
-
-                    switch (dr.GetName(idx).ToUpper())
+                    while (dr.Read())
                     {
-                        case "ID_PESSOA":
-                            obj.id_pessoa = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "NOME":
-                            obj.nome = Convert.ToString(dr[idx]);
-                            break;
-                        case "CPF":
-                            obj.cpf = Convert.ToString(dr[idx]);
-                            break;
-                        case "RG":
-                            obj.rg = Convert.ToString(dr[idx]);
-                            break;
-                        case "DT_NASC":
-                            obj.data_nasc = Convert.ToDateTime(dr[idx]);
-                            break;
+                        Funcionario obj = new Funcionario();
+                        obj.id_funcionario = Convert.ToInt32(dr["ID_FUNCIONARIO"].ToString());
+                        obj.cargo.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());
+                        obj.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
+                        
+                        lstFunc.Add(obj);
                     }
                 }
             }
@@ -99,7 +172,7 @@ namespace Model.DAO.Especifico
                 throw ex;
             }
 
-            return obj;
+            return lstFunc;
         }
 
         #endregion
