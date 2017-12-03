@@ -16,23 +16,34 @@ namespace SmartUP.Controllers
             Area area = new Area();
             AreaDAO areaDAO = new AreaDAO();
             ViewBag.lstArea = areaDAO.busca();
-            ViewBag.ar = area;
             return View();
         }
         public ActionResult FrmBuscarBloco()
         {
+            Bloco bloco = new Bloco();
+            BlocoDAO blocoDAO = new BlocoDAO();
+            ViewBag.lstBloco = blocoDAO.busca();
             return View();
         }
         public ActionResult FrmBuscarCondominio()
         {
+            Condominio condominio = new Condominio();
+            CondominioDAO condominioDAO = new CondominioDAO();
+            ViewBag.lstCond = condominioDAO.busca();
             return View();
         }
         public ActionResult FrmBuscarUnidade()
         {
+            Unidade unidade = new Unidade();
+            UnidadeDAO unidadeDAO = new UnidadeDAO();
+            ViewBag.lstUnidade = unidadeDAO.busca();
             return View();
         }
         public ActionResult FrmBuscarAviso()
         {
+            Aviso aviso = new Aviso();
+            AvisoDAO avisoDAO = new AvisoDAO();
+            ViewBag.lstAviso = avisoDAO.busca();
             return View();
         }
         public ActionResult FrmCadastrarArea()

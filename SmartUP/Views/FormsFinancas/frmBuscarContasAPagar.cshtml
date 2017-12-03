@@ -99,15 +99,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var contaAPagar in ViewBag.lstCP)
+                                {
+                                    <tr>
+                                        <td>@contaAPagar.desc_conta</td>
+                                        <td>@contaAPagar.data</td>
+                                        <td>@contaAPagar.fornecedor</td>
+                                        <td>@contaAPagar.condominio</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

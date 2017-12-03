@@ -91,25 +91,24 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+                                    <th>Unidade</th>
+									<th>Nome do visitante</th>
+									<th>RG do visitante</th>
+									<th>Data/hora de entrada</th>
+									<th>Data/hora de saida</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var visita in ViewBag.lstVisita)
+                                {
+                                    <tr>
+                                        <td>@visita.unidade.identificacao</td>
+                                        <td>@visita.visitante.nome</td>
+                                        <td>@visita.visitante.rg</td>
+                                        <td>@visita.dtChegada</td>
+                                        <td>@visita.dtSaida</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

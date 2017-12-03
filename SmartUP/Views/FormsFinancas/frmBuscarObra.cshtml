@@ -101,15 +101,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var area in ViewBag.lstArea)
+                                {
+                                    <tr>
+                                        <td>@area.nome</td>
+                                        <td>@area.descricao</td>
+                                        <td>@area.capacMax</td>
+                                        <td>@area.seAluga</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

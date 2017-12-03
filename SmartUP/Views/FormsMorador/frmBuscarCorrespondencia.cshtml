@@ -85,25 +85,23 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Unidade</th>
+									<th>descCorrespondencia</th>
+									<th>Data de Entrada</th>
+									<th>Data de Saida</th>
+						
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var corresp in ViewBag.lstCorrespondencia)
+                                {
+                                    <tr>
+                                        <td>@corresp.unidade</td>
+                                        <td>@corresp.descCorrespondencia</td>
+                                        <td>@corresp.dtEntrada</td>
+                                        <td>@corresp.dtSaida</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

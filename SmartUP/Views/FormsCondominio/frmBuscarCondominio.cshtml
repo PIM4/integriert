@@ -49,23 +49,22 @@
 								<tr>
 									<th>Nome</th>
 									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Quantidade de Blocos</th>
+									<th>Proprietario</th>
+                                    <th>Inauguração</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+								@foreach (var cond in ViewBag.lstCond)
+                                {
+                                    <tr>
+                                        <td>@cond.nome</td>
+                                        <td>@cond.endereco</td>
+                                        <td>@cond.qtdBlocos</td>
+                                        <td>@cond.proprietario</td>
+                                        <td>@cond.dataInauguracao</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

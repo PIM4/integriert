@@ -85,26 +85,23 @@
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
 						<table class="striped">
 							<thead>
-								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
-								</tr>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>RG</th>
+                                    <th>CPF</th>
+                                    <th>Empresa</th>
+                                </tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var terceiro in ViewBag.lstTerceiro)
+                                {
+                                    <tr>
+                                        <td>@terceiro.nome</td>
+                                        <td>@terceiro.rg</td>
+                                        <td>@terceiro.cpf</td>
+                                        <td>@terceiro.fornecedor</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

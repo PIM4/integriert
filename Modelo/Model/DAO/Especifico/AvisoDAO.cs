@@ -30,7 +30,7 @@ namespace Model.DAO.Especifico
 
             try
             {
-                query = "INSERT INTO AVISO (TITULO, DESCRICAO, DATA, ID_COND, STS_ATIVO) VALUES ('" + aviso.titulo + "', '"
+                query = "INSERT INTO AVISO (TITULO, DESCRICAO, DT_AVISO, ID_COND, STS_ATIVO) VALUES ('" + aviso.titulo + "', '"
                         + aviso.descricao + "', '" + (aviso.data).ToString() + "', "+ (aviso.cond.id_cond).ToString() + ", 1);";
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -49,7 +49,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DATA, C.NOME_COND FROM AVISO AS A " 
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME_COND FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "                     
                         + " WHERE A.STS_ATIVO = 1 AND DATA BETWEEN '" + dtinicio 
                         + "' AND '" + (dtfinal).ToString() + "';";        
@@ -70,7 +70,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DATA, C.NOME FROM AVISO AS A "
+                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
                          + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                          + " WHERE A.STS_ATIVO = 1 AND A.TITULO LIKE '%" + titulo + "%';";   
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
@@ -90,7 +90,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DATA, C.NOME FROM AVISO AS A "
+                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                         + " WHERE A.STS_ATIVO = 1 AND C.NOME LIKE '%" + condominio + "%';";   
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
@@ -110,7 +110,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DATA, C.NOME FROM AVISO AS A "
+                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                         + " WHERE A.STS_ATIVO = 1;";
                 lstAviso = setarObjeto(banco.MetodoSelect(query));

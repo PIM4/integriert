@@ -14,7 +14,7 @@ namespace WPF.DotNetBrowser
 
             webView = new WPFBrowserView();
             mainLayout.Children.Add((UIElement)webView.GetComponent());
-            webView.Browser.LoadURL("http://google.com");
+            webView.Browser.LoadURL("http://localhost:58602");
         }
     }
 }

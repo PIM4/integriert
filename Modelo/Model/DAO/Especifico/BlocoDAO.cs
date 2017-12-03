@@ -69,7 +69,7 @@ namespace Model.DAO.Especifico
             List<Bloco> lstBloco = new List<Bloco>();
             try
             {
-                query = "SELECT B.IDENTIFICACAO, B.QTD_ANDARES, C.NOME, B.QTD_UNIDADES FROM BLOCO AS B "
+                query = "SELECT B.IDENTIFICACAO, C.NOME FROM BLOCO AS B "
                         + " INNER JOIN CONDOMINIO AS C ON C.ID_COND = B.ID_COND"
                         + " WHERE B.STS_ATIVO = 1;";
                 lstBloco = setarObjeto(banco.MetodoSelect(query));

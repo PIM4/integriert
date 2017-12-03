@@ -49,7 +49,7 @@ namespace Model.DAO.Especifico
             List<Condominio> lstCond = new List<Condominio>();
             try
             {
-                query = "SELECT NOME, DT_INAUGURACAO, PROPRIETARIO, CNPJ FROM CONDOMINIO WHERE STS_ATIVO = 1;";
+                query = "SELECT ID_COND, NOME, DT_INAUGURACAO, PROPRIETARIO, CNPJ FROM CONDOMINIO WHERE STS_ATIVO = 1;";
                 lstCond = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -158,12 +158,12 @@ namespace Model.DAO.Especifico
                     while (dr.Read())
                     {
                         obj.id_cond = Convert.ToInt32(dr["ID_COND"].ToString());
-                        obj.nome = Convert.ToString(dr["NOME_COND"].ToString());
+                        obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.proprietario = Convert.ToString(dr["PROPRIETARIO"].ToString());
                         obj.cnpj = Convert.ToString(dr["CNPJ"].ToString());
                         obj.dataInauguracao = Convert.ToDateTime(dr["DT_INAUGURACAO"].ToString());
 
-                        obj.endereco.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
+                        //obj.endereco.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
 
                         lstCond.Add(obj);
                     }

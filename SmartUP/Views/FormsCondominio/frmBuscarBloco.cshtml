@@ -57,15 +57,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+								@foreach (var bl in ViewBag.lstBloco)
+                                {
+                                    <tr>
+                                        <td>@bl.nome</td>
+                                        <td>@bl.descricao</td>
+                                        <td>@bl.capacMax</td>
+                                        <td>@bl.seAluga</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>

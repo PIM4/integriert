@@ -98,15 +98,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Bouna Vitta</td>
-									<td>Julio Buono</td>
-									<td>1</td>
-									<td>64</td>
-									<td>12/06/2001</td>
-									<td>ASK</td>
-									<td>27.948.894.00001</td>
-								</tr>
+                                @foreach (var evento in ViewBag.lstEvento)
+                                {
+                                    <tr>
+                                        <td>@evento.nome</td>
+                                        <td>@evento.descricao</td>
+                                        <td>@evento.capacMax</td>
+                                        <td>@evento.seAluga</td>
+                                    </tr>
+                                }
 							</tbody>
 						</table>
 					</div>
