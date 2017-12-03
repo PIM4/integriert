@@ -19,7 +19,7 @@ namespace Model.DAO.Especifico
         #region Objetos
 
         dbBancos banco = new dbBancos();
-        Pessoa pessoa = new Pessoa();   //CONVERSAR COM CASSIANO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Pessoa pessoa = new Pessoa();   
         string query = null;
 
         #endregion

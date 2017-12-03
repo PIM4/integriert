@@ -112,7 +112,7 @@ namespace Model.DAO.Especifico
             {
                 query = "SELECT E.DT_EVENTO, E.TITULO, U.IDENTIFICACAO FROM EVENTO AS E "
                         + "INNER JOIN UNIDADE AS U ON E.ID_UNIDADE = U.ID_UNIDADE "
-                        + "WHERE U.IDENTIFICACAO = '" + resp + "';";
+                        + "WHERE U.IDENTIFICACAO = '" + resp + "' AND E.STS_ATIVO = 1;";
                 lstEvento = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -124,26 +124,91 @@ namespace Model.DAO.Especifico
             return lstEvento;
         }	
 
-		public List<Evento> buscaPorUnidade(Unidade unidade)
-		{
-            return this.lstEvento;
-        }			
+		//public List<Evento> buscaPorUnidade(Unidade unidade)
+		//{
+  //          return this.lstEvento;
+  //      }			
 
 		public List<Evento> busca()
 		{
-            return this.lstEvento;
+            query = null;
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                query = "SELECT E.DT_EVENTO, E.TITULO, U.IDENTIFICACAO FROM EVENTO AS E "
+                        + "INNER JOIN UNIDADE AS U ON E.ID_UNIDADE = U.ID_UNIDADE "
+                        + "WHERE E.STS_ATIVO = 1";
+                lstEvento = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstEvento;
         }
 
-		public bool remove(int id)
-		{
-            return true;
+        public List<Evento> buscaAreaEvento(Evento evento)
+        {
+            query = null;
+            List<Evento> lstEvento = new List<Evento>();
+            try
+            {
+                query = "SELECT A.NOME FROM AREA AS A " +
+                        "INNER JOIN AREA_EVENTO AS AE ON AE.ID_AREA = A.AREA" +
+                        "INNER JOIN EVENTO AS E ON E.ID_EVENTO = AE.ID_EVENTO" +
+                        "WHERE AE.STS_ATIVO = 1 " +
+                        "AND E.ID_EVENTO = " + evento.id_evento.ToString() + "" +
+                        "AND E.STS_ATIVO = 1;";
+                lstEvento = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstEvento;
         }
 
         public bool altera(Evento evento)
         {
-            return true;
+            query = null;
+            try
+            {
+                query = "UPDATE EVENTO SET TITULO = '" + evento.descEvento
+                        + "', DT_EVENTO = '" + evento.data.ToString() + "' "
+                        + "WHERE ID_EVENTO = " + evento.id_evento.ToString() + ";";
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
         }
 
+        public bool remove(int id)
+		{
+            query = null;
+            try
+            {
+                query = "UPDATE EVENTO SET STS_ATIVO = 0 WHERE ID_EVENTO = "
+                        + (id).ToString() + ";";
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+        
         #endregion
 
         #region Métodos
