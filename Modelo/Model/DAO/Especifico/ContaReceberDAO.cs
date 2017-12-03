@@ -26,13 +26,15 @@ namespace Model.DAO.Especifico
         #region CRUD
 
         public bool cadastra(ContaReceber cr)
-		{//verificar no banco se existe o campo OBSERVACAO. Se nao, adicionar.
+		{
             query = null;
             try
             {
                 query = "INSERT INTO CONTA_RECEBER (DT_CONTA_RECEBER, VALOR, ID_COND, ID_UNIDADE, STS_ATIVO) VALUES ('"
-                        + (cr.data).ToShortDateString() + "', " + (cr.valor).ToString() + ", " 
-                        + (cr.condominio.id_cond).ToString()  + ", " + (cr.unidade.id_unidade).ToString() + ", 1;";
+                        + (cr.data).ToShortDateString() + "', " 
+                        + (cr.valor).ToString() + ", " 
+                        + (cr.condominio.id_cond).ToString()  + ", " 
+                        + (cr.unidade.id_unidade).ToString() + ", 1;";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -172,7 +174,6 @@ namespace Model.DAO.Especifico
 
         public List<ContaReceber> setarObjeto(SqlDataReader dr)
         {
-            ContaReceber obj = new ContaReceber();
             List<ContaReceber> lstCR = new List<ContaReceber>();
 
             try
@@ -181,6 +182,7 @@ namespace Model.DAO.Especifico
                 {
                     while (dr.Read())
                     {
+                        ContaReceber obj = new ContaReceber();
                         obj.id_cr = Convert.ToInt32(dr["ID_CONTA_RECEBER"].ToString());
                         obj.valor = Convert.ToDecimal(dr["VALOR"].ToString());
                         obj.data = Convert.ToDateTime(dr["DT_CONTA_RECEBER"].ToString());
@@ -193,33 +195,6 @@ namespace Model.DAO.Especifico
                         lstCR.Add(obj);
                     }
                 }
-
-                //for (int idx = 0; idx < dr.FieldCount; idx++)
-                //{
-                //    dr.GetName(idx).ToString();
-
-                //    switch (dr.GetName(idx).ToUpper())
-                //    {
-                //        case "DESCRICAO":
-                //            obj.desc_conta = Convert.ToString(dr[idx]);
-                //            break;
-                //        case "RAZAO_SOCIAL":
-                //            obj.fornecedor.nomeEmpresa = Convert.ToString(dr[idx]);
-                //            break;
-                //        case "VALOR":
-                //            obj.valor = Convert.ToDecimal(dr[idx]);
-                //            break;
-                //        case "DT_PAGTO":
-                //            obj.data = Convert.ToDateTime(dr[idx]);
-                //            break;
-                //        case "ID_FORNECEDOR":
-                //            obj.fornecedor.id_fornecedor = Convert.ToInt32(dr[idx]);
-                //            break;
-                //        case "ID_TIPO_CONTA":
-                //            obj.id_tipo = Convert.ToInt32(dr[idx]);
-                //            break;
-                //    }
-                //}
             }
 
             catch (Exception ex)

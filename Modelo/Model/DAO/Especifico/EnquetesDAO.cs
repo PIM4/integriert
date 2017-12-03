@@ -30,8 +30,10 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO ENQUETE (PERGUNTA, DT_INICIO, DT_FINAL, ID_COND, STS_ATIVO) VALUES ('"
-                        + enquete.pergunta + "', '" + (enquete.dtInicio).ToShortDateString() + "', "
-                        + (enquete.dtFim).ToShortDateString() + "', " + (enquete.condominio.id_cond).ToString()
+                        + enquete.pergunta + "', '" 
+                        + (enquete.dtInicio).ToShortDateString() + "', "
+                        + (enquete.dtFim).ToShortDateString() + "', " 
+                        + (enquete.condominio.id_cond).ToString()
                         + ", 1;";
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -50,7 +52,9 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO ENQUETE_ALTERNATIVAS (TEXTO, ID_ENQUETE, STS_ATIVO) VALUES ('"
-                        + enquete.textoAlt + "', " + (enquete.id_enquete).ToString() + ", 1;";
+                        + enquete.textoAlt + "', " 
+                        + (enquete.id_enquete).ToString() 
+                        + ", 1;";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -68,7 +72,8 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO VOTO (ID_ENQUETE, ID_ENQUETE_ALTERNATIVAS, ID_PESSOA, STS_ATIVO) VALUES ("
-                        + (enquete.id_enquete).ToString() + ", " + (enquete.voto).ToString() + ", "
+                        + (enquete.id_enquete).ToString() + ", " 
+                        + (enquete.voto).ToString() + ", "
                         + (enquete.pessoa.id_pessoa).ToString() + ", 1);";
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -128,7 +133,7 @@ namespace Model.DAO.Especifico
             List<Enquete> lstEnqueteAlt = new List<Enquete>();
             try
             {
-                query = "SELECT TEXTO FROM ENQUETE_ALTERNATIVAS WHERE STS_ATIVO = 1 AND ID_ENQUETE = " 
+                query = "SELECT * FROM ENQUETE_ALTERNATIVAS WHERE STS_ATIVO = 1 AND ID_ENQUETE = " 
                         + (id).ToString() + ";";
                 lstEnqueteAlt = setarObjeto(banco.MetodoSelect(query));
             }
@@ -147,7 +152,7 @@ namespace Model.DAO.Especifico
             List<Enquete> lstVoto = new List<Enquete>();
             try
             {
-                query = "SELECT ";
+                query = "SELECT EA.TEXTO, ";
                 lstVoto = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -165,8 +170,8 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "UPDATE ENQUETE SET DT_FINAL = '"
-                        + (enquete.dtFim).ToShortDateString() + "' WHERE ID_ENQUETE = " 
-                        + (enquete.id_enquete).ToString() + ";";
+                        + (enquete.dtFim).ToShortDateString() 
+                        + "' WHERE ID_ENQUETE = " + (enquete.id_enquete).ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -220,43 +225,27 @@ namespace Model.DAO.Especifico
 
         public List<Enquete> setarObjeto(SqlDataReader dr)
         {
-            Enquete obj = new Enquete();
             List<Enquete> lstEnquete = new List<Enquete>();
             try
             {
-                for (int idx = 0; idx < dr.FieldCount; idx++)
+                if (dr.HasRows)
                 {
-                    dr.GetName(idx).ToString();
-
-                    switch (dr.GetName(idx).ToUpper())
+                    while (dr.Read())
                     {
-                        case "ID_ENQUETE":
-                            obj.id_enquete = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "PERGUNTA":
-                            obj.pergunta = Convert.ToString(dr[idx]);
-                            break;
-                        case "DT_INICIO":
-                            obj.dtInicio = Convert.ToDateTime(dr[idx]);
-                            break;
-                        case "DT_FINAL":
-                            obj.dtFim = Convert.ToDateTime(dr[idx]);
-                            break;
-                        case "ID_COND":
-                            obj.condominio.id_cond = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "ID_ENQUETE_ALTERNATIVAS":
-                            obj.id_enquete_alt = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "ID_VOTO":
-                            obj.id_voto = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "ID_PESSOA":
-                            obj.pessoa.id_pessoa = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "TEXTO":
-                            obj.textoAlt = Convert.ToString(dr[idx]);
-                            break;
+                        Enquete obj = new Enquete();
+
+                        obj.id_enquete = Convert.ToInt32(dr["ID_ENQUETE"].ToString());
+                        obj.pergunta = Convert.ToString(dr["PERGUNTA"].ToString());
+                        obj.dtInicio = Convert.ToDateTime(dr["DT_INICIO"].ToString());
+                        obj.dtFim = Convert.ToDateTime(dr["DT_FINAL"].ToString());
+                        obj.enq_ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());        //verificar
+
+                        obj.id_enquete_alt = Convert.ToInt32(dr["ID_ENQUETE_ALTERNATIVAS"].ToString());
+                        obj.textoAlt = Convert.ToString(dr["TEXTO"].ToString());
+
+                        obj.id_voto = Convert.ToInt32(dr["ID_VOTO"].ToString());
+
+                        obj.condominio.id_cond = Convert.ToInt32(dr["ID_COND"].ToString());
                     }
                 }
             }

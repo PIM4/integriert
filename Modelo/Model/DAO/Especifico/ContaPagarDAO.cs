@@ -32,8 +32,11 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO CONTA_PAGAR (VALOR, DT_PAGTO, ID_TIPO_CONTA, ID_FORNECEDOR, ID_COND, STS_ATIVO) VALUES ("
-                        + (cp.valor).ToString() + ", '" + (cp.data).ToShortDateString() + "', " + (cp.id_tipo).ToString()
-                        + ", " + (cp.fornecedor.id_fornecedor).ToString() + ", " + (cp.condominio.id_cond).ToString() + ", 1);";
+                        + (cp.valor).ToString() + ", '" 
+                        + (cp.data).ToShortDateString() + "', " 
+                        + (cp.id_tipo).ToString() + ", " 
+                        + (cp.fornecedor.id_fornecedor).ToString() + ", " 
+                        + (cp.condominio.id_cond).ToString() + ", 1);";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -110,28 +113,28 @@ namespace Model.DAO.Especifico
             return lstContaPagar;
         }
 
-        //public List<ContaPagar> buscaPorFornecedor(Fornecedor fornecedor)
-        //{
-        //    query = null;
-        //    List<ContaPagar> lstContaPagar = new List<ContaPagar>();
-        //    try
-        //    {
-        //        query = "SELECT F.RAZAO_SOCIAL, CP.DT_PAGTO, CP.VALOR, TC.DESCRICAO FROM CONTA_PAGAR AS CP "
-        //                + "INNER JOIN FORNECEDOR AS F ON F.ID_FORNECEDOR = CP.ID_FORNECEDOR "
-        //                + "INNER JOIN TIPO_CONTA AS TC ON TC.ID_TIPO_CONTA = CP.ID_TIPO_CONTA "
-        //                + "WHERE F.RAZAO_SOCIAL LIKE '%" + fornecedor.nomeEmpresa + "%';";
-        //        lstContaPagar = setarObjeto(banco.MetodoSelect(query));
-        //    }
+        public List<ContaPagar> buscaPorFornecedor(Fornecedor fornecedor)
+        {
+            query = null;
+            List<ContaPagar> lstContaPagar = new List<ContaPagar>();
+            try
+            {
+                query = "SELECT F.RAZAO_SOCIAL, CP.DT_PAGTO, CP.VALOR, TC.DESCRICAO FROM CONTA_PAGAR AS CP "
+                        + "INNER JOIN FORNECEDOR AS F ON F.ID_FORNECEDOR = CP.ID_FORNECEDOR "
+                        + "INNER JOIN TIPO_CONTA AS TC ON TC.ID_TIPO_CONTA = CP.ID_TIPO_CONTA "
+                        + "WHERE F.RAZAO_SOCIAL LIKE '%" + fornecedor.nomeEmpresa + "%';";
+                lstContaPagar = setarObjeto(banco.MetodoSelect(query));
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-        //    return lstContaPagar;
-        //}
+            return lstContaPagar;
+        }
 
-		public List<ContaPagar> buscaContaPagar()
+        public List<ContaPagar> buscaContaPagar()
 		{
             query = null;
             List<ContaPagar> lstContaPagar = new List<ContaPagar>();
@@ -157,8 +160,11 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "UPDATE CONTA_PAGAR SET VALOR = " + (cp.valor).ToString() + ", DT_PAGTO = '" + (cp.data).ToShortDateString()
-                        + "', ID_TIPO_CONTA = " + (cp.id_tipo).ToString() + ", ID_COND = " + (cp.condominio.id_cond).ToString() + ";";
+                query = "UPDATE CONTA_PAGAR SET " 
+                        + "VALOR = " + (cp.valor).ToString() 
+                        + ", DT_PAGTO = '" + (cp.data).ToShortDateString()
+                        + "', ID_TIPO_CONTA = " + (cp.id_tipo).ToString() 
+                        + ", ID_COND = " + (cp.condominio.id_cond).ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -220,7 +226,7 @@ namespace Model.DAO.Especifico
             List<ContaPagar> lstTipos = new List<ContaPagar>();
             try
             {
-                query = "SELECT DESCRICAO FROM TIPO_CONTA WHERE STS_ATIVO = 1;";
+                query = "SELECT * FROM TIPO_CONTA WHERE STS_ATIVO = 1;";
                 lstTipos = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -240,7 +246,6 @@ namespace Model.DAO.Especifico
 
         public List<ContaPagar> setarObjeto(SqlDataReader dr)
         {
-            ContaPagar obj = new ContaPagar();
             List<ContaPagar> lstCP = new List<ContaPagar>();
 
             try
@@ -249,6 +254,7 @@ namespace Model.DAO.Especifico
                 {
                     while (dr.Read())
                     {
+                        ContaPagar obj = new ContaPagar();
                         obj.id_cp = Convert.ToInt32(dr["ID_CONTA_PAGAR"].ToString());
                         obj.valor = Convert.ToDecimal(dr["VALOR"].ToString());
                         obj.data = Convert.ToDateTime(dr["DT_PAGTO"].ToString());
@@ -264,33 +270,6 @@ namespace Model.DAO.Especifico
                         lstCP.Add(obj);
                     }
                 }
-
-                //for (int idx = 0; idx < dr.FieldCount; idx++)
-                //{
-                //    dr.GetName(idx).ToString();
-
-                //    switch (dr.GetName(idx).ToUpper())
-                //    {
-                //        case "DESCRICAO":
-                //            obj.desc_conta = Convert.ToString(dr[idx]);
-                //            break;
-                //        case "RAZAO_SOCIAL":
-                //            obj.fornecedor.nomeEmpresa = Convert.ToString(dr[idx]);
-                //            break;
-                //        case "VALOR":
-                //            obj.valor = Convert.ToDecimal(dr[idx]);
-                //            break;
-                //        case "DT_PAGTO":
-                //            obj.data = Convert.ToDateTime(dr[idx]);
-                //            break;
-                //        case "ID_FORNECEDOR":
-                //            obj.fornecedor.id_fornecedor = Convert.ToInt32(dr[idx]);
-                //            break;
-                //        case "ID_TIPO_CONTA":
-                //            obj.id_tipo = Convert.ToInt32(dr[idx]);
-                //            break;
-                //    }
-                //}
             }
 
             catch (Exception ex)

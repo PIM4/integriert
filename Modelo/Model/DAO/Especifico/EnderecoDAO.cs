@@ -19,7 +19,7 @@ namespace Model.DAO.Especifico
         #region Objetos
 
         dbBancos banco = new dbBancos();
-        Pessoa pessoa = new Pessoa();   //CONVERSAR COM CASSIANO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Pessoa pessoa = new Pessoa();   
         string query = null;
 
         #endregion
@@ -32,8 +32,16 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP, ID_PESSOA, STS_ATIVO, DESCRICAO) VALUES ('"
-                    + end.logradouro + "', " + (end.numero).ToString() + ", '" + end.complemento + "', '" + end.bairro + "', '" + end.cidade + "', '" 
-                    + end.estado + "', '" + end.cep + "', " + (end.id_pessoa).ToString() + ", " + ", 1, '" + end.descricao + "';)";
+                        + end.logradouro + "', " 
+                        + (end.numero).ToString() + ", '" 
+                        + end.complemento + "', '" 
+                        + end.bairro + "', '" 
+                        + end.cidade + "', '" 
+                        + end.estado + "', '" 
+                        + end.cep + "', " 
+                        + (end.id_pessoa).ToString() + ", " 
+                        + ", 1, '" 
+                        + end.descricao + "';)";
                 return true;
             }
 
@@ -50,8 +58,8 @@ namespace Model.DAO.Especifico
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                query = "SELECT DESCRICAO, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP FROM ENDERECO WHERE STS_ATIVO = 1 AND LOGRADOURO LIKE '%" 
-                    + logradouro + "%';";
+                query = "SELECT * FROM ENDERECO WHERE STS_ATIVO = 1 AND LOGRADOURO LIKE '%" 
+                        + logradouro + "%';";
                 lstEndereco = setarObjeto(banco.MetodoSelect(query));
             }
                          
@@ -69,8 +77,8 @@ namespace Model.DAO.Especifico
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                query = "SELECT DESCRICAO, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP FROM ENDERECO WHERE STS_ATIVO = 1 AND CEP = "
-                    + cep + ";";
+                query = "SELECT * FROM ENDERECO WHERE STS_ATIVO = 1 AND CEP = "
+                        + cep + ";";
                 lstEndereco = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -88,8 +96,8 @@ namespace Model.DAO.Especifico
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                query = "SELECT DESCRICAO, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP FROM ENDERECO WHERE STS_ATIVO = 1 AND ESTADO = "
-                    + estado + ";";
+                query = "SELECT * FROM ENDERECO WHERE STS_ATIVO = 1 AND ESTADO = "
+                        + estado + ";";
                 lstEndereco = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -107,8 +115,8 @@ namespace Model.DAO.Especifico
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                query = "SELECT DESCRICAO, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP FROM ENDERECO WHERE STS_ATIVO = 1 AND CIDADE ="
-                    + cidade + ";";
+                query = "SELECT * FROM ENDERECO WHERE STS_ATIVO = 1 AND CIDADE ="
+                        + cidade + ";";
                 lstEndereco = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -126,7 +134,7 @@ namespace Model.DAO.Especifico
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                query = "SELECT DESCRICAO, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP FROM ENDERECO WHERE STS_ATIVO = 1;";
+                query = "SELECT * FROM ENDERECO WHERE STS_ATIVO = 1;";
                 lstEndereco = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -143,9 +151,15 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "UPDATE CORRESPONDENCIA SET LOGRADOURO = '" + endereco.logradouro + "', NUMERO = " + endereco.numero.ToString()
-                        + ", COMPLEMENTO = '" + endereco.complemento + "', BAIRRO = '" + endereco.bairro + "', CIDADE = '" + endereco.cidade
-                        + "', ESTADO = '" + endereco.estado + "', CEP = '" + endereco.cep + "', DESCRICAO = '" + endereco.descricao + "' "
+                query = "UPDATE CORRESPONDENCIA SET " 
+                        + " LOGRADOURO = '" + endereco.logradouro 
+                        + "', NUMERO = " + endereco.numero.ToString()
+                        + ", COMPLEMENTO = '" + endereco.complemento 
+                        + "', BAIRRO = '" + endereco.bairro 
+                        + "', CIDADE = '" + endereco.cidade
+                        + "', ESTADO = '" + endereco.estado 
+                        + "', CEP = '" + endereco.cep 
+                        + "', DESCRICAO = '" + endereco.descricao + "' "
                         + " WHERE ID_ENDERECO = " + endereco.id_endereco.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -163,7 +177,8 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "UPDATE ENDERECO SET STS_ATIVO = 0 WHERE ID_ENDERECO = " + id.ToString() + ";";
+                query = "UPDATE ENDERECO SET STS_ATIVO = 0 WHERE ID_ENDERECO = " 
+                        + id.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -181,43 +196,26 @@ namespace Model.DAO.Especifico
 
         public List<Endereco> setarObjeto(SqlDataReader dr)
         {
-            Endereco obj = new Endereco();
             List<Endereco> lstEndereco = new List<Endereco>();
             try
             {
-                for (int idx = 0; idx < dr.FieldCount; idx++)
+                if (dr.HasRows)
                 {
-                    dr.GetName(idx).ToString();
-
-                    switch (dr.GetName(idx).ToUpper())
+                    while (dr.Read())
                     {
-                        case "ID_ENDERECO":
-                            obj.id_endereco = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "DESCRICAO":
-                            obj.descricao = Convert.ToString(dr[idx]);
-                            break;
-                        case "LOGRADOURO":
-                            obj.logradouro = Convert.ToString(dr[idx]);
-                            break;
-                        case "NUMERO":
-                            obj.numero = Convert.ToInt32(dr[idx]);
-                            break;
-                        case "COMPLEMENTO":
-                            obj.complemento = Convert.ToString(dr[idx]);
-                            break;
-                        case "BAIRRO":
-                            obj.bairro = Convert.ToString(dr[idx]);
-                            break;
-                        case "CIDADE":
-                            obj.cidade = Convert.ToString(dr[idx]);
-                            break;
-                        case "ESTADO":
-                            obj.estado = Convert.ToString(dr[idx]);
-                            break;
-                        case "CEP":
-                            obj.cep = Convert.ToString(dr[idx]);
-                            break;
+                        Endereco obj = new Endereco();
+                        obj.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
+                        obj.logradouro = Convert.ToString(dr["LOGRADOURO"].ToString());
+                        obj.numero = Convert.ToInt32(dr["NUMERO"].ToString());
+                        obj.bairro = Convert.ToString(dr["BAIRRO"].ToString());
+                        obj.estado = Convert.ToString(dr["ESTADO"].ToString());
+                        obj.cep = Convert.ToString(dr["CEP"].ToString());
+                        obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
+                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
+                        
+                        obj.fornecedor.id_fornecedor = Convert.ToInt32(dr["ID_FORNECEDOR"].ToString());
+
+                        lstEndereco.Add(obj);
                     }
                 }
             }
