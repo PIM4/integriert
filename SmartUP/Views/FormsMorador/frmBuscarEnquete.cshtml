@@ -48,22 +48,19 @@
 							<thead>
 								<tr>
 									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
+									<th>Data inicial</th>
+									<th>Data final</th>
 									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
 								</tr>
 							</thead>
 							<tbody>
                                 @foreach (var enquete in ViewBag.lstEnquete)
                                 {
                                     <tr>
-                                        <td>@enquete.nome</td>
-                                        <td>@enquete.descricao</td>
-                                        <td>@enquete.capacMax</td>
-                                        <td>@enquete.seAluga</td>
+                                        <td>@enquete.pergunta</td>
+                                        <td>@enquete.dtInicial</td>
+                                        <td>@enquete.dtFinal</td>
+                                        <td>@enquete.condominio</td>
                                     </tr>
                                 }
 							</tbody>

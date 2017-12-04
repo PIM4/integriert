@@ -89,23 +89,22 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Unidade</th>
+									<th>Data</th>
+									<th>Valor</th>
+									<th>Condominio</th>
+									<th>Observação</th>
 								</tr>
 							</thead>
 							<tbody>
-                                @foreach (var area in ViewBag.lstArea)
+                                @foreach (var cr in ViewBag.lstContaReceber)
                                 {
                                     <tr>
-                                        <td>@area.nome</td>
-                                        <td>@area.descricao</td>
-                                        <td>@area.capacMax</td>
-                                        <td>@area.seAluga</td>
+                                        <td>@cr.unidade</td>
+                                        <td>@cr.data</td>
+                                        <td>@cr.valor</td>
+                                        <td>@cr.condominio</td>
+                                        <td>@cr.observacao</td>
                                     </tr>
                                 }
 							</tbody>

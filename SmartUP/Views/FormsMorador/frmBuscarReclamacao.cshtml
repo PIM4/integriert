@@ -86,23 +86,18 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Titulo</th>
+									<th>Autor</th>
+									<th>data</th>
 								</tr>
 							</thead>
 							<tbody>
                                 @foreach (var reclam in ViewBag.lstReclam)
                                 {
                                     <tr>
-                                        <td>@reclam.nome</td>
-                                        <td>@reclam.descricao</td>
-                                        <td>@reclam.capacMax</td>
-                                        <td>@reclam.seAluga</td>
+                                        <td>@reclam.titulo</td>
+                                        <td>@reclam.autor</td>
+                                        <td>@reclam.data</td>
                                     </tr>
                                 }
 							</tbody>

@@ -85,23 +85,22 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
+									<th>Nome da empresa</th>
+									<th>Ramo</th>
 									<th>CNPJ</th>
+									<th>Endereço</th>
+									<th>Telefone</th>
 								</tr>
 							</thead>
 							<tbody>
-                                @foreach (var area in ViewBag.lstArea)
+                                @foreach (var fornecedor in ViewBag.lstFornecedor)
                                 {
                                     <tr>
-                                        <td>@area.nome</td>
-                                        <td>@area.descricao</td>
-                                        <td>@area.capacMax</td>
-                                        <td>@area.seAluga</td>
+                                        <td>@fornecedor.nomeEmpresa</td>
+                                        <td>@fornecedor.ramo</td>
+                                        <td>@fornecedor.cnpj</td>
+                                        <td>@fornecedor.endereco</td>
+                                        <td>@fornecedor.telefone</td>
                                     </tr>
                                 }
 							</tbody>

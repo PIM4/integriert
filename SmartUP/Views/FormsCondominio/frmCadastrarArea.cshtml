@@ -26,32 +26,32 @@
 			<div class="row">
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
-					<form class="">
+					<form action="@Url.Action("CadastraArea")" method="post">
 						<h5 style="">Cadastro de Area</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
+								<input id="area.nome" name="area.nome" type="text" class="validate">
 								<label for="icon_prefix">Nome</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
+								<input id="area.descricao" name="area.descricao" type="text" class="validate">
 								<label for="icon_prefix">Descrição</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="number" class="validate">
+								<input id="area.capacMax" name="area.capacMax" type="number" class="validate">
 								<label for="icon_prefix">Capacidade</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<label for="sim">Alugevel</label>
-								<input id="sim" name="alugavel" type="radio" class="validate">
+								<input id="sim" name="alugavel" value="1" type="radio" class="validate">
 								<label for="sim">Sim</label>
-								<input id="nao" name="alugavel" type="radio" class="validate">
+								<input id="nao" name="alugavel" value="1" type="radio" class="validate">
 								<label for="nao">Não</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col s3">
-								<a class="btn botao">Salvar</a>
+                                <input type="submit" value="Salvar" />
 							</div>
 						</div>						
 					</form>

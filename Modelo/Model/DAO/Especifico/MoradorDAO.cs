@@ -80,7 +80,7 @@ namespace Model.DAO.Especifico
             }
         }
 
-        public bool remove(int id)
+        public bool remove(Morador morador)
 		{
             return true;
         }
@@ -98,8 +98,7 @@ namespace Model.DAO.Especifico
                     while (dr.Read())
                     {
                         Morador obj = new Morador();
-                        obj.id_funcionario = Convert.ToInt32(dr["ID_FUNCIONARIO"].ToString());
-                        obj.cargo.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());
+                        obj.unidade.id_unidade = Convert.ToInt32(dr["ID_UNIDADE"].ToString());
                         obj.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
 
                         lstMorador.Add(obj);
@@ -116,34 +115,6 @@ namespace Model.DAO.Especifico
             return lstMorador;
         }
 
-        public List<Morador> setarObjetoCargo(SqlDataReader dr)
-        {
-            List<Morador> lstMorador = new List<Morador>();
-
-            try
-            {
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        Morador obj = new Morador();
-                        obj.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());
-                        obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
-                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
-
-                        lstMorador.Add(obj);
-                    }
-                }
-            }
-
-            catch (Exception ex)
-            {
-                dr.Dispose();
-                throw ex;
-            }
-
-            return lstMorador;
-        }
 
         #endregion
 

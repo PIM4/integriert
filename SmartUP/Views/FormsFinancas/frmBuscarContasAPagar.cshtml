@@ -89,17 +89,14 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Descrição</th>
+									<th>Data</th>
+									<th>Fornecedor</th>
+									<th>Condominio</th>
 								</tr>
 							</thead>
 							<tbody>
-                                @foreach (var contaAPagar in ViewBag.lstCP)
+                                @foreach (var contaAPagar in ViewBag.lstContaPagar)
                                 {
                                     <tr>
                                         <td>@contaAPagar.desc_conta</td>

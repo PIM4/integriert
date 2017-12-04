@@ -88,23 +88,20 @@
 						<table class="striped">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>Evento</th>
+									<th>Unidade</th>
+									<th>Data</th>
+									<th>Responsavel</th>
 								</tr>
 							</thead>
 							<tbody>
                                 @foreach (var evento in ViewBag.lstEvento)
                                 {
                                     <tr>
-                                        <td>@evento.nome</td>
-                                        <td>@evento.descricao</td>
-                                        <td>@evento.capacMax</td>
-                                        <td>@evento.seAluga</td>
+                                        <td>@evento.descEvento</td>
+                                        <td>@evento.unidade</td>
+                                        <td>@evento.data</td>
+                                        <td>@evento.responsavel</td>
                                     </tr>
                                 }
 							</tbody>

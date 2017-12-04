@@ -84,28 +84,23 @@
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
 						<table class="striped">
-							<thead>
-								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
-								</tr>
-							</thead>
-							<tbody>
+                            <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Autor</th>
+                                <th>data</th>
+                            </tr>
+                            </thead>
+                            <tbody>
                                 @foreach (var sugest in ViewBag.lstSugest)
                                 {
                                     <tr>
-                                        <td>@sugest.nome</td>
-                                        <td>@sugest.descricao</td>
-                                        <td>@sugest.capacMax</td>
-                                        <td>@sugest.seAluga</td>
+                                        <td>@sugest.titulo</td>
+                                        <td>@sugest.autor</td>
+                                        <td>@sugest.data</td>
                                     </tr>
                                 }
-							</tbody>
+                            </tbody>
 						</table>
 					</div>
 				</div>

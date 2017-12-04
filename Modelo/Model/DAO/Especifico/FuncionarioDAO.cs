@@ -96,8 +96,8 @@ namespace Model.DAO.Especifico
             List<Funcionario> lstFuncionarios = new List<Funcionario>();
             try
             {
-                query = "SELECT P.NOME, C.DESCRICAO FROM PESSOA AS P " +
-                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_PESSOA " +
+                query = "SELECT P.NOME FROM PESSOA AS P " +
+                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_FUNCIONARIO " +
                         "INNER JOIN CARGO ON F.ID_CARGO = C.ID_CARGO " +
                         "WHERE F.STS_ATIVO = 1;";
                 lstFuncionarios = setarObjeto(banco.MetodoSelect(query));
@@ -239,7 +239,6 @@ namespace Model.DAO.Especifico
                         Funcionario obj = new Funcionario();
                         obj.id_funcionario = Convert.ToInt32(dr["ID_FUNCIONARIO"].ToString());
                         obj.cargo.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());
-                        obj.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
                         
                         lstFunc.Add(obj);
                     }

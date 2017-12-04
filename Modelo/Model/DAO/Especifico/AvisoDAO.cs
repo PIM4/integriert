@@ -112,7 +112,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME_COND FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                         + " WHERE A.STS_ATIVO = 1;";
                 lstAviso = setarObjeto(banco.MetodoSelect(query));

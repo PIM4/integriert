@@ -101,13 +101,13 @@
 								</tr>
 							</thead>
 							<tbody>
-                                @foreach (var area in ViewBag.lstArea)
+                                @foreach (var obra in ViewBag.lstObra)
                                 {
                                     <tr>
-                                        <td>@area.nome</td>
-                                        <td>@area.descricao</td>
-                                        <td>@area.capacMax</td>
-                                        <td>@area.seAluga</td>
+                                        <td>@obra.area</td>
+                                        <td>@obra.fornecedor</td>
+                                        <td>@obra.dtInicial</td>
+                                        <td>@obra.dtFinal</td>
                                     </tr>
                                 }
 							</tbody>
