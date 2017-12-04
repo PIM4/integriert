@@ -25,6 +25,7 @@ namespace ConsoleApp1
             };
             Area ar = new Area
             {
+                id_area = 6,
                 nome = "Piscina",
                 descricao = "Piscina Infantil",
                 capacMax = 10,
@@ -63,38 +64,25 @@ namespace ConsoleApp1
                 condominio = cond,
             };
 
-            CondominioDAO condDAO = new CondominioDAO();
-
-
+            AreaDAO objDAO = new AreaDAO();
 
 
             /*CRIA*/
 
-            Console.WriteLine(condDAO.cadastra(cond));
-            Console.ReadKey();
-
+            
+            objDAO.cadastra(ar);
+            List<Area> lstArea = new List<Area>();
+            lstArea = objDAO.busca();
             /*ALTERA*/
             //areaDAO.altera(ar);
 
             /*BUSCA especifico*/
 
-            //List<Area> listaArea = new List<Area>();
-            //List<Area> listaArea2 = new List<Area>();
-
-            //listaArea = areaDAO.buscaPorNome("Piscina");
-            //listaArea2 = areaDAO.buscaPorAlugaveis(false);
-            //foreach (Area area2 in listaArea)
-            //{
-            //    foreach (Area area in listaArea2)
-            //    {
-            //        if (area2.id_area == area.id_area)
-            //        {
-            //            Console.WriteLine(area.id_area + " " + area.nome + " " + area.capacMax.ToString() + " " + area.descricao + " " + area.seAluga.ToString());
-            //        }
-            //    }
-            //}
-
-
-        }
+            foreach (var area in lstArea)
+            {
+                Console.WriteLine(area.id_area +"\n" +area.nome +"\n"+ area.descricao + "\n" + area.capacMax + "\n" + area.seAluga + "\n" + area.ativo);
+            }
+            Console.ReadKey();
+         }
     }
 }

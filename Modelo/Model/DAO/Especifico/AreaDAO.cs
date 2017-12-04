@@ -32,12 +32,14 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO AREA (NOME, DESCRICAO, RESERVA, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
+                query = "INSERT INTO AREA (ID_AREA, NOME, DESCRICAO, RESERVA, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
+                                + area.id_area + "', '"
                                 + area.nome + "', '" 
                                 + area.descricao + "', " 
                                 + Convert.ToInt32(area.seAluga) + ", "
-                                + (area.capacMax).ToString() + ", " 
+                                + Convert.ToInt32(area.capacMax) + ", " 
                                 + Convert.ToInt32(area.ativo) + ");";
+                
                 banco.MetodoNaoQuery(query);
                 return true;
             }

@@ -96,6 +96,7 @@
     <Content Include="content\css\normalize.css" />
     <Content Include="content\css\style.css" />
     <Content Include="content\images\city.jpg" />
+    <Content Include="content\images\icon.ico" />
     <Content Include="content\images\logo.jpg" />
     <Content Include="content\images\office.jpg" />
     <Content Include="content\images\person1.jpg" />
@@ -104,12 +105,14 @@
     <Content Include="content\images\smartLogo.jpg" />
     <Content Include="content\images\smartLogoW.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\datatables.min.js" />
     <Content Include="scripts\jquery-ui.js" />
     <Content Include="scripts\jquery.mask.min.js" />
     <Content Include="scripts\materialize.js" />
     <Content Include="scripts\materialize.min.js" />
     <Content Include="scripts\script.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
+    <Content Include="content\css\dataTables.min.css" />
     <None Include="Properties\PublishProfiles\integriert - Web Deploy.pubxml" />
     <Content Include="Views\FormsCondominio\frmCadastrarArea.cshtml" />
     <Content Include="Views\FormsCondominio\frmBuscarArea.cshtml" />
@@ -211,6 +214,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>content\images\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -71,7 +71,7 @@
 							</div>
 						</form>
 						<div class="input-field col s5 m4 l3" style="top: -10px; position: relative;">
-							<a href="@Url.Action("FrmCadastrarCondominio", "FormsCondominio")" class="btn botao" >Novo</a>
+							<a href="@Url.Action("FrmCadastrarArea", "FormsCondominio")" class="btn botao" >Novo</a>
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						<table class="striped">
+						 <table id="example" class="display striped" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Nome</th>
@@ -88,17 +88,26 @@
 									<th>Reserva</th>
 								</tr>
 							</thead>
+                           <tfoot>
+                               <tr>
+                                    <th>Nome</th>
+									<th style="display: none;">Descrição</th>
+									<th style="display: none;">Capacidade Max</th>
+									<th >Reserva</th>
+                               </tr>
+                           </tfoot>
 							<tbody>
-                                @foreach (var area in ViewBag.lstArea)
-                                {
-                                <tr>
-                                    <td>@area.nome</td>
-                                    <td>@area.descricao</td>
-                                    <td>@area.capacMax</td>
-                                    <td>@area.seAluga</td>
-                                </tr>
-                                }
-							</tbody>
+                                    
+                                    @foreach (var area in ViewBag.lstArea)
+                                    {
+                                        <tr>
+                                            <td>@area.nome</td>
+                                            <td>@area.descricao</td>
+                                            <td>@area.capacMax</td>
+                                            <td>@area.seAluga</td>
+                                        </tr>
+                                    }
+                            </tbody>
 						</table>
 					</div>
 				</div>
