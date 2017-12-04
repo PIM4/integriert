@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Model.Entity
 {
-	public class Morador 
+	public class Morador : Pessoa
 	{
 
         public Morador()
@@ -15,6 +15,8 @@ namespace Model.Entity
 		{
 			
 		}
+
+        public Unidade unidade { get; set; }
 	}
 
 }
