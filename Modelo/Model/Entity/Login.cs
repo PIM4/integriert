@@ -5,9 +5,15 @@ namespace Model.Entity
 {
 	public class Login
 	{
+        public int id_login { get; set; }
 		public string login{get;set;}
 		public string senha{get;set;}
 		public int permissao{get;set;}
+        public int ativo { get; set; }
+
+        public Pessoa pessoa { get; set; }
+
+
 		public Login()
         {
 

@@ -26,7 +26,9 @@ namespace Model.DAO.Especifico
 
         #region CRUD
 
-		public bool cadastra(Funcionario funcionario)
+        #region Funcionário
+
+        public bool cadastra(Funcionario funcionario)
 		{
             query = null;
             try
@@ -35,6 +37,7 @@ namespace Model.DAO.Especifico
                         + (funcionario.cargo).ToString() + ", " 
                         + (funcionario.id_pessoa).ToString() 
                         + ", 1)";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -108,12 +111,12 @@ namespace Model.DAO.Especifico
             return lstFuncionarios;
         }
 
-        public bool altera(Funcionario funcionario) //VERIFICAR
+        public bool altera(Funcionario funcionario)
         {
             query = null;
             try
             {
-                query = "UPDATE FUNCIONARIO SET ";
+                query = "UPDATE FUNCIONARIO SET ID_CARGO = " + funcionario.cargo.id_cargo.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -141,7 +144,84 @@ namespace Model.DAO.Especifico
                 throw ex;
             }
         }
-        
+
+        #endregion
+
+        #region Cargo
+
+        public bool cadastraCargo(Cargo cargo)
+        {
+            query = null;
+            try
+            {
+                query = "INSERT INTO CARGO (DESCRICAO, STS_ATIVO) VALUES ('" +
+                        cargo.descricao + "', 1);";
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
+        public List<Cargo> buscaCargo()
+        {
+            query = null;
+            List<Cargo> lstCargo = new List<Cargo>();
+            try
+            {
+                query = "SELECT P.NOME, C.DESCRICAO FROM PESSOA AS P " +
+                        "INNER JOIN FUNCIONARIO AS F ON P.ID_PESSOA = F.ID_PESSOA " +
+                        "INNER JOIN CARGO ON F.ID_CARGO = C.ID_CARGO " +
+                        "WHERE F.STS_ATIVO = 1;";
+                lstCargo = setarObjetoCargo(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstCargo;
+        }
+
+        public bool alteraCargo(Cargo cargo)
+        {
+            query = null;
+            try
+            {
+                query = "UPDATE CARGO SET DESCRICAO = '" + cargo.descricao
+                        + "' WHERE ID_CARGO = " + cargo.id_cargo + ";";
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
+        public bool removeCargo(int id)
+        {
+            query = null;
+            try
+            {
+                query = "UPDATE CARGO SET STS_ATIVO = 0 WHERE ID_CARGO = " + id.ToString() + ";";
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #region Métodos
@@ -173,6 +253,35 @@ namespace Model.DAO.Especifico
             }
 
             return lstFunc;
+        }
+
+        public List<Cargo> setarObjetoCargo(SqlDataReader dr)
+        {
+            List<Cargo> lstCargo = new List<Cargo>();
+
+            try
+            {
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Cargo obj = new Cargo();
+                        obj.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());
+                        obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
+                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
+
+                        lstCargo.Add(obj);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                dr.Dispose();
+                throw ex;
+            }
+
+            return lstCargo;
         }
 
         #endregion

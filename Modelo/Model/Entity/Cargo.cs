@@ -23,5 +23,7 @@ namespace Model.Entity
         public int id_cargo { get; set; }
 
         public string descricao { get; set; }
+
+        public int ativo { get; set; }
     }
 }
