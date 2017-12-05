@@ -10,7 +10,8 @@ namespace Model.Entity
 		public Pessoa proprietario{get;set;}
 		public Bloco bloco{get;set;}
 		public int vagas{get;set;}
-		
+        public bool ativo { get; set; }
+        
         public Unidade()
         {
 
