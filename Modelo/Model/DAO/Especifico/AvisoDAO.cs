@@ -32,7 +32,10 @@ namespace Model.DAO.Especifico
             {
 
                 query = "INSERT INTO AVISO (TITULO, DESCRICAO, DT_AVISO, ID_COND, STS_ATIVO) VALUES ('" + aviso.titulo + "', '"
-                        + aviso.descricao + "', '" + (aviso.data).ToString() + "', "+ (aviso.cond.id_cond).ToString() + ", 1);";
+                        + aviso.descricao + "', '" 
+                        + (aviso.data).ToShortDateString() + "', "
+                        + (aviso.cond.id_cond).ToString() 
+                        + ", 1);";
 
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -51,9 +54,9 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME_COND FROM AVISO AS A "
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, A.STS_ATIVO, C.ID_COND, C.NOME_COND FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "                     
-                        + " WHERE A.STS_ATIVO = 1 AND DATA BETWEEN '" + dtinicio 
+                        + " WHERE A.STS_ATIVO = 1 AND A.DT_AVISO BETWEEN '" + dtinicio 
                         + "' AND '" + (dtfinal).ToString() + "';";        
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
             }
@@ -72,7 +75,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, A.STS_ATIVO, C.ID_COND, C.NOME_COND FROM AVISO AS A "
                          + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                          + " WHERE A.STS_ATIVO = 1 AND A.TITULO LIKE '%" + titulo + "%';";   
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
@@ -86,15 +89,15 @@ namespace Model.DAO.Especifico
             return lstAviso;
         }
 
-		public List<Aviso> buscaPorCondominio(Condominio condominio)
+		public List<Aviso> buscaPorCondominio(string condominio)
 		{
             query = null;
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, A.STS_ATIVO, C.ID_COND, C.NOME_COND FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
-                        + " WHERE A.STS_ATIVO = 1 AND C.NOME LIKE '%" + condominio + "%';";   
+                        + " WHERE A.STS_ATIVO = 1 AND C.NOME_COND LIKE '%" + condominio + "%';";   
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
             }
 
@@ -112,7 +115,7 @@ namespace Model.DAO.Especifico
             List<Aviso> lstAviso = new List<Aviso>();
             try
             {
-                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME_COND FROM AVISO AS A "
+                query = "SELECT A.ID_AVISO, A.TITULO, A.DESCRICAO, A.DT_AVISO, A.STS_ATIVO, C.ID_COND, C.NOME_COND FROM AVISO AS A "
                         + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
                         + " WHERE A.STS_ATIVO = 1;";
                 lstAviso = setarObjeto(banco.MetodoSelect(query));
@@ -181,7 +184,8 @@ namespace Model.DAO.Especifico
                         obj.titulo = Convert.ToString(dr["TITULO"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
                         obj.data = Convert.ToDateTime(dr["DT_AVISO"].ToString());
-
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
+                        obj.cond = new Condominio();
                         obj.cond.id_cond = Convert.ToInt32(dr["ID_COND"].ToString());
                         obj.cond.nome = Convert.ToString(dr["NOME_COND"].ToString());
 

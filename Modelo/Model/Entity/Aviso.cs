@@ -20,6 +20,8 @@ namespace Model.Entity
 
 		public DateTime data { get; set; }
 
+        public bool ativo { get; set; }
+
         public Aviso(string titulo, string descricao, Condominio condominio)
         {
 
