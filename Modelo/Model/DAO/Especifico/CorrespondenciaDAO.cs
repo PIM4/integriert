@@ -29,10 +29,11 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {       
-                query = "INSERT INTO CORRESPONDENCIA (DESCRICAO, ID_UNIDADE, DT_ENTRADA, DT_SAIDA, ID_PESSOA, STS_ATIVO, OBS_CANC) VALUES ('"
+                query = "INSERT INTO CORRESPONDENCIA (DESCRICAO, ID_UNIDADE, DT_ENTRADA, DT_SAIDA, STS_ATIVO, OBS_CANC) VALUES ('"
                         + correspondencia.descCorrespondencia + "', " 
                         + (correspondencia.unidade.id_unidade).ToString() + ", '"
-                        + (correspondencia.dtEntrada).ToString() + "', NULL, NULL, 1, NULL);";
+                        + correspondencia.dtEntrada + "', '" + correspondencia.dtSaida + "', 1, NULL);";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -49,7 +50,7 @@ namespace Model.DAO.Especifico
             List<Correspondencia> lstCorrespondencia = new List<Correspondencia>();
             try
             {
-                query = "SELECT C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, P.ID_PESSOA, C.OBS_CANC FROM CORRESPONDENCIA AS C "
+                query = "SELECT C.STS_ATIVO, C.ID_CORRESPONDENCIA, C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, P.ID_PESSOA, C.OBS_CANC, U.ID_UNIDADE  FROM CORRESPONDENCIA AS C "
                         + " INNER JOIN UNIDADE AS U ON C.ID_UNIDADE = U.ID_UNIDADE "
                         + " LEFT OUTER JOIN PESSOA AS P ON C.ID_PESSOA = P.ID_PESSOA "
                         + " WHERE C.ID_UNIDADE = " + unidade.ToString()
@@ -71,7 +72,7 @@ namespace Model.DAO.Especifico
             List<Correspondencia> lstCorrespondencia = new List<Correspondencia>();
             try
             {
-                query = "SELECT C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, P.ID_PESSOA, C.OBS_CANC FROM CORRESPONDENCIA AS C "
+                query = "SELECT C.STS_ATIVO, C.ID_CORRESPONDENCIA, C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, P.ID_PESSOA, C.OBS_CANC , U.ID_UNIDADE FROM CORRESPONDENCIA AS C "
                         + " INNER JOIN UNIDADE AS U ON C.ID_UNIDADE = U.ID_UNIDADE "
                         + " LEFT OUTER JOIN PESSOA AS P ON C.ID_PESSOA = P.ID_PESSOA "
                         + " WHERE C.DT_ENTRADA = " + (dtEntrada).ToShortDateString() + " AND C.DT_SAIDA = " + (dtSaida).ToShortDateString()
@@ -93,9 +94,9 @@ namespace Model.DAO.Especifico
             List<Correspondencia> lstCorrespondencia = new List<Correspondencia>();
             try
             {
-                query = "SELECT C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, P.ID_PESSOA, C.OBS_CANC FROM CORRESPONDENCIA AS C "
+                query = "SELECT C.STS_ATIVO, C.ID_CORRESPONDENCIA, C.DESCRICAO, U.IDENTIFICACAO, C.DT_ENTRADA, C.DT_SAIDA, C.OBS_CANC, U.ID_UNIDADE FROM CORRESPONDENCIA AS C "
                         + " INNER JOIN UNIDADE AS U ON C.ID_UNIDADE = U.ID_UNIDADE "
-                        + " LEFT OUTER JOIN PESSOA AS P ON C.ID_PESSOA = P.ID_PESSOA "
+                        //+ " INNER JOIN PESSOA AS P ON C.ID_PESSOA = P.ID_PESSOA "
                         + " WHERE C.STS_ATIVO = 1;";
                 lstCorrespondencia = setarObjeto(banco.MetodoSelect(query));
             }
@@ -180,15 +181,17 @@ namespace Model.DAO.Especifico
                         Correspondencia obj = new Correspondencia();
                         obj.id_correspondencia = Convert.ToInt32(dr["ID_CORRESPONDENCIA"].ToString());
                         obj.descCorrespondencia = Convert.ToString(dr["DESCRICAO"].ToString());
-                        obj.dtEntrada = Convert.ToDateTime(dr["DT_ENTRADA"].ToString());
-                        obj.dtSaida = Convert.ToDateTime(dr["DT_SAIDA"].ToString());
-                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
+                        obj.dtEntrada = Convert.ToString(dr["DT_ENTRADA"].ToString());
+                        obj.dtSaida = Convert.ToString(dr["DT_SAIDA"].ToString());
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         obj.obsCancelamento = Convert.ToString(dr["OBS_CANC"].ToString());
 
+                        obj.unidade = new Unidade();
                         obj.unidade.id_unidade = Convert.ToInt32(dr["ID_UNIDADE"].ToString());
                         obj.unidade.identificacao = Convert.ToString(dr["IDENTIFICACAO"].ToString());
 
-                        obj.responsavelRetirada.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
+                        //obj.responsavelRetirada = new Pessoa();
+                        //obj.responsavelRetirada.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
 
                         lstCorresp.Add(obj);
                     }

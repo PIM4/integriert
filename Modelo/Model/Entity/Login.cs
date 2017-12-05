@@ -9,7 +9,7 @@ namespace Model.Entity
 		public string login{get;set;}
 		public string senha{get;set;}
 		public int permissao{get;set;}
-        public int ativo { get; set; }
+        public bool ativo { get; set; }
 
         public Pessoa pessoa { get; set; }
 
