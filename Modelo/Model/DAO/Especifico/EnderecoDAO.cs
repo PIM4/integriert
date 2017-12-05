@@ -31,7 +31,9 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP, ID_PESSOA, STS_ATIVO, DESCRICAO) VALUES ('"
+                end.pessoa = new Pessoa();
+                end.fornecedor = new Fornecedor();
+                query = "INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP, ID_PESSOA, STS_ATIVO, DESCRICAO, ID_FORNECEDOR) VALUES ('"
                         + end.logradouro + "', " 
                         + (end.numero).ToString() + ", '" 
                         + end.complemento + "', '" 
@@ -39,9 +41,11 @@ namespace Model.DAO.Especifico
                         + end.cidade + "', '" 
                         + end.estado + "', '" 
                         + end.cep + "', " 
-                        + (end.id_pessoa).ToString() + ", " 
-                        + ", 1, '" 
-                        + end.descricao + "';)";
+                        + (end.pessoa.id_pessoa).ToString() + ", " 
+                        + "1, '" 
+                        + end.descricao + "', " 
+                        + end.fornecedor.id_fornecedor.ToString() + ");";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -140,6 +144,7 @@ namespace Model.DAO.Especifico
 
             catch (Exception ex)
             {
+                
                 throw ex;
             }
 
@@ -151,7 +156,7 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "UPDATE CORRESPONDENCIA SET " 
+                query = "UPDATE ENDERECO SET " 
                         + " LOGRADOURO = '" + endereco.logradouro 
                         + "', NUMERO = " + endereco.numero.ToString()
                         + ", COMPLEMENTO = '" + endereco.complemento 
@@ -211,8 +216,13 @@ namespace Model.DAO.Especifico
                         obj.estado = Convert.ToString(dr["ESTADO"].ToString());
                         obj.cep = Convert.ToString(dr["CEP"].ToString());
                         obj.descricao = Convert.ToString(dr["DESCRICAO"].ToString());
-                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
-                        
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
+                        obj.complemento = Convert.ToString(dr["COMPLEMENTO"].ToString());
+
+                        obj.pessoa = new Pessoa();
+                        obj.pessoa.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
+
+                        obj.fornecedor = new Fornecedor();
                         obj.fornecedor.id_fornecedor = Convert.ToInt32(dr["ID_FORNECEDOR"].ToString());
 
                         lstEndereco.Add(obj);

@@ -33,9 +33,9 @@ namespace Model.Entity
 
         public string descricao { get; set; }
 
-        public int ativo { get; set; }
+        public bool ativo { get; set; }
 
-        public Pessoa id_pessoa { get; set; }
+        public Pessoa pessoa { get; set; }
 
         public Fornecedor fornecedor { get; set; }
 		
