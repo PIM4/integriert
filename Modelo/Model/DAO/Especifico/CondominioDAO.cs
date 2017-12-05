@@ -30,11 +30,14 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO CONDOMINIO (NOME, DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO) VALUES ('"
-                        + condominio.nome + "', '" 
+                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND, ID_ENDERECO) VALUES ('"
+                        //+ condominio.nome + "', '" 
                         + (condominio.dataInauguracao.ToString()) + "', '"
                         + condominio.proprietario + "', '" 
-                        + condominio.cnpj + "', 1);";
+                        + condominio.cnpj + "', 1, '" 
+                        + condominio.nome + "', " 
+                        + condominio.endereco.id_endereco.ToString() + ");";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -52,7 +55,7 @@ namespace Model.DAO.Especifico
             try
             {
 
-                query = "SELECT ID_COND, NOME_COND, DT_INAUGURACAO, PROPRIETARIO, CNPJ FROM CONDOMINIO WHERE STS_ATIVO = 1;";
+                query = "SELECT ID_COND, NOME_COND, DT_INAUGURACAO, PROPRIETARIO, ID_ENDERECO, CNPJ, STS_ATIVO FROM CONDOMINIO WHERE STS_ATIVO = 1;";
 
                 lstCond = setarObjeto(banco.MetodoSelect(query));
             }
@@ -71,7 +74,7 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "UPDATE CONDOMINIO SET " 
-                        + "NOME = '" + condominio.nome 
+                        + "NOME_COND = '" + condominio.nome 
                         + "', PROPRIETARIO = '" + condominio.proprietario 
                         + "', CNPJ = '" + condominio.cnpj 
                         + "' WHERE ID_COND = " + (condominio.id_cond).ToString() + ";";
@@ -169,8 +172,11 @@ namespace Model.DAO.Especifico
                         obj.proprietario = Convert.ToString(dr["PROPRIETARIO"].ToString());
                         obj.cnpj = Convert.ToString(dr["CNPJ"].ToString());
                         obj.dataInauguracao = Convert.ToDateTime(dr["DT_INAUGURACAO"].ToString());
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
 
-                        //obj.endereco.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
+                        obj.endereco = new Endereco();
+                        obj.endereco.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
+                        //obj.endereco.logradouro = Convert.ToString(dr[]);
 
                         lstCond.Add(obj);
                     }
