@@ -24,18 +24,18 @@ namespace SmartUP.Controllers
 
         public ActionResult Autenticacao(string email, string senha)
         {
-            LoginDAO dao = new LoginDAO();
-            Login user = dao.Busca(email, senha);
-            if (user != null)
-            {
-                Session["usuarioLogado"] = user.login;
-                Session["Permission"] = user.permissao;
-                return RedirectToAction("Dash", "Home");
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //LoginDAO dao = new LoginDAO();
+            //Login user = dao.busca(email, senha);
+            //if (user != null)
+            //{
+            //    Session["usuarioLogado"] = user.login;
+            //    Session["Permission"] = user.permissao;
+            //    return RedirectToAction("Dash", "Home");
+            //}
+            //else
+            //{
+             return RedirectToAction("Index", "Home");
+            //}
         }
     }
 }

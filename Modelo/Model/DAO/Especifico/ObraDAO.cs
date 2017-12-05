@@ -46,23 +46,23 @@ namespace Model.DAO.Especifico
             }
         }
 
-        public List<Obra> buscaTipoObra()
-        {
-            query = null;
-            List<Area> lstArea = new List<Area>();
-            try
-            {
-                query = "SELECT * FROM AREA WHERE STS_ATIVO = 1 ORDER BY NOME;";
-                lstArea = setarObjeto(banco.MetodoSelect(query));
-            }
+        //public List<Obra> buscaTipoObra()
+        //{
+        //    query = null;
+        //    List<Area> lstArea = new List<Area>();
+        //    try
+        //    {
+        //        query = "SELECT * FROM AREA WHERE STS_ATIVO = 1 ORDER BY NOME;";
+        //        lstArea = setarObjeto(banco.MetodoSelect(query));
+        //    }
 
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
 
-            return lstArea;
-        }
+        //    return lstArea;
+        //}
 
         public bool alteraTipoObra(Obra obra)
         {

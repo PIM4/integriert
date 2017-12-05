@@ -198,6 +198,7 @@
     <Content Include="Views\Home\cardVisita.cshtml" />
     <Content Include="Views\Shared\_menuLateralMorador.cshtml" />
     <Content Include="Views\Shared\_menuLateralPorteiro.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
