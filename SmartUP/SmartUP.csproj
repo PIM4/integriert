@@ -113,6 +113,7 @@
     <Content Include="scripts\script.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
     <Content Include="content\css\dataTables.min.css" />
+    <Content Include="content\fonts\material\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
     <None Include="Properties\PublishProfiles\integriert - Web Deploy.pubxml" />
     <Content Include="Views\FormsCondominio\frmCadastrarArea.cshtml" />
     <Content Include="Views\FormsCondominio\frmBuscarArea.cshtml" />
@@ -185,7 +186,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_menuSuperior.cshtml" />
-    <Content Include="Views\Shared\_menuLateral.cshtml" />
+    <Content Include="Views\Shared\_menuLateralADM.cshtml" />
     <Content Include="Views\Shared\err.html" />
     <Content Include="Views\Home\cardAviso.cshtml" />
     <Content Include="Views\Home\cardCorrespondencia.cshtml" />
@@ -195,6 +196,8 @@
     <Content Include="Views\Home\cardReclamacao.cshtml" />
     <Content Include="Views\Home\cardSugestao.cshtml" />
     <Content Include="Views\Home\cardVisita.cshtml" />
+    <Content Include="Views\Shared\_menuLateralMorador.cshtml" />
+    <Content Include="Views\Shared\_menuLateralPorteiro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

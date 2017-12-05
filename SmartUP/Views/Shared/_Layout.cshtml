@@ -8,10 +8,10 @@
 <head>
     <meta charset="UTF-8">
     <title>SmartUP - Soluções inteligentes para condomínios!</title>
+    <link rel="icon" href="~/content/images/icon.ico" type="image/x-icon" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link rel="icon" href="~/content/images/icon.ico" type="image/x-icon" />
     <link type="text/css" rel="stylesheet" href="~/content/css/normalize.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="~/content/css/jquery-ui.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="~/content/css/materialize.min.css" media="screen,projection" />
@@ -23,8 +23,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+    
     @Html.Partial("_menuSuperior");
-    @Html.Partial("_menuLateral");
+    
+    @if (Session["ADMLogado"] != null)
+    {
+        @Html.Partial("_menuLateralADM");
+    }
+    @if (Session["PorteiroLogado"] != null)
+    {
+        @Html.Partial("_menuLateralPorteiro");
+    }
+    @if (Session["MoradorLogado"] != null)
+    {
+        @Html.Partial("_menuLateralMorador");
+    }
     
     @RenderBody();
 
