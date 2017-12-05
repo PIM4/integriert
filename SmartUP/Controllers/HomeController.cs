@@ -25,7 +25,7 @@ namespace SmartUP.Controllers
         public ActionResult Autenticacao(string email, string senha)
         {
             LoginDAO dao = new LoginDAO();
-            Login user = dao.Busca(email, senha);
+            Login user = dao.busca(email, senha);
             if (user != null)
             {
                 Session["usuarioLogado"] = user.login;
