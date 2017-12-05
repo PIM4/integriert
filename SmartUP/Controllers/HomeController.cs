@@ -29,8 +29,19 @@ namespace SmartUP.Controllers
             Login user = dao.busca(email, senha);
             if (user != null)
             {
-                Session["usuarioLogado"] = user.login;
-                Session["Permission"] = user.permissao;
+                if (user.permissao == 1)
+                {
+                    Session["ADMLogado"] = user.login;
+                }
+                if (user.permissao == 2)
+                {
+                    Session["PorteiroLogado"] = user.login;
+                }
+                if (user.permissao == 3)
+                {
+                    Session["MoradorLogado"] = user.login;
+                }
+                ViewBag.Nome = user.login;
                 return RedirectToAction("Dash", "Home");
             }
             else
