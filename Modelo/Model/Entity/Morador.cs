@@ -15,7 +15,8 @@ namespace Model.Entity
 		{
 			
 		}
-
+        public int id_morador { get; set; }
+        //public bool ativo { get; set; }
         public Unidade unidade { get; set; }
 	}
 
