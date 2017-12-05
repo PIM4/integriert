@@ -1,4 +1,5 @@
-﻿using Model.Entity;
+﻿using Model.DAO.Especifico;
+using Model.Entity;
 using SmartUP.Models;
 using System;
 using System.Collections.Generic;
