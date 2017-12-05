@@ -125,8 +125,9 @@ namespace Model.DAO.Especifico
                         obj.login = Convert.ToString(dr["EMAIL"].ToString());
                         obj.senha = Convert.ToString(dr["SENHA"].ToString());
                         obj.permissao = Convert.ToInt32(dr["NIVEL_ACESSO"].ToString());
-                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
 
+                        obj.pessoa = new Pessoa();
                         obj.pessoa.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
 
                         lstLogin.Add(obj);
