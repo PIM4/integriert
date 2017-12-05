@@ -19,9 +19,7 @@ namespace Model.Entity
 
 		public string nome{get;set;}
 
-		public int qtAndares{get;set;}
-
-		public int qtApto{get;set;}	
+        public bool ativo { get; set; }
 
 		public Condominio cond{get;set;}
 	}

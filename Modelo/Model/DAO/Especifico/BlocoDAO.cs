@@ -30,11 +30,10 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO BLOCO (IDENTIFICACAO, QTD_ANDARES, ID_COND, QTD_UNIDADES, STS_ATIVO) VALUES ('"
+                query = "INSERT INTO BLOCO (IDENTIFICACAO, ID_COND, STS_ATIVO) VALUES ('"
                         + bloco.nome + "', " 
-                        + (bloco.qtAndares).ToString() + ", " 
-                        + (bloco.cond.id_cond).ToString() + ", " 
-                        + (bloco.qtApto).ToString() + ", 1);";
+                        + (bloco.cond.id_cond).ToString() + ", 1);";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -51,7 +50,7 @@ namespace Model.DAO.Especifico
             List<Bloco> lstBloco = new List<Bloco>();
             try
             {
-                query = "SELECT B.IDENTIFICACAO, B.QTD_ANDARES, C.NOME_COND, B.QTD_UNIDADES FROM BLOCO AS B "
+                query = "SELECT B.ID_BLOCO, B.IDENTIFICACAO, C.NOME_COND, B.STS_ATIVO, B.ID_COND FROM BLOCO AS B "
                          + " INNER JOIN CONDOMINIO AS C ON B.ID_COND = C.ID_COND "
                          + " WHERE B.STS_ATIVO = 1 AND B.IDENTIFICACAO LIKE '%" + nome + "%';";
                 lstBloco = setarObjeto(banco.MetodoSelect(query));
@@ -71,7 +70,7 @@ namespace Model.DAO.Especifico
             List<Bloco> lstBloco = new List<Bloco>();
             try
             {
-                query = "SELECT B.ID_BLOCO, B.IDENTIFICACAO, B.ID_COND, C.NOME_COND FROM BLOCO AS B "
+                query = "SELECT B.ID_BLOCO, B.IDENTIFICACAO, B.ID_COND, C.NOME_COND , B.STS_ATIVO, B.ID_COND FROM BLOCO AS B "
                         + " INNER JOIN CONDOMINIO AS C ON C.ID_COND = B.ID_COND"
                         + " WHERE B.STS_ATIVO = 1;";
                 lstBloco = setarObjeto(banco.MetodoSelect(query));
@@ -91,9 +90,8 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "UPDATE BLOCO SET " 
-                        + " IDENTIFICACAO = '" + bloco.nome 
-                        + "', QT_ANDARES = " + (bloco.qtAndares).ToString()
-                        + " WHERE ID_BLOCO = " + (bloco.id_bloco).ToString() + ";";
+                        + " IDENTIFICACAO = '" + bloco.nome
+                        + "' WHERE ID_BLOCO = " + (bloco.id_bloco).ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -139,9 +137,11 @@ namespace Model.DAO.Especifico
                         
                         obj.id_bloco = Convert.ToInt32(dr["ID_BLOCO"].ToString());
                         obj.nome = Convert.ToString(dr["IDENTIFICACAO"].ToString());
-
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
+                        obj.cond = new Condominio();
                         obj.cond.id_cond = Convert.ToInt32(dr["ID_COND"].ToString());
                         obj.cond.nome = Convert.ToString(dr["NOME_COND"].ToString());
+
 
                         lstBloco.Add(obj);
                     }
