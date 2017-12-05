@@ -28,11 +28,11 @@ namespace Model.Entity
 
         public Unidade unidade { get; set; }
 
-		public DateTime dtEntrada{ get; set; }
+		public string dtEntrada{ get; set; }
 
-		public DateTime dtSaida{ get; set; }
+		public string dtSaida{ get; set; }
 
-        public int ativo { get; set; }
+        public bool ativo { get; set; }
 
 		//public int responsavelRetirada{ get; set; }    //Mudei o tipo
 
