@@ -32,8 +32,8 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO AREA (ID_AREA, NOME, DESCRICAO, RESERVA, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
-                                + area.id_area + "', '"
+                query = "INSERT INTO AREA (NOME, DESCRICAO, RESERVA, CAPACIDADE_MAX, STS_ATIVO) VALUES ('"
+                                //+ area.id_area + "', '"
                                 + area.nome + "', '" 
                                 + area.descricao + "', " 
                                 + Convert.ToInt32(area.seAluga) + ", "
