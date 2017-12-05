@@ -33,11 +33,11 @@ namespace Model.DAO.Especifico
 
             try
             {
-                query = "INSERT INTO LOGIN (EMAIL, SENHA, NIVEL_ACESSO, ID_PESSOA, STS_ATIVO) VALUES ('" +
-                        login.login + "', '" + 
+                query = "INSERT INTO LOGIN (SENHA, NIVEL_ACESSO, ID_PESSOA, STS_ATIVO, EMAIL) VALUES ('" +
+                        //login.login + "', '" + 
                         login.senha + "', " +
                         login.permissao.ToString() + ", " + 
-                        login.pessoa.id_pessoa.ToString() + ", 1);";
+                        login.pessoa.id_pessoa.ToString() + ", " + "1, '" + login.login + "');";
 
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -56,9 +56,8 @@ namespace Model.DAO.Especifico
             List<Login> lstLogin = new List<Login>();
             try
             {
-                query = "SELECT A.TITULO, A.DESCRICAO, A.DT_AVISO, C.NOME FROM AVISO AS A "
-                        + " INNER JOIN CONDOMINIO AS C ON A.ID_COND = C.ID_COND "
-                        + " WHERE A.STS_ATIVO = 1;";
+                query = "SELECT TOP 1 * FROM LOGIN WHERE EMAIL = '" 
+                        + login + "' AND SENHA = '" + senha + "' AND STS_ATIVO = 1;";
                 lstLogin = setarObjeto(banco.MetodoSelect(query));
             }
 
