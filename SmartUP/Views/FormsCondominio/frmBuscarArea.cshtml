@@ -34,8 +34,8 @@
                             <form action="/" method="post">
                                 <div class="row">
                                     <div class="input-field col s12 m3">
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nome</label>
+                                        <input id="nome_area" type="text" class="validate">
+                                        <label for="nome_area">Nome</label>
                                     </div>
                                     <div class="input-field col s12 m3">
                                         <input id="icon_prefix" type="text" class="validate">
@@ -79,7 +79,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						 <table id="example" class="display striped" cellspacing="0" width="100%">
+						 <table class="display datatable striped" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Nome</th>
@@ -91,22 +91,22 @@
                            <tfoot>
                                <tr>
                                     <th>Nome</th>
-									<th style="display: none;">Descrição</th>
-									<th style="display: none;">Capacidade Max</th>
-									<th >Reserva</th>
+									<th>Descrição</th>
+									<th>Capacidade Max</th>
+									<th>Reserva</th>
                                </tr>
                            </tfoot>
 							<tbody>
                                     
-                                    @foreach (var area in ViewBag.lstArea)
-                                    {
-                                        <tr>
-                                            <td>@area.nome</td>
-                                            <td>@area.descricao</td>
-                                            <td>@area.capacMax</td>
-                                            <td>@area.seAluga</td>
-                                        </tr>
-                                    }
+                                @foreach (var area in ViewBag.lstArea)
+                                {
+                                    <tr>
+                                        <td>@area.nome</td>
+                                        <td>@area.descricao</td>
+                                        <td>@area.capacMax</td>
+                                        <td>@area.seAluga</td>
+                                    </tr>
+                                }
                             </tbody>
 						</table>
 					</div>

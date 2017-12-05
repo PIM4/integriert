@@ -86,7 +86,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						<table class="striped">
+						<table class="striped datatable">
 							<thead>
 								<tr>
 									<th>Descrição</th>
@@ -95,6 +95,14 @@
 									<th>Condominio</th>
 								</tr>
 							</thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Data</th>
+                                    <th>Fornecedor</th>
+                                    <th>Condominio</th>
+                                </tr>
+                            </tfoot>
 							<tbody>
                                 @foreach (var contaAPagar in ViewBag.lstContaPagar)
                                 {

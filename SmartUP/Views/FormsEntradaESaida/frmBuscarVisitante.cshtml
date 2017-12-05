@@ -79,26 +79,25 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						<table class="striped">
+						<table class="striped datatable">
 							<thead>
 								<tr>
 									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Blocos</th>
-									<th>Unidades</th>
-									<th>Data de inauguração</th>
-									<th>Proprietáario</th>
-									<th>CNPJ</th>
+									<th>rg</th>
 								</tr>
 							</thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>rg</th>
+                                </tr>
+                            </tfoot>
 							<tbody>
-                                @foreach (var area in ViewBag.lstArea)
+                                @foreach (var visitante in ViewBag.lstVisitante)
                                 {
                                     <tr>
-                                        <td>@area.nome</td>
-                                        <td>@area.descricao</td>
-                                        <td>@area.capacMax</td>
-                                        <td>@area.seAluga</td>
+                                        <td>@visitante.nome</td>
+                                        <td>@visitante.descricao</td>
                                     </tr>
                                 }
 							</tbody>

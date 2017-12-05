@@ -86,7 +86,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						<table class="striped">
+						<table class="striped datatable">
 							<thead>
 								<tr>
 									<th>Nome</th>
@@ -95,6 +95,14 @@
 									<th>Unidade</th>
 								</tr>
 							</thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>RG</th>
+                                    <th>Unidade</th>
+                                </tr>
+                            </tfoot>
 							<tbody>
                                 @foreach (var morador in ViewBag.lstMorador)
                                 {
