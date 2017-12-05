@@ -29,6 +29,7 @@ namespace Model.Entity
 
 		public DateTime dataInauguracao{get;set;}
 		
+        public bool ativo { get; set; }
 	}
 
 }
