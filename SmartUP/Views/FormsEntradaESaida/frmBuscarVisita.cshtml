@@ -88,7 +88,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
-						<table class="striped">
+						<table class="striped datatable">
 							<thead>
 								<tr>
                                     <th>Unidade</th>
@@ -98,6 +98,15 @@
 									<th>Data/hora de saida</th>
 								</tr>
 							</thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Unidade</th>
+                                    <th>Nome do visitante</th>
+                                    <th>RG do visitante</th>
+                                    <th>Data/hora de entrada</th>
+                                    <th>Data/hora de saida</th>
+                                </tr>
+                            </tfoot>
 							<tbody>
                                 @foreach (var visita in ViewBag.lstVisita)
                                 {
