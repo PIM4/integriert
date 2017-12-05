@@ -54,6 +54,7 @@ namespace SmartUP.Controllers
         }
         public ActionResult FrmCadastrarAviso()
         {
+
             return View();
         }
         public ActionResult FrmCadastrarBloco()
