@@ -14,7 +14,7 @@ namespace Model.Entity
 		public Login login{set;get;}
 		public List<Endereco> endereco{set;get;}
 		public List<Telefone> telefone{set;get;}
-        public int ativo { get; set; }
+        public bool ativo { get; set; }
 
         public Pessoa()
         {

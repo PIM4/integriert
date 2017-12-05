@@ -36,6 +36,7 @@ namespace Model.DAO.Especifico
                         + pessoa.rg + "', '" 
                         + (pessoa.data_nasc).ToShortDateString() 
                         + "', 1);";
+                banco.MetodoNaoQuery(query);
                 return true;
             }
 
@@ -71,7 +72,7 @@ namespace Model.DAO.Especifico
             List<Pessoa> lstPessoa = new List<Pessoa>();
             try
             {
-                query = "SELECT * WHERE STS_ATIVO = 1 AND NOME LIKE '%" + nome + "%';";
+                query = "SELECT * FROM PESSOA WHERE STS_ATIVO = 1 AND NOME LIKE '%" + nome + "%';";
                 lstPessoa = setarObjeto(banco.MetodoSelect(query));
             }
                 
@@ -110,7 +111,7 @@ namespace Model.DAO.Especifico
                         "', CPF = '" + pessoa.cpf + 
                         "', RG = '" + pessoa.rg +
                         "', DT_NASC = '" + pessoa.data_nasc.ToShortDateString() + 
-                        "WHERE ID_PESSOA = " + pessoa.id_pessoa.ToString() + ";";
+                        "' WHERE ID_PESSOA = " + pessoa.id_pessoa.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -155,10 +156,11 @@ namespace Model.DAO.Especifico
                     {
                         Pessoa obj = new Pessoa();
                         obj.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
+                        obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.cpf = Convert.ToString(dr["CPF"].ToString());
                         obj.rg = Convert.ToString(dr["RG"].ToString());
                         obj.data_nasc = Convert.ToDateTime(dr["DT_NASC"].ToString());
-                        obj.ativo = Convert.ToInt32(dr["STS_ATIVO"].ToString());
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         
                         lstPessoa.Add(obj);
                     }
