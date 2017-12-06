@@ -43,8 +43,6 @@ namespace ConsoleApp1
             {
                 id_bloco = 1,
                 nome = "Flamboyant",
-                qtAndares = 8,
-                qtApto = 64,
                 cond = cond,
             };
             ContaPagar cp = new ContaPagar
@@ -64,23 +62,23 @@ namespace ConsoleApp1
                 condominio = cond,
             };
 
-            AreaDAO objDAO = new AreaDAO();
+            CondominioDAO objDAO = new CondominioDAO();
 
 
             /*CRIA*/
 
             
-            objDAO.cadastra(ar);
-            List<Area> lstArea = new List<Area>();
-            lstArea = objDAO.busca();
+            List<Condominio> cd = objDAO.busca();
+            
+            //lstArea = objDAO.busca();
             /*ALTERA*/
             //areaDAO.altera(ar);
 
             /*BUSCA especifico*/
-
-            foreach (var area in lstArea)
+            
+            foreach (Condominio obj in cd)
             {
-                Console.WriteLine(area.id_area +"\n" +area.nome +"\n"+ area.descricao + "\n" + area.capacMax + "\n" + area.seAluga + "\n" + area.ativo);
+                Console.WriteLine(obj.id_cond + "\n" + obj.nome + "\n" + obj.qtdBlocos);
             }
             Console.ReadKey();
          }

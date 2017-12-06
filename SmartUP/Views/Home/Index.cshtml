@@ -35,25 +35,26 @@
                     <div class="center-align" style="margin-bottom: 20px;">
                         <img src="images/smart.jpg" width="180" style="">
                     </div>
-                    <form method="GET">
+                    <form action="@Url.Action("Autenticacao")s" method="GET">
                         <div class="row" style="margin-bottom: 0px;">
                             <div class="input-field col s12">
                                 <span class="erro">Erro ao executar login</span>
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" name="user" class="validate">
-                                <label for="icon_prefix">User</label>
+                                <input id="user_id" type="text" name="user.login" class="validate">
+                                <label for="user_id">User</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="icon_pass" type="password" name="pass" class="validate">
-                                <label for="icon_pass">Password</label>
+                                <input id="user_pass" type="password" name="user.pass" class="validate">
+                                <label for="user_pass">Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12">
                                 <input type="submit" name="" value="Logar" style="width: 100%; height: 50px; border: none; background: #1091f7; color: #fff;">
+                                
                             </div>
                         </div>
                     </form>

@@ -10,3 +10,12 @@ C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ModelDll.exe
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\obj\Debug\ModelDll.pdb
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\Modelo.dll
 C:\Users\User\source\repos\SmartUP\ConsoleApp1\bin\Debug\Modelo.pdb
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\bin\Debug\ModelDll.exe.config
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\bin\Debug\ModelDll.exe
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\bin\Debug\ModelDll.pdb
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\bin\Debug\Modelo.dll
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\bin\Debug\Modelo.pdb
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\obj\Debug\ConsoleAPP.csprojResolveAssemblyReference.cache
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\obj\Debug\ConsoleAPP.csproj.CoreCompileInputs.cache
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\obj\Debug\ModelDll.exe
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\ConsoleApp1\obj\Debug\ModelDll.pdb

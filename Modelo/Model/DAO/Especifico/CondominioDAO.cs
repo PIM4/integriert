@@ -55,7 +55,7 @@ namespace Model.DAO.Especifico
             try
             {
 
-                query = "SELECT ID_COND, NOME_COND, DT_INAUGURACAO, PROPRIETARIO, ID_ENDERECO, CNPJ, STS_ATIVO FROM CONDOMINIO WHERE STS_ATIVO = 1;";
+                query = "SELECT * FROM CONDOMINIO WHERE STS_ATIVO = 1;";
 
                 lstCond = setarObjeto(banco.MetodoSelect(query));
             }

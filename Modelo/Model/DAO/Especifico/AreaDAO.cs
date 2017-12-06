@@ -37,8 +37,7 @@ namespace Model.DAO.Especifico
                                 + area.nome + "', '" 
                                 + area.descricao + "', " 
                                 + Convert.ToInt32(area.seAluga) + ", "
-                                + Convert.ToInt32(area.capacMax) + ", " 
-                                + Convert.ToInt32(area.ativo) + ");";
+                                + Convert.ToInt32(area.capacMax) + ", 1);";
                 
                 banco.MetodoNaoQuery(query);
                 return true;

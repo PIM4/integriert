@@ -29,18 +29,6 @@
 					<form action="@Url.Action("CadastraArea")" method="post">
 						<h5 style="">Cadastro de Area</h5>
 						<div class="row">
-                            <div class="input-field col s12 m3">
-                                <input id="area.ativo" name="area.ativo" type="text" class="validate">
-                                <label for="ativo.ativo">ativo</label>
-                            </div>
-                            <div class="input-field col s12 m3">
-                                <input id="area.seAluga" name="area.seAluga" type="text" class="validate">
-                                <label for="seAluga">sealuga</label>
-                            </div>
-                            <div class="input-field col s12 m3">
-                                <input id="area.id_area" name="area.id_area" type="number" class="validate">
-                                <label for="id_area">id</label>
-                            </div>
 							<div class="input-field col s12 m3" >
 								<input id="area.nome" name="area.nome" type="text" class="validate">
 								<label for="nome">Nome</label>
@@ -53,6 +41,10 @@
 								<input id="area.capacMax" name="area.capacMax" type="number" class="validate">
 								<label for="capacMax">Capacidade</label>
 							</div>
+                            <div class="input-field col s12 m3">
+                                <input id="area.seAluga" name="area.seAluga" type="text" class="validate">
+                                <label for="seAluga">sealuga</label>
+                            </div>
 							@*<div class="input-field col s12 m3" >
 								<label for="sim">Alugevel</label>
 								<input id="sim" name="area.seAluga" selected value="1" type="radio" class="validate">

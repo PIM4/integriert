@@ -9,3 +9,9 @@ C:\Users\User\source\repos\SmartUP\Modelo\obj\Debug\Modelo.csprojResolveAssembly
 C:\Users\User\source\repos\SmartUP\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\SmartUP\Modelo\obj\Debug\Modelo.dll
 C:\Users\User\source\repos\SmartUP\Modelo\obj\Debug\Modelo.pdb
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\bin\Debug\Modelo.dll
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\bin\Debug\Modelo.pdb
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\obj\Debug\Modelo.dll
+C:\Users\bruna\Documents\GitHub\OFICIAL\integriert\Modelo\obj\Debug\Modelo.pdb

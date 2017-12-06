@@ -13,7 +13,7 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="@Url.Action("frmBuscarBloco","FormsCondominio")">
+						<a class="" href="@Url.Action("frmBuscarBloco", "FormsCondominio")">
 							<span class="span_forms">Buscar bloco</span>
 						</a>	
 						/						
@@ -26,33 +26,27 @@
 			<div class="row">
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
-					<form class="">
-						<h5 style="">Cadastro de bloco</h5>
-						<div class="row">
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Nome</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="number" class="validate">
-								<label for="icon_prefix">Quantidade de Andares</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="number" class="validate">
-								<label for="icon_prefix">Quantidade de unidades</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Condominio</label>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="col s3">
-								<a class="btn botao">Salvar</a>
-							</div>
-						</div>						
-					</form>
+                        <form action="@Url.Action("CadastrarBloco")" method="post">
+                            <h5 style="">Cadastro de bloco</h5>
+                            <div class="row">
+                                <div class="input-field col s12 m3">
+                                    <input id="icon_prefix" type="text" name="obj.nome" class="validate">
+                                    <label for="icon_prefix">Nome</label>
+                                </div>
+                                <select>
+                                     @foreach(var cond in ViewBag.lstCond)
+                                     {
+                                            <option value="@cond.id_cond" name="obj.cond" >@cond.nome</option>
+                                     }
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s3">
+                                    <button>Salva</button>
+                                </div>
+                            </div>
+                        </form>
 					</div>
 				</div>
 			</div>

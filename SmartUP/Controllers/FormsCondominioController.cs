@@ -28,7 +28,7 @@ namespace SmartUP.Controllers
             CondominioDAO condominioDAO = new CondominioDAO();
             ViewBag.lstCond = condominioDAO.busca();
             return View();
-        }
+         }
         public ActionResult FrmBuscarUnidade()
         {
             UnidadeDAO unidadeDAO = new UnidadeDAO();
@@ -41,10 +41,10 @@ namespace SmartUP.Controllers
             ViewBag.lstAviso = avisoDAO.busca();
             return View();
         }
+
         public ActionResult FrmCadastrarArea(Area area)
         {
-           
-            return View();
+           return View();
         }
         public ActionResult CadastraArea(Area area)
         {
@@ -52,21 +52,38 @@ namespace SmartUP.Controllers
             areaDAO.cadastra(area);
             return RedirectToAction("frmBuscarArea", "FormsCondominio");
         }
-        public ActionResult FrmCadastrarAviso()
-        {
 
+        public ActionResult FrmCadastrarAviso(Aviso obj)
+        {
+            AvisoDAO dao = new AvisoDAO();
+            dao.cadastra(obj);
             return View();
         }
+
         public ActionResult FrmCadastrarBloco()
         {
+            CondominioDAO condominioDAO = new CondominioDAO();
+            ViewBag.lstCond = condominioDAO.busca();
             return View();
         }
-        public ActionResult FrmCadastrarCondominio()
+        public ActionResult CadastrarBloco(Bloco obj)
         {
+            BlocoDAO dao = new BlocoDAO();
+            
+            dao.cadastra(obj);
+            return RedirectToAction("frmBuscarBloco", "FormsCondominio");
+        }
+
+        public ActionResult FrmCadastrarCondominio(Condominio obj)
+        {
+            CondominioDAO dao = new CondominioDAO();
+            dao.cadastra(obj);
             return View();
         }
-        public ActionResult FrmCadastrarUnidade()
+        public ActionResult FrmCadastrarUnidade(Unidade obj)
         {
+            UnidadeDAO dao = new UnidadeDAO();
+            dao.cadastra(obj);
             return View();
         }
     }
