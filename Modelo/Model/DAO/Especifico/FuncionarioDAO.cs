@@ -236,6 +236,7 @@ namespace Model.DAO.Especifico
                 {
                     while (dr.Read())
                     {
+                        Cargo cargo = new Cargo();
                         Funcionario obj = new Funcionario();
                         obj.id_funcionario = Convert.ToInt32(dr["ID_FUNCIONARIO"].ToString());
                         obj.cargo.id_cargo = Convert.ToInt32(dr["ID_CARGO"].ToString());

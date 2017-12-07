@@ -26,33 +26,33 @@
 			<div class="row">
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
-					<form class="">
-						<h5 style="">Cadastro de unidade</h5>
-						<div class="row">
-							<div class="input-field col s12 m4" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Identificação</label>
-							</div>
-							<div class="input-field col s12 m4" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Proprietário</label>
-							</div>
-							<div class="input-field col s12 m4" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Bloco</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="number" class="validate">
-								<label for="icon_prefix">Quantidade de veiculos</label>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="col s3">
-								<a class="btn botao">Salvar</a>
-							</div>
-						</div>						
-					</form>
+                        <form action="@Url.Action("CadastrarUnidade")" method="post">
+                            <h5 style="">Cadastro de unidade</h5>
+                            <div class="row">
+                                <div class="input-field col s12 m4">
+                                    <input id="icon_prefix" type="text" name="obj.identificacao" class="validate">
+                                    <label for="icon_prefix">Identificação</label>
+                                </div>
+                                <div class="input-field col s12 m4">
+                                    <input id="icon_prefix" type="text" name="obj.proprietario.nome" class="validate">
+                                    <label for="icon_prefix">Proprietário</label>
+                                </div>
+                                <div class="input-field col s12 m4">
+                                    <input id="icon_prefix" type="text" name="obj.bloco.nome" class="validate">
+                                    <label for="icon_prefix">Bloco</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <input id="icon_prefix" type="number" name="obj.vagas" class="validate">
+                                    <label for="icon_prefix">Quantidade de veiculos</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s3">
+                                    <input type="submit" name="name" value="" />
+                                </div>
+                            </div>
+                        </form>
 					</div>
 				</div>
 			</div>

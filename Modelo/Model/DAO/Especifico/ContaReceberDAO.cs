@@ -112,9 +112,9 @@ namespace Model.DAO.Especifico
             List<ContaReceber> lstCR = new List<ContaReceber>();
             try
             {
-                query = "SELECT U.IDENTIFICACAO, CR.DT_CONTA_RECEBER, CR.VALOR FROM CONTA_RECEBER AS CR "
+                query = "SELECT U.IDENTIFICACAO, CR.DIA_PAGTO, CR.VALOR FROM CONTA_RECEBER AS CR "
                         + "INNER JOIN UNIDADE AS U ON U.ID_UNIDADE = CR.ID_UNIDADE "
-                        + "WHERE CR.STS_ATIVO = 1 ORDER BY CR.DT_CONTA_RECEBER DESC;";
+                        + "WHERE CR.STS_ATIVO = 1 ORDER BY CR.DIA_PAGTO DESC;";
                 lstCR = setarObjeto(banco.MetodoSelect(query));
             }
 

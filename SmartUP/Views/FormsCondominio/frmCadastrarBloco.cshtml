@@ -33,11 +33,11 @@
                                     <input id="icon_prefix" type="text" name="obj.nome" class="validate">
                                     <label for="icon_prefix">Nome</label>
                                 </div>
-                                <select>
-                                     @foreach(var cond in ViewBag.lstCond)
-                                     {
-                                            <option value="@cond.id_cond" name="obj.cond" >@cond.nome</option>
-                                     }
+                                <select name="obj.cond.id_cond">
+                                    @foreach (var cond in ViewBag.lstCond)
+                                    {
+                                        <option value="@cond.id_cond"  >@cond.nome</option>
+                                    }
                                 </select>
                             </div>
 

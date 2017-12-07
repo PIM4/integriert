@@ -13,7 +13,7 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="@url.action("frmBuscarAviso","FormsCondominio")">
+						<a class="" href="@Url.Action("frmBuscarAviso","FormsCondominio")">
 							<span class="span_forms">Buscar Aviso</span>
 						</a>	
 						/						
@@ -26,33 +26,38 @@
 			<div class="row">
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
-					<form class="">
-						<h5 style="">Cadastro de Aviso</h5>
-						<div class="row">
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate" required>
-								<label for="icon_prefix">Título</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate" required>
-								<label for="icon_prefix">Condominio</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input type="text" id="icon_prefix" class="validate date" required>
-								<label for="icon_prefix">Data</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate" required>
-								<label for="icon_prefix">Descrição</label>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="col s3">
-								<a class="btn botao">Salvar</a>
-							</div>
-						</div>						
-					</form>
+                        <form action="@Url.Action("CadastrarAviso")" method="post">
+                            <h5 style="">Cadastro de Aviso</h5>
+                            <div class="row">
+                                <div class="input-field col s12 m3">
+                                    <input id="icon_prefix" type="text" name="obj.titulo" class="validate" required>
+                                    <label for="icon_prefix">Título</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <select name="obj.cond.id_cond">
+                                        @foreach (var cond in ViewBag.lstCond)
+                                        {
+                                            <option value="@cond.id_cond">@cond.nome</option>
+                                        }
+                                    </select>
+                                    <label for="icon_prefix">Condominio</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <input type="text" id="icon_prefix" name="obj.data" class="validate date" required>
+                                    <label for="icon_prefix">Data</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <input id="icon_prefix" type="text" name="obj.descricao" class="validate" required>
+                                    <label for="icon_prefix">Descrição</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s3">
+                                    <input type="submit" name="name" value="" />
+                                </div>
+                            </div>
+                        </form>
 					</div>
 				</div>
 			</div>
