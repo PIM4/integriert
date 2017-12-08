@@ -19,6 +19,7 @@ namespace Model.DAO.Especifico
         #region Objetos
         dbBancos banco = new dbBancos();
         string query = null;
+        PessoaDAO Pessoadao = new PessoaDAO();
 
         #endregion
 
@@ -30,8 +31,10 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
+                
+                morador.id_pessoa = Pessoadao.cadastra(morador.nome, morador.cpf, morador.rg, morador.data_nasc);
                 query = "INSERT INTO MORADOR (ID_PESSOA, ID_UNIDADE, STS_ATIVO) VALUES (" +
-                        morador.id_pessoa.ToString() + ", " + 
+                        morador.id_pessoa.ToString() + ", " +
                         morador.unidade.id_unidade.ToString() + ", 1);";
                 banco.MetodoNaoQuery(query);
                 return true;

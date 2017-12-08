@@ -25,24 +25,25 @@ namespace Model.DAO.Especifico
 
         #region CRUD
 
-        public bool cadastra(Pessoa pessoa)
+        public int cadastra(string nome, string cpf, string rg, DateTime data_nasc)
 		{
             query = null;
             try
             {
                 query = "INSERT INTO PESSOA (NOME, CPF, RG, DT_NASC, STS_ATIVO) VALUES ('"
-                        + pessoa.nome + "', '" 
-                        + pessoa.cpf + "', '" 
-                        + pessoa.rg + "', '" 
-                        + (pessoa.data_nasc).ToShortDateString() 
+                        +nome + "', '"
+                        +cpf + "', '"
+                        +rg + "', '"
+                        +data_nasc.ToShortDateString()
                         + "', 1);";
                 banco.MetodoNaoQuery(query);
-                return true;
+                List<Pessoa> listPessoa = buscaPorRg(rg);
+                return listPessoa[0].id_pessoa;
             }
 
             catch(Exception ex)
             {
-                return false;
+                //return false;
                 throw ex;
             }
         }
@@ -174,6 +175,29 @@ namespace Model.DAO.Especifico
             }
 
             return lstPessoa;
+        }
+
+        public int setarIdPessoa(SqlDataReader dr)
+        {
+            Pessoa obj = new Pessoa();
+            try
+            {
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        obj.id_pessoa = Convert.ToInt32(dr["ID_PESSOA"].ToString());
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                dr.Dispose();
+                throw ex;
+            }
+
+            return obj.id_pessoa;
         }
 
         #endregion

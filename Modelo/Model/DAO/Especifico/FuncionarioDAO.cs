@@ -21,6 +21,7 @@ namespace Model.DAO.Especifico
         List<Funcionario> lstFuncionario = new List<Funcionario>();
         dbBancos banco = new dbBancos();
         string query = null;
+        PessoaDAO ps = new PessoaDAO();
 
         #endregion
 
@@ -33,6 +34,7 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
+                funcionario.id_funcionario = ps.cadastra(funcionario.nome, funcionario.cpf, funcionario.rg, funcionario.data_nasc);
                 query = "INSERT INTO FUNCIONARIO (ID_CARGO, ID_PESSOA, STS_ATIVO) VALUES ("
                         + (funcionario.cargo).ToString() + ", " 
                         + (funcionario.id_pessoa).ToString() 

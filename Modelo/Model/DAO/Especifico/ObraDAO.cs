@@ -22,8 +22,7 @@ namespace Model.DAO.Especifico
 
         #endregion
 
-
-        List<Obra> lstObra = new List<Obra>();
+        //List<Obra> lstObra = new List<Obra>();
         
         #region TIPO OBRA
 
@@ -34,7 +33,6 @@ namespace Model.DAO.Especifico
             {
                 query = "INSERT INTO TIPO_OBRA (DESCRICAO, STS_ATIVO) VALUES ('"
                         + obra.desc_tipo + "', 1);";
-
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -46,23 +44,23 @@ namespace Model.DAO.Especifico
             }
         }
 
-        //public List<Obra> buscaTipoObra()
-        //{
-        //    query = null;
-        //    List<Area> lstArea = new List<Area>();
-        //    try
-        //    {
-        //        query = "SELECT * FROM AREA WHERE STS_ATIVO = 1 ORDER BY NOME;";
-        //        lstArea = setarObjeto(banco.MetodoSelect(query));
-        //    }
+        public List<Obra> buscaTipoObra()
+        {
+            query = null;
+            List<Obra> lstObra = new List<Obra>();
+            try
+            {
+                query = "SELECT * FROM TIPO_OBRA WHERE STS_ATIVO = 1 ORDER BY DESCRICAO;";
+                lstObra = setarObjeto(banco.MetodoSelect(query));
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-        //    return lstArea;
-        //}
+            return lstObra;
+        }
 
         public bool alteraTipoObra(Obra obra)
         {
@@ -104,12 +102,21 @@ namespace Model.DAO.Especifico
         #endregion
 
         #region OBRA
+
         public bool cadastraObra(Obra obra)
 		{
             query = null;
             try
             {
-                query = "INSERT INTO OBRA";
+                query = "INSERT INTO OBRA (DESCRICAO, DT_INICIO, DT_PREVISAO_TERMINO, FINALIZADA, " +
+                    "ID_AREA, ID_TIPO_OBRA, ID_COND, STS_ATIVO) VALUES ('" +
+                    obra.descricao_obra + "', '" + 
+                    obra.dt_inicio + "', '" +
+                    obra.dt_previsao_termino + "', " +
+                    obra.finalizada.ToString() + ", " +
+                    obra.area.id_area.ToString() + ", " +
+                    obra.id_tipo_obra.ToString() + ", " +
+                    obra.cond.id_cond.ToString() + ", 1);";
 
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -122,48 +129,131 @@ namespace Model.DAO.Especifico
             }
         }
 
-		public List<Obra> buscaPorArea(Area area)
-		{
-            return lstObra;
-        }
+		//public List<Obra> buscaPorArea(Area area)
+		//{
+  //          query = null;
+  //          List<Obra> lstObra = new List<Obra>();
+  //          try
+  //          {
+  //              query = "SELECT * FROM OBRA WHERE NOME LIKE '%" + nome + "%' AND STS_ATIVO = 1 ORDER BY NOME;";
+  //              lstObra = setarObjeto(banco.MetodoSelect(query));
+  //          }
 
-		public List<Obra> buscaPorTipo(string tipo)
-		{
-            return lstObra;
-        }	
+  //          catch (Exception ex)
+  //          {
+  //              throw ex;
+  //          }
+
+  //          return lstObra;
+  //      }
+
+		//public List<Obra> buscaPorTipo(string tipo)
+		//{
+  //          return lstObra;
+  //      }	
 		
-		public List<Obra> buscaPorData(DateTime data)
-		{
-            return lstObra;
-        }
+		//public List<Obra> buscaPorData(DateTime data)
+		//{
+  //          return lstObra;
+  //      }
 
 		public List<Obra> buscaPorAbertas()
 		{
+            query = null;
+            List<Obra> lstObra = new List<Obra>();
+            try
+            {
+                query = "SELECT * FROM OBRA WHERE STS_ATIVO = 1 AND FINALIZADA = 0 " +
+                        " ORDER BY DT_INICIO DESC;";
+                lstObra = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return lstObra;
         }	
 
 		public List<Obra> buscaPorFechadas()
 		{
+            query = null;
+            List<Obra> lstObra = new List<Obra>();
+            try
+            {
+                query = "SELECT * FROM OBRA WHERE STS_ATIVO = 1 AND FINALIZADA = 1 " +
+                        " ORDER BY DT_INICIO DESC;";
+                lstObra = setarObjeto(banco.MetodoSelect(query));
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return lstObra;
         }						
 
 		public List<Obra> busca()
 		{
-            return lstObra;
-        }
+            query = null;
+            List<Obra> lstObra = new List<Obra>();
+            try
+            {
+                query = "SELECT * FROM OBRA WHERE STS_ATIVO = 1 ORDER BY DT_INICIO DESC;";
+                lstObra = setarObjeto(banco.MetodoSelect(query));
+            }
 
-		public bool remove(int id)
-		{
-            return true;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstObra;
         }
 
         public bool altera(Obra obra)
         {
-            return true;
+            query = null;
+            try
+            {
+                query = "UPDATE OBRA (DT_TERMINO, FINALIZADA) WHERE ID_OBRA = " 
+                        + obra.id_obra.ToString() + ";";
+
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
         }
+
+        public bool remove(int id)
+        {
+            query = null;
+            try
+            {
+                query = "UPDATE OBRA SET STS_ATIVO = 0 WHERE ID_OBRA = " + id.ToString() + ";";
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region TERCEIRO OBRA
+
+
 
         #endregion
 
@@ -187,14 +277,11 @@ namespace Model.DAO.Especifico
                         obj.dt_termino = Convert.ToString(dr["DT_TERMINO"].ToString());
                         obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         
-
                         obj.id_tipo_obra = Convert.ToInt32(dr["ID_TIPO_OBRA"].ToString());
                         obj.desc_tipo = Convert.ToString(dr["ID_AREA"].ToString());
 
                         obj.area = new Area();
                         obj.area.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
-
-
 
                         lstObra.Add(obj);
                     }
