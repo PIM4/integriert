@@ -40,7 +40,7 @@ namespace SmartUP.Controllers
             public ActionResult FrmCadastrarBloco(Bloco obj)
             {
                 CondominioDAO dao = new CondominioDAO();
-                ViewBag.lstBloco = dao.busca();
+                ViewBag.lstCond = dao.busca();
                 return View();
             }
             public ActionResult CadastrarBloco(Bloco obj)
