@@ -152,7 +152,8 @@ namespace Model.DAO.Especifico
             List<Enquete> lstVoto = new List<Enquete>();
             try
             {
-                query = "SELECT EA.TEXTO, ";
+                query = "SELECT EA.TEXTO, COUNT(SELECT ID_VOTO FROM VOTO WHERE ID_ENQUETE = + " 
+                        + id.ToString() + " )";
                 lstVoto = setarObjeto(banco.MetodoSelect(query));
             }
 
