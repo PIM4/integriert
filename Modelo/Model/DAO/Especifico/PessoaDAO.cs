@@ -103,16 +103,16 @@ namespace Model.DAO.Especifico
             return lstPessoa;
         }
 
-        public bool altera(Pessoa pessoa)
+        public bool altera(int id, string nome, string cpf, string rg, DateTime datanasc)
         {
             query = null;
             try
             {
-                query = "UPDATE PESSOA SET NOME = '" + pessoa.nome + 
-                        "', CPF = '" + pessoa.cpf + 
-                        "', RG = '" + pessoa.rg +
-                        "', DT_NASC = '" + pessoa.data_nasc.ToShortDateString() + 
-                        "' WHERE ID_PESSOA = " + pessoa.id_pessoa.ToString() + ";";
+                query = "UPDATE PESSOA SET NOME = '" + nome + 
+                        "', CPF = '" + cpf + 
+                        "', RG = '" + rg +
+                        "', DT_NASC = '" + datanasc.ToShortDateString() + 
+                        "' WHERE ID_PESSOA = " + id.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
             }

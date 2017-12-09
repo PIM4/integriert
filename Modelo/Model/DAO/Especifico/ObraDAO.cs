@@ -51,7 +51,7 @@ namespace Model.DAO.Especifico
             try
             {
                 query = "SELECT * FROM TIPO_OBRA WHERE STS_ATIVO = 1 ORDER BY DESCRICAO;";
-                lstObra = setarObjeto(banco.MetodoSelect(query));
+                lstObra = setarObjetoTipoObra(banco.MetodoSelect(query));
             }
 
             catch (Exception ex)
@@ -99,6 +99,8 @@ namespace Model.DAO.Especifico
             }
         }
 
+
+
         #endregion
 
         #region OBRA
@@ -112,8 +114,8 @@ namespace Model.DAO.Especifico
                     "ID_AREA, ID_TIPO_OBRA, ID_COND, STS_ATIVO) VALUES ('" +
                     obra.descricao_obra + "', '" + 
                     obra.dt_inicio + "', '" +
-                    obra.dt_previsao_termino + "', " +
-                    obra.finalizada.ToString() + ", " +
+                    obra.dt_previsao_termino + "', '" +
+                    obra.finalizada.ToString() + "', " +
                     obra.area.id_area.ToString() + ", " +
                     obra.id_tipo_obra.ToString() + ", " +
                     obra.cond.id_cond.ToString() + ", 1);";
@@ -213,13 +215,14 @@ namespace Model.DAO.Especifico
             return lstObra;
         }
 
-        public bool altera(Obra obra)
+        public bool altera(string dt_term, bool finalizada, int id)
         {
             query = null;
             try
             {
-                query = "UPDATE OBRA (DT_TERMINO, FINALIZADA) WHERE ID_OBRA = " 
-                        + obra.id_obra.ToString() + ";";
+                query = "UPDATE OBRA SET DT_TERMINO = '" + dt_term
+                        + "', FINALIZADA = '"+ finalizada +"' WHERE ID_OBRA = " 
+                        + id.ToString() + ";";
 
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -253,7 +256,25 @@ namespace Model.DAO.Especifico
 
         #region TERCEIRO OBRA
 
+        public bool cadastraTerceiroObra(Terceiro terceiro, Obra obra)
+        {
+            query = null;
+            try
+            {
 
+                query = "INSERT INTO TERCEIRO_OBRA (ID_TERCEIRO, ID_OBRA, STS_ATIVO) VALUES (" +
+                        terceiro.id_terceiro.ToString() + ", " + obra.id_obra.ToString() + ", 1);";
+
+                banco.MetodoNaoQuery(query);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
 
         #endregion
 
@@ -274,7 +295,7 @@ namespace Model.DAO.Especifico
                         obj.finalizada = Convert.ToBoolean(dr["FINALIZADA"].ToString());
                         obj.dt_inicio = Convert.ToString(dr["DT_INICIO"].ToString());
                         obj.dt_previsao_termino = Convert.ToString(dr["DT_PREVISAO_TERMINO"].ToString());
-                        obj.dt_termino = Convert.ToString(dr["DT_TERMINO"].ToString());
+                        obj.dt_termino = Convert.ToDateTime(dr["DT_TERMINO"].ToString());
                         obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         
                         obj.id_tipo_obra = Convert.ToInt32(dr["ID_TIPO_OBRA"].ToString());
@@ -283,6 +304,34 @@ namespace Model.DAO.Especifico
                         obj.area = new Area();
                         obj.area.id_area = Convert.ToInt32(dr["ID_AREA"].ToString());
 
+                        lstObra.Add(obj);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                dr.Dispose();
+                throw ex;
+            }
+
+            return lstObra;
+        }
+
+        public List<Obra> setarObjetoTipoObra(SqlDataReader dr)
+        {
+            List<Obra> lstObra = new List<Obra>();
+            try
+            {
+                if (dr.HasRows)
+                {
+                    while (dr.Read() == true)
+                    {
+                        Obra obj = new Obra();
+
+                        obj.id_tipo_obra = Convert.ToInt32(dr["ID_TIPO_OBRA"].ToString());
+                        obj.desc_tipo = Convert.ToString(dr["DESCRICAO"].ToString());
+                        obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         lstObra.Add(obj);
                     }
                 }

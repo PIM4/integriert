@@ -11,7 +11,7 @@ namespace Model.Entity
         public Condominio cond { get; set; }
         public string dt_inicio { get; set; }
         public string dt_previsao_termino { get; set; }
-        public string dt_termino { get; set; }
+        public DateTime dt_termino { get; set; }
         public bool finalizada { get; set; }
         public bool ativo { get; set; }
 
