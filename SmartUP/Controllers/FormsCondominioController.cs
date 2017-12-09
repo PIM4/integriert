@@ -80,8 +80,10 @@ namespace SmartUP.Controllers
             }
             public ActionResult FrmCadastrarUnidade()
             {
-                UnidadeDAO dao = new UnidadeDAO();
-                ViewBag.lstUni = dao.busca();
+                PessoaDAO daoP = new PessoaDAO();
+                BlocoDAO daob = new BlocoDAO();
+                ViewBag.lstBloco = daob.busca();
+                ViewBag.lstPessoa = daoP.busca();
                 return View();
             }
             public ActionResult CadastrarUnidade(Unidade obj)

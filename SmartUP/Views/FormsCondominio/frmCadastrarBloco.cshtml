@@ -29,21 +29,24 @@
                         <form action="@Url.Action("CadastrarBloco")" method="post">
                             <h5 style="">Cadastro de bloco</h5>
                             <div class="row">
-                                <div class="input-field col s12 m3">
-                                    <input id="icon_prefix" type="text" name="obj.nome" class="validate" pattern="[A-Za-z]">
-                                    <label for="icon_prefix">Nome</label>
+                                <div class="input-field col s12 m5 l3">
+                                    <input id="obj.nome" type="text" name="obj.nome" class="validate texto" required>
+                                    <label for="obj.nome">Nome</label>
                                 </div>
-                                <select name="obj.cond.id_cond">
-                                    @foreach (var cond in ViewBag.lstCond)
-                                    {
-                                        <option value="@cond.id_cond"  >@cond.nome</option>
-                                    }
-                                </select>
+                                <div class="input-field col s12 m5 l3">
+                                    <select id="obj" name="obj.cond.id_cond" required>
+                                        <option value="" disabled selected>Selecione o condominio</option>
+                                        @foreach (var cond in ViewBag.lstCond)
+                                        {
+                                            <option value="@cond.id_cond">@cond.nome</option>
+                                        }
+                                    </select>
+                                    <label style="display:none;">Selecione o condominio</label>
+                                </div>
                             </div>
-
                             <div class="row">
                                 <div class="col s3">
-                                    <button>Salva</button>
+                                    <button class="btn botao">Salva</button>
                                 </div>
                             </div>
                         </form>

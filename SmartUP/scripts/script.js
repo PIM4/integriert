@@ -136,3 +136,15 @@ $(document).ready(function(){
         });
     
 })
+
+// Validação de nome
+$(".texto").on("input", function(){
+  var regexp = /[^a-zA-Z]/g;
+  if(this.value.match(regexp)){
+    $(this).val(this.value.replace(regexp,''));
+  }
+});
+
+$(document).ready(function () {
+    $('select').material_select();
+});
