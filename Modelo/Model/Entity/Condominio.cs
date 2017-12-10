@@ -21,9 +21,11 @@ namespace Model.Entity
 
 		public Endereco endereco{get;set;}		
 
-		public int qtdBlocos{get;set;}	
-	
-		public string proprietario{get;set;}
+		public int qtdBlocos{get;set;}
+
+        public int qtdUnidades { get; set; }
+
+        public string proprietario{get;set;}
 
 		public string cnpj{get;set;}
 

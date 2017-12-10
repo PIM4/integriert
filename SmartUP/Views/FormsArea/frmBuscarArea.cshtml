@@ -36,7 +36,7 @@
 							</div>
 						</form>
 						<div class="input-field col s5 m4 l3" style="top: -10px; position: relative;">
-							<a href="@Url.Action("FrmCadastrarArea", "FormsCondominio")" class="btn botao" >Novo</a>
+							<a href="@Url.Action("FrmCadastrarArea", "FormsArea")" class="btn botao" >Novo</a>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 						 <table class="display datatable striped" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-                                    <th>...</th>
+                                    <th width="30">Editar</th>
 									<th>Nome</th>
 									<th>Descrição</th>
 									<th>Capacidade Max</th>
@@ -56,6 +56,7 @@
 							</thead>
                            <tfoot>
                                <tr>
+                                    <th></th>
                                     <th>Nome</th>
 									<th>Descrição</th>
 									<th>Capacidade Max</th>
@@ -67,7 +68,7 @@
                                 @foreach (var area in ViewBag.lstArea)
                                 {
                                     <tr>
-                                        <td>@Url.Action("frmAlterarBloco", "FormsCondominio", area)</td>
+                                        <td><a href="@Url.Action("frmAlterarBloco", "FormsCondominio", area)"><i class="material-icons">edit</i></a></td>
                                         <td>@area.nome</td>
                                         <td>@area.descricao</td>
                                         <td>@area.capacMax</td>
