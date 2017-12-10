@@ -30,8 +30,8 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND, " +
-                        "ID_ENDERECO) VALUES ('"
+                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND) " +
+                        "VALUES ('"
                         //+ condominio.nome + "', '" 
                         + condominio.dataInauguracao.ToString() + "', '"
                         + condominio.proprietario + "', '" 
