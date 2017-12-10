@@ -31,24 +31,46 @@ namespace SmartUP.Controllers
         #endregion
         
         #region Bloco
-            public ActionResult FrmBuscarBloco()
+        public ActionResult FrmBuscarBloco()
+        {
+            BlocoDAO blocoDAO = new BlocoDAO();
+            ViewBag.lstBloco = blocoDAO.busca();
+            return View();
+        }
+        public ActionResult FrmCadastrarBloco(Bloco obj)
+        {
+            if(obj != null)
             {
-                BlocoDAO blocoDAO = new BlocoDAO();
-                ViewBag.lstBloco = blocoDAO.busca();
-                return View();
+                BlocoDAO daoBloco = new BlocoDAO();
+                CondominioDAO condDAO = new CondominioDAO();
+                List<Condominio> lstCond = condDAO.busca();
+                List<Bloco> lstbloco = daoBloco.busca();
+                foreach(Bloco bloco in lstbloco)
+                {
+                    if(bloco.id_bloco == obj.id_bloco)
+                    {
+                        foreach(Condominio cond in lstCond)
+                        {
+                            if(cond.id_cond == bloco.cond.id_cond)
+                            {
+
+                            }
+                        }
+                        ViewBag.bloco = bloco;
+                        return View();
+                    }
+                }
             }
-            public ActionResult FrmCadastrarBloco(Bloco obj)
-            {
-                CondominioDAO dao = new CondominioDAO();
-                ViewBag.lstCond = dao.busca();
-                return View();
-            }
-            public ActionResult CadastrarBloco(Bloco obj)
-            {
-                BlocoDAO dao = new BlocoDAO();
-                dao.cadastra(obj);
-                return RedirectToAction("frmBuscarBloco", "FormsCondominio");
-            }
+            CondominioDAO dao = new CondominioDAO();
+            ViewBag.lstCond = dao.busca();
+            return View();
+        }
+        public ActionResult CadastrarBloco(Bloco obj)
+        {
+            BlocoDAO dao = new BlocoDAO();
+            dao.cadastra(obj);
+            return RedirectToAction("frmBuscarBloco", "FormsCondominio");
+        }
         #endregion
         
         #region Condominio
