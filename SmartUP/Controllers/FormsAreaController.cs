@@ -17,8 +17,13 @@ namespace SmartUP.Controllers
             ViewBag.lstArea = areaDAO.busca();
             return View();
         }
-        public ActionResult FrmCadastrarArea(Area area)
+        public ActionResult FrmCadastrarArea()
         {
+            return View();
+        }
+        public ActionResult FrmAlterarArea(Area area)
+        {
+            ViewBag.area = area;
             return View();
         }
         public ActionResult CadastraArea(Area area)

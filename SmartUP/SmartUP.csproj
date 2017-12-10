@@ -129,6 +129,7 @@
     <Content Include="Views\FormsCondominio\frmCadastrarCondominio.cshtml" />
     <Content Include="Views\FormsUnidade\frmCadastrarUnidade.cshtml" />
     <Content Include="Views\FormsBloco\frmAlterarBloco.cshtml" />
+    <Content Include="Views\FormsArea\frmAlteraArea.cshtml" />
     <None Include="Views\FormsFinancas\frmBuscarContasAPagar.cshtml" />
     <None Include="Views\FormsFinancas\frmBuscarContasAReceber.cshtml" />
     <None Include="Views\FormsFinancas\frmBuscarFornecedor.cshtml" />

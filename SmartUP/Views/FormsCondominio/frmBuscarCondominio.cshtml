@@ -36,7 +36,7 @@
 							</div>
 						</form>
 						<div class="input-field col s5 m4 l3" style="top: -10px; position: relative;">
-							<a  href="@Url.Action("frmCadastrarCondominio", "FormsCondominio")" class="btn botao" >Novo</a>
+							<a  href="@Url.Action("frmCadastrarCondominio")" class="btn botao" >Novo</a>
 						</div>
 					</div>
 				</div>
@@ -51,20 +51,22 @@
 						<table class="striped datatable">
 							<thead>
 								<tr>
-									<th>Nome</th>
-									<th>Endereço</th>
-									<th>Quantidade de Blocos</th>
-									<th>Proprietario</th>
+                                    <th>Nome</th>
+                                    <th>CNPJ</th>
+                                    <th>Proprietario</th>
                                     <th>Inauguração</th>
+                                    <th>Quantidade de Blocos</th>
+                                    <th>Quantidade de Blocos</th>
 								</tr>
 							</thead>
                             <tfoot>
                                 <tr>
                                     <th>Nome</th>
-                                    <th>Endereço</th>
-                                    <th>Quantidade de Blocos</th>
+                                    <th>CNPJ</th>
                                     <th>Proprietario</th>
                                     <th>Inauguração</th>
+                                    <th>Quantidade de Blocos</th>
+                                    <th>Quantidade de Blocos</th>
                                 </tr>
                             </tfoot>
 							<tbody>
@@ -72,10 +74,11 @@
                                 {
                                     <tr>
                                         <td>@cond.nome</td>
-                                        <td><a class="modal-trigger" href="#modal1">Endereço</a></td>
-                                        <td>@cond.qtdBlocos</td>
+                                        <td>@cond.cnpj</td>
                                         <td>@cond.proprietario</td>
                                         <td>@cond.dataInauguracao</td>
+                                        <td>@cond.qtdUnidades</td>
+                                        <td>@cond.qtdBlocos</td>
                                     </tr>
                                 }
 							</tbody>
@@ -83,107 +86,7 @@
 					</div>
 				</div>
 			</div>
-
 		</section>
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <div class="row">
-                    <h5 style="">Endereço</h5>
-                    <div class="col s12">
-                        <ul class="tabs">
-                            <li class="tab col s3"><a href="#test1">Test 1</a></li>
-                            <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-                        </ul>
-                    </div>
-                    <div id="test1" class="col s12">
-                        <form action="">
-                            <div class="row">
-                                <div class="input-field col s12 m3">
-                                    <input id="end.logradouro" name="end.logradouro" type="text" disabled>
-                                    <label for="end.logradouro">Logradouro</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.numero" name="end.numero" type="text" disabled>
-                                    <label for="end.numero">Numero</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.complemento" name="end.complemento" type="text" disabled>
-                                    <label for="end.complemento">Complemento</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.bairro" name="end.bairro" type="text" disabled>
-                                    <label for="end.bairro">Bairro</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12 m3">
-                                    <input id="end.cep" name="end.cep" type="text" disabled>
-                                    <label for="end.cep">CEP</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.cidade" name="end.cidade" type="text" disabled>
-                                    <label for="end.cidade">Cidade</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.estado" name="area.estado" type="text" disabled>
-                                    <label for="end.estado">Estado</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.desc" name="end.desc" type="text" disabled>
-                                    <label for="end.desc">Descrição</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="test2" class="col s12">
-                        <form action="">
-                            
-                            <div class="row">
-                                <div class="input-field col s12 m3">
-                                    <input id="end.logradouro" name="end.logradouro" type="text" disabled>
-                                    <label for="end.logradouro">Logradouro</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.numero" name="end.numero" type="text" disabled>
-                                    <label for="end.numero">Numero</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.complemento" name="end.complemento" type="text" disabled>
-                                    <label for="end.complemento">Complemento</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.bairro" name="end.bairro" type="text" disabled>
-                                    <label for="end.bairro">Bairro</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12 m3">
-                                    <input id="end.cep" name="end.cep" type="text" disabled>
-                                    <label for="end.cep">CEP</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.cidade" name="end.cidade" type="text" disabled>
-                                    <label for="end.cidade">Cidade</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.estado" name="area.estado" type="text" disabled>
-                                    <label for="end.estado">Estado</label>
-                                </div>
-                                <div class="input-field col s12 m3">
-                                    <input id="end.desc" name="end.desc" type="text" disabled>
-                                    <label for="end.desc">Descrição</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
-            </div>
-        </div>
-
 	</div>
 </section>
 <div class="fundo"></div>

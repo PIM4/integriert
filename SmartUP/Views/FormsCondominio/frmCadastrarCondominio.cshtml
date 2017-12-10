@@ -13,7 +13,7 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="@Url.Action("frmBuscarCondominio","FormsCondominio")">
+						<a class="" href="@Url.Action("frmBuscarCondominio")">
 							<span class="span_forms">Buscar condominio</span>
 						</a>	
 						/						
@@ -28,7 +28,8 @@
 					<div class="cadastroForm">
 					<form class="">
 						<h5 style="">Cadastro de condominío</h5>
-						<div class="row">
+						
+                        <div class="row">
 							<div class="input-field col s12 m4" >
 								<input id="icon_prefix" type="text" class="validate">
 								<label for="icon_prefix">Nome</label>
@@ -42,6 +43,7 @@
 								<label for="icon_prefix">Proprietário</label>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="tel" class="validate date">
@@ -55,39 +57,8 @@
 								<input id="icon_prefix" type="number" class="validate">
 								<label for="icon_prefix">Unidades</label>
 							</div>	
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate cep">
-								<label for="icon_prefix">CEP</label>
-							</div>														
 						</div>
-						<div class="row">
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Logradouro</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate">
-								<label for="icon_prefix">Numero</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Cidade</label>
-							</div>	
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Estado</label>
-							</div>															
-						</div>			
-						<div class="row">
-							<div class="input-field col s12 m4" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Complemento</label>
-							</div>
-							<div class="input-field col s12 m4" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Descrição</label>
-							</div>
-						</div>
+						
 						<div class="row">
 							<div class="col s3">
 								<a class="btn botao">Salvar</a>
