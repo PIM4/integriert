@@ -22,6 +22,8 @@ namespace Model.Entity
         public bool ativo { get; set; }
 
 		public Condominio cond{get;set;}
+
+        public int totUnidade { get; set; }
 	}
 
 }
