@@ -30,7 +30,8 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND, ID_ENDERECO) VALUES ('"
+                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND, " +
+                        "ID_ENDERECO) VALUES ('"
                         //+ condominio.nome + "', '" 
                         + (condominio.dataInauguracao.ToString()) + "', '"
                         + condominio.proprietario + "', '" 
@@ -54,7 +55,6 @@ namespace Model.DAO.Especifico
             List<Condominio> lstCond = new List<Condominio>();
             try
             {
-
                 query = "SELECT * FROM CONDOMINIO WHERE STS_ATIVO = 1;";
 
                 lstCond = setarObjeto(banco.MetodoSelect(query));

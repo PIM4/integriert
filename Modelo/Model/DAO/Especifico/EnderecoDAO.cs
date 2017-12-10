@@ -33,7 +33,8 @@ namespace Model.DAO.Especifico
             {
                 end.pessoa = new Pessoa();
                 end.fornecedor = new Fornecedor();
-                query = "INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP, ID_PESSOA, STS_ATIVO, DESCRICAO, ID_FORNECEDOR) VALUES ('"
+                query = "INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, CEP, " +
+                        "ID_PESSOA, STS_ATIVO, DESCRICAO, ID_FORNECEDOR) VALUES ('"
                         + end.logradouro + "', " 
                         + (end.numero).ToString() + ", '" 
                         + end.complemento + "', '" 

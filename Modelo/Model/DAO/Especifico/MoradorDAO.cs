@@ -53,7 +53,7 @@ namespace Model.DAO.Especifico
             List<Morador> lstMorador = new List<Morador>();
             try
             {
-                query = "SELECT M.ID_MORADOR, P.ID_PESSOA, U.ID_UNIDADE, M.STS_ATIVO, P.NOME, P.CPF, U.IDENTIFICACAO FROM PESSOA AS P " +
+                query = "SELECT M.ID_MORADOR, P.ID_PESSOA, U.ID_UNIDADE, M.STS_ATIVO, P.NOME, P.CPF, P.RG, U.IDENTIFICACAO FROM PESSOA AS P " +
                         "INNER JOIN MORADOR AS M ON M.ID_PESSOA = P.ID_PESSOA " +
                         "INNER JOIN UNIDADE AS U ON U.ID_UNIDADE = M.ID_UNIDADE " +
                         "WHERE M.STS_ATIVO = 1;";
