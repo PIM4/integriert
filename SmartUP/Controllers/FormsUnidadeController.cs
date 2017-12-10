@@ -51,7 +51,7 @@ namespace SmartUP.Controllers
         {
             UnidadeDAO dao = new UnidadeDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarUnidade", "FormsCondominio");
+            return RedirectToAction("frmBuscarUnidade");
         }
         #endregion
     }

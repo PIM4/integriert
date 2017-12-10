@@ -35,7 +35,7 @@
                                 </div>
 
                                 <div class="input-field col s12 m3">
-                                    <select id="obj.proprietario.nome" name="obj.proprietario.nome" required>
+                                    <select id="obj.proprietario.nome" name="obj.proprietario.id_pessoa" required>
                                         <option value="" disabled selected>Selecione o proprietario</option>
                                         @foreach (var proprietario in ViewBag.lstPessoa)
                                         {
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="input-field col s12 m3">
-                                    <select id="obj.bloco.nome" name="obj.bloco.nome" required>
+                                    <select id="obj.bloco.nome" name="obj.bloco.id_bloco" required>
                                         <option value="" disabled selected>Selecione o bloco</option>
                                         @foreach (var bloco in @ViewBag.lstBloco)
                                         {
