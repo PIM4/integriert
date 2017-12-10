@@ -11,7 +11,7 @@ namespace Model.Entity
         {
 
         }
-		public Morador(bool morador, bool proprietario, string nome, string rg, string documento, List<Endereco> endereco, List<Telefone> telefone)
+		public Morador(bool morador, bool proprietario, string nome, string rg, string documento, List<Telefone> telefone)
 		{
 			
 		}
