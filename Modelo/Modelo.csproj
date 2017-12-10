@@ -47,7 +47,6 @@
     <Compile Include="Model\DAO\Especifico\ContaPagarDAO.cs" />
     <Compile Include="Model\DAO\Especifico\ContaReceberDAO.cs" />
     <Compile Include="Model\DAO\Especifico\CorrespondenciaDAO.cs" />
-    <Compile Include="Model\DAO\Especifico\EnderecoDAO.cs" />
     <Compile Include="Model\DAO\Especifico\EnquetesDAO.cs" />
     <Compile Include="Model\DAO\Especifico\EventoDAO.cs" />
     <Compile Include="Model\DAO\Especifico\facede.cs" />
@@ -74,7 +73,6 @@
     <Compile Include="Model\Entity\ContaPagar.cs" />
     <Compile Include="Model\Entity\ContaReceber.cs" />
     <Compile Include="Model\Entity\Correspondencia.cs" />
-    <Compile Include="Model\Entity\Endereco.cs" />
     <Compile Include="Model\Entity\Enquete.cs" />
     <Compile Include="Model\Entity\Evento.cs" />
     <Compile Include="Model\Entity\Fornecedor.cs" />

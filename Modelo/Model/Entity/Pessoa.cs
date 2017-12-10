@@ -12,7 +12,6 @@ namespace Model.Entity
 		public string rg{get;set;}
 		public string cpf{get;set;}
 		public Login login{set;get;}
-		public List<Endereco> endereco{set;get;}
 		public List<Telefone> telefone{set;get;}
         public bool ativo { get; set; }
 
@@ -20,7 +19,7 @@ namespace Model.Entity
         {
 
         }
-		public Pessoa(string nome, string rg, string documento, List<Endereco> endereco, List<Telefone> telefone)
+		public Pessoa(string nome, string rg, string documento, List<Telefone> telefone)
 		{
 
 		}

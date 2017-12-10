@@ -10,7 +10,7 @@ namespace Model.Entity
 
         }
 
-        public Condominio(string nome, Endereco endereco, string proprietario, string cnpj, DateTime dtInau)
+        public Condominio(string nome, string proprietario, string cnpj, DateTime dtInau)
         {
 
         }
@@ -18,8 +18,7 @@ namespace Model.Entity
         public int id_cond { get; set; }
 
 		public string nome{get;set;}
-
-		public Endereco endereco{get;set;}		
+        
 
 		public int qtdBlocos{get;set;}
 

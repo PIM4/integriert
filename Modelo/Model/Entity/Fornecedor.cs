@@ -11,7 +11,7 @@ namespace Model.Entity
 
         }
 
-        public Fornecedor(string nomeEmpresa, string ramo, string cnpj, List<Endereco> endereco, List<Telefone> telefone)
+        public Fornecedor(string nomeEmpresa, string ramo, string cnpj, List<Telefone> telefone)
         {
 
         }
@@ -23,8 +23,6 @@ namespace Model.Entity
 		public string ramo { get; set; }
 
 		public string cnpj { get; set; }
-
-        public List<Endereco> endereco { get; set; }
 
         public List<Telefone> telefone { get; set; }
         

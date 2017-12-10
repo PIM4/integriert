@@ -30,13 +30,14 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND, ID_ENDERECO) VALUES ('"
+                query = "INSERT INTO CONDOMINIO (DT_INAUGURACAO, PROPRIETARIO, CNPJ, STS_ATIVO, NOME_COND) " +
+                        "VALUES ('"
                         //+ condominio.nome + "', '" 
-                        + (condominio.dataInauguracao.ToString()) + "', '"
+                        + condominio.dataInauguracao.ToString() + "', '"
                         + condominio.proprietario + "', '" 
                         + condominio.cnpj + "', 1, '" 
-                        + condominio.nome + "', " 
-                        + condominio.endereco.id_endereco.ToString() + ");";
+                        + condominio.nome + "'" 
+                        + ");";
                 banco.MetodoNaoQuery(query);
                 return true;
             }
@@ -54,7 +55,6 @@ namespace Model.DAO.Especifico
             List<Condominio> lstCond = new List<Condominio>();
             try
             {
-
                 query = "SELECT * FROM CONDOMINIO WHERE STS_ATIVO = 1;";
 
                 lstCond = setarObjeto(banco.MetodoSelect(query));
@@ -173,10 +173,6 @@ namespace Model.DAO.Especifico
                         obj.cnpj = Convert.ToString(dr["CNPJ"].ToString());
                         obj.dataInauguracao = Convert.ToDateTime(dr["DT_INAUGURACAO"].ToString());
                         obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
-
-                        obj.endereco = new Endereco();
-                        obj.endereco.id_endereco = Convert.ToInt32(dr["ID_ENDERECO"].ToString());
-                        //obj.endereco.logradouro = Convert.ToString(dr[]);
 
                         lstCond.Add(obj);
                     }
