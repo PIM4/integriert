@@ -7,25 +7,14 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class FormsFuncionarioController : Controller
+    public class FormsTerceiroController : Controller
     {
         // GET: Forms_funcionario
-        public ActionResult FrmBuscarInterno()
-        {
-            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-            ViewBag.lstFuncionario = funcionarioDAO.busca();
-            return View();
-        }
 
         public ActionResult FrmBuscarTerceiro()
         {
             TerceiroDAO terceiroDAO = new TerceiroDAO();
             ViewBag.lstTerceiro = terceiroDAO.busca();
-            return View();
-        }
-
-        public ActionResult FrmCadastrarInterno()
-        {
             return View();
         }
 

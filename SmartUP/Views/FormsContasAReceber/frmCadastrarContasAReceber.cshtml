@@ -12,13 +12,13 @@
                         <a class="" href="@Url.Action("Dash", "Home")">
                             <span class="span_forms">Home</span>
                         </a>
-						/
-						<a class="" href="@Url.Action("frmBuscarReclam_sugest","FormsMorador")">
-							<span class="span_forms">Buscar reclamação</span>
+						/	
+						<a class="" href="@Url.Action("frmBuscarContasAReceber")">
+							<span class="span_forms">Buscar contas a receber</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar reclamação</span>
+							<span class="span_forms">Cadastrar contas a receber</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,23 +27,29 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de reclamação</h5>
+						<h5 style="">Cadastro de contas a receber</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Autor</label>
+								<label for="icon_prefix">Condominio</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Titulo</label>
+								<label for="icon_prefix">Unidade</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Mensagem</label>
+								<label for="icon_prefix">Observação</label>
 							</div>
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="date" class="validate date">
 								<label for="icon_prefix">Data</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12 m3" >
+								<input id="icon_prefix" type="tel" class="validate money">
+								<label for="icon_prefix">Valor</label>
 							</div>
 						</div>
 						<div class="row">

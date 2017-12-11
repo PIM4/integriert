@@ -13,12 +13,12 @@
                             <span class="span_forms">Home</span>
                         </a>
 						/
-						<a class="" href="@Url.Action("frmBuscarObra","FormsFinancas")">
-							<span class="span_forms">Buscar obras</span>
+						<a class="" href="@Url.Action("frmBuscarFornecedor")">
+							<span class="span_forms">Buscar fornecedor</span>
 						</a>	
 						/						
 						<a class="span_forms ativo" href="#">
-							<span class="span_forms">Cadastrar obras</span>
+							<span class="span_forms">Cadastrar fornecedor</span>
 						</a>					
 					</li>
 				</ul>
@@ -27,23 +27,29 @@
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
 					<form class="">
-						<h5 style="">Cadastro de obras</h5>
+						<h5 style="">Cadastro de fornecedor</h5>
 						<div class="row">
 							<div class="input-field col s12 m3" >
 								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Tipo de obra</label>
+								<label for="icon_prefix">Nome da empresa</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
-								<label for="icon_prefix">Data de inicio</label>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Ramo</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
-								<label for="icon_prefix">Previsão de termino</label>
+								<input id="icon_prefix" type="tel" class="validate cnpj">
+								<label for="icon_prefix">CNPJ</label>
 							</div>
 							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate date">
-								<label for="icon_prefix">Data de termino</label>
+								<input id="icon_prefix" type="tel" class="validate sp_celphones">
+								<label for="icon_prefix">Telefone</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12 m3" >
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Endereço</label>
 							</div>
 						</div>
 						<div class="row">

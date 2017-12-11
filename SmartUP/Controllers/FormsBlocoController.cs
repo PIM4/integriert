@@ -73,7 +73,7 @@ namespace SmartUP.Controllers
         {
             BlocoDAO dao = new BlocoDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarBloco", "FormsCondominio");
+            return RedirectToAction("frmBuscarBloco");
         }
         
         #endregion

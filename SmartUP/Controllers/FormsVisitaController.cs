@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace SmartUP.Controllers
 {
-    public class FormsEntradaESaidaController : Controller
+    public class FormsVisitaController : Controller
     {
-    #region Visita
+        #region Visita
         public ActionResult FrmBuscarVisita()
         {
             VisitaDAO visitaDAO = new VisitaDAO();
@@ -33,26 +33,5 @@ namespace SmartUP.Controllers
             return RedirectToAction("frmBuscarVisita");
         }
         #endregion
-
-        #region Visitante
-        public ActionResult FrmBuscarVisitante()
-        {
-            VisitanteDAO visitanteDAO = new VisitanteDAO();
-            ViewBag.lstVisitante = visitanteDAO.busca();
-            return View();
-        }
-
-        public ActionResult FrmCadastrarVisitante()
-        {
-            return View();
-        }
-
-        public ActionResult CadastraVisitante(Visitante obj)
-        {
-            VisitanteDAO dao = new VisitanteDAO();
-            dao.cadastra(obj);
-            return RedirectToAction("frmBuscarVisitante");
-        }
-    #endregion
     }
 }

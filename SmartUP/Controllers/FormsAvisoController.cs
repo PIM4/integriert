@@ -27,7 +27,7 @@ namespace SmartUP.Controllers
         {
             AvisoDAO dao = new AvisoDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarAviso", "FormsCondominio");
+            return RedirectToAction("frmBuscarAviso");
         }
         #endregion
     }

@@ -30,7 +30,7 @@ namespace SmartUP.Controllers
         {
             AreaDAO areaDAO = new AreaDAO();
             areaDAO.cadastra(area);
-            return RedirectToAction("frmBuscarArea", "FormsCondominio");
+            return RedirectToAction("frmBuscarArea");
         }
         #endregion
     }
