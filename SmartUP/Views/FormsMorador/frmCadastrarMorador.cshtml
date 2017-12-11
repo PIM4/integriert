@@ -26,42 +26,44 @@
 			<div class="row">
 				<div class="col s12 " style="padding: 22px;">
 					<div class="cadastroForm">
-					<form class="">
-						<h5 style="">Cadastro de morador</h5>
-						<div class="row">
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Nome</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate rg">
-								<label for="icon_prefix">RG</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate cpf">
-								<label for="icon_prefix">CPF</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Unidade</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="tel" class="validate sp_celphones">
-								<label for="icon_prefix">Telefone</label>
-							</div>
-							<div class="input-field col s12 m3" >
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Endereço</label>
-							</div>
-						</div>						
-						<div class="row">
-							<div class="col s3">
-								<a class="btn botao">Salvar</a>
-							</div>
-						</div>						
-					</form>
+                        <form action="@Url.Action("CadastraMorador")" method="post">
+                            <h5 style="">Cadastro de morador</h5>
+                            <div class="row">
+                                <div class="input-field col s12 m3">
+                                    <input id="obj.nome" name="obj.nome" type="text" class="validate">
+                                    <label for="obj.nome">Nome</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <input id="obj.rg" name="obj.rg" type="tel" class="validate rg">
+                                    <label for="obj.rg">RG</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <input id="obj.cpf" name="obj.cpf" type="tel" class="validate cpf">
+                                    <label for="obj.cpf">CPF</label>
+                                </div>
+                                <div class="input-field col s12 m3">
+                                    <select id="obj.unidade.id_unidade" name="obj.unidade.id_unidade" required>
+                                        <option value="" disabled selected>Selecione o unidade</option>
+                                        @foreach (var unidade in ViewBag.lstUnidade)
+                                        {
+                                            <option value="@unidade.id_unidade">@unidade.identificacao</option>
+                                        }
+                                    </select>
+                                    <label for="obj.unidade.id_unidade" style="display:none;">Selecione o unidade</label>
+                                </div>
+                            </div>
+                            @*<div class="row">
+                <div class="input-field col s12 m3" >
+                    <input id="icon_prefix" type="tel" class="validate sp_celphones">
+                    <label for="icon_prefix">Telefone</label>
+                </div>
+            </div>*@
+                            <div class="row">
+                                <div class="col s3">
+                                    <button class="btn botao">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
 					</div>
 				</div>
 			</div>

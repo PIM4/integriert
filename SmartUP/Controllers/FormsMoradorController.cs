@@ -1,4 +1,5 @@
 ﻿using Model.DAO.Especifico;
+using Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,18 @@ namespace SmartUP.Controllers
             MoradorDAO moradorDAO = new MoradorDAO();
             ViewBag.lstMorador = moradorDAO.busca();
             return View();
+        }
+        public ActionResult FrmCadastrarMorador()
+        {
+            UnidadeDAO dao = new UnidadeDAO();
+            ViewBag.lstUnidade = dao.busca();
+            return View();
+        }
+        public ActionResult CadastraMorador(Morador obj)
+        {
+            MoradorDAO dao = new MoradorDAO();
+            dao.cadastra(obj);
+            return RedirectToAction("frmBuscarMorador");
         }
 
         public ActionResult FrmBuscarCorrespondencia()
@@ -52,10 +65,8 @@ namespace SmartUP.Controllers
             return View();
         }
 
-        public ActionResult FrmCadastrarMorador()
-        {
-            return View();
-        }
+
+
 
         public ActionResult FrmCadastrarCorrespondencia()
         {

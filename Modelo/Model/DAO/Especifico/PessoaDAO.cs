@@ -34,7 +34,7 @@ namespace Model.DAO.Especifico
                         +nome + "', '"
                         +cpf + "', '"
                         +rg + "', '"
-                        +data_nasc.ToShortDateString()
+                        +data_nasc.ToString()
                         + "', 1);";
                 banco.MetodoNaoQuery(query);
                 List<Pessoa> listPessoa = buscaPorRg(rg);
