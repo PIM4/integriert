@@ -11,13 +11,13 @@ namespace SmartUP.Controllers
     public class FormsVisitaController : Controller
     {
         #region Visita
-        public ActionResult FrmBuscarVisita()
+        public ActionResult frmBuscaVisita()
         {
             VisitaDAO visitaDAO = new VisitaDAO();
             ViewBag.lstVisita = visitaDAO.busca();
             return View();
         }
-        public ActionResult FrmCadastrarVisita()
+        public ActionResult frmCadastraVisita()
         {
             VisitanteDAO daoV = new VisitanteDAO();
             UnidadeDAO daoU = new UnidadeDAO();
@@ -30,7 +30,7 @@ namespace SmartUP.Controllers
         {
             VisitaDAO dao = new VisitaDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarVisita");
+            return RedirectToAction("frmBuscaVisita");
         }
         #endregion
     }

@@ -11,7 +11,7 @@ namespace SmartUP.Controllers
     public class FormsUnidadeController : Controller
     {
         #region Unidade
-        public ActionResult FrmBuscarUnidade()
+        public ActionResult frmBuscaUnidade()
         {
             UnidadeDAO unidadeDAO = new UnidadeDAO();
             BlocoDAO blocoDAO = new BlocoDAO();
@@ -39,7 +39,7 @@ namespace SmartUP.Controllers
 
             return View();
         }
-        public ActionResult FrmCadastrarUnidade()
+        public ActionResult frmCadastraUnidade()
         {
             PessoaDAO daoP = new PessoaDAO();
             BlocoDAO daob = new BlocoDAO();
@@ -51,7 +51,7 @@ namespace SmartUP.Controllers
         {
             UnidadeDAO dao = new UnidadeDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarUnidade");
+            return RedirectToAction("frmBuscaUnidade");
         }
         #endregion
     }

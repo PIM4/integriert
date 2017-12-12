@@ -11,33 +11,36 @@ namespace SmartUP.Controllers
     public class FormsCondominioController : Controller
     {
         #region Condominio
-        public ActionResult FrmBuscarCondominio()
+        public ActionResult frmBuscaCondominio()
         {
-            //EnderecoDAO enderecoDAO = new EnderecoDAO();
-            //List<Endereco> lstEndereco = enderecoDAO.busca();
-
-            //foreach(Endereco e in lstEndereco)
-            //{
-            //    if(e.id_endereco == 2)
-            //    {
-            //        ViewBag.end = e;
-            //    }
-            //}
             CondominioDAO condominioDAO = new CondominioDAO();
             ViewBag.lstCond = condominioDAO.busca();
             return View();
             }
-        public ActionResult FrmCadastrarCondominio(Condominio obj)
+        public ActionResult frmCadastraCondominio(Condominio obj)
         {
-           
+            PessoaDAO dao = new PessoaDAO();
+            ViewBag.lstPessoa = dao.busca();
+            return View();
+        }
+        public ActionResult frmAlteraCondominio(Condominio obj)
+        {
+            PessoaDAO dao = new PessoaDAO();
+            ViewBag.lstPessoa = dao.busca();
             return View();
         }
         public ActionResult CadastraCondominio(Condominio obj)
         {
             CondominioDAO dao = new CondominioDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmCondominio");
+            return RedirectToAction("frmBuscaCondominio");
         }
-    #endregion
+        public ActionResult AlteraCondominio(Condominio obj)
+        {
+            CondominioDAO dao = new CondominioDAO();
+            dao.altera(obj);
+            return RedirectToAction("frmBuscaCondominio");
+        }
+        #endregion
     }
 }

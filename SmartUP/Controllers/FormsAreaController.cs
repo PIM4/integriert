@@ -11,13 +11,13 @@ namespace SmartUP.Controllers
     public class FormsAreaController : Controller
     {
         #region AREA
-        public ActionResult FrmBuscarArea()
+        public ActionResult frmBuscaArea()
         {
             AreaDAO areaDAO = new AreaDAO();
             ViewBag.lstArea = areaDAO.busca();
             return View();
         }
-        public ActionResult FrmCadastrarArea()
+        public ActionResult frmCadastraArea()
         {
             return View();
         }
@@ -30,14 +30,13 @@ namespace SmartUP.Controllers
         {
             AreaDAO areaDAO = new AreaDAO();
             areaDAO.cadastra(area);
-            return RedirectToAction("frmBuscarArea");
+            return RedirectToAction("frmBuscaArea");
         }
-
         public ActionResult AlteraArea(Area area)
         {
             AreaDAO areaDAO = new AreaDAO();
             areaDAO.altera(area);
-            return RedirectToAction("frmBuscarArea");
+            return RedirectToAction("frmBuscaArea");
         }
         #endregion
     }

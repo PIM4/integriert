@@ -1,4 +1,5 @@
 ﻿using Model.DAO.Especifico;
+using Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,36 @@ namespace SmartUP.Controllers
     {
         // GET: Forms_funcionario
 
-        public ActionResult FrmBuscarTerceiro()
+        public ActionResult frmBuscaTerceiro()
         {
             TerceiroDAO terceiroDAO = new TerceiroDAO();
             ViewBag.lstTerceiro = terceiroDAO.busca();
             return View();
         }
 
-        public ActionResult FrmCadastrarTerceiro()
+        public ActionResult frmCadastraTerceiro()
         {
             return View();
+        }
+        public ActionResult FrmAlteraCorrespondencia(Terceiro obj)
+        {
+            ViewBag.obj = obj;
+            return View();
+        }
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ActionResult CadastraCorrespondencia(Terceiro obj)
+        {
+            TerceiroDAO dao = new TerceiroDAO();
+            dao.cadastra(obj);
+            return RedirectToAction("frmBuscaTerceiro");
+        }
+        public ActionResult CadastraContasAReceber(Terceiro obj)
+        {
+            TerceiroDAO dao = new TerceiroDAO();
+            dao.cadastra(obj);
+            return RedirectToAction("frmBuscaTerceiro");
         }
     }
 }

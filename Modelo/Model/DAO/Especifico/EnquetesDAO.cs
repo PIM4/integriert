@@ -113,7 +113,7 @@ namespace Model.DAO.Especifico
             List<Enquete> lstEnquete = new List<Enquete>();
             try
             {
-                query = "SELECT E.PERGUNTA, E.DT_INICIO, E.DT_FINAL, C.NOME_COND FROM ENQUETE AS E"
+                query = "SELECT E.PERGUNTA, E.ID_ENQUETE, E.STS_ATIVO, E.DT_INICIO, E.DT_FINAL, C.NOME_COND FROM ENQUETE AS E"
                         + " INNER JOIN CONDOMINIO AS C ON E.ID_COND = C.ID_COND"
                         + " WHERE E.STS_ATIVO = 1;";
                 lstEnquete = setarObjeto(banco.MetodoSelect(query));

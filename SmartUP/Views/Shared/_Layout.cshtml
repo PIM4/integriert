@@ -30,10 +30,6 @@
     {
         @Html.Partial("_menuLateralADM");
     }
-    @if (Session["PorteiroLogado"] != null)
-    {
-        @Html.Partial("_menuLateralPorteiro");
-    }
     @if (Session["MoradorLogado"] != null)
     {
         @Html.Partial("_menuLateralMorador");

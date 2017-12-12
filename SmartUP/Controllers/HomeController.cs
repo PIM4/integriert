@@ -17,9 +17,22 @@ namespace SmartUP.Controllers
             return View();
         }
 
-        public ActionResult Dash()
+        public ActionResult Dash(Login user)
         {
+            //if(Session["ADMLogado"] != null)
+            //{
+            //    ViewBag.type = "Administrador";
+            //}
+            //if (Session["PorteiroLogado"] != null)
+            //{
+            //    ViewBag.type = "Porteiro";
+            //}
+            //if (Session["MoradorLogado"] != null)
+            //{
+            //    ViewBag.type = "Morador";
+            //}
             Session["ADMLogado"] = "Carlos";
+            ViewBag.nome = user.login;
             return View();
         }
 
@@ -27,11 +40,12 @@ namespace SmartUP.Controllers
         {
             LoginDAO dao = new LoginDAO();
             Login user = dao.busca(email, senha);
-            if (user != null)
+            if (user.login == "")
             {
                 if (user.permissao == 1)
                 {
                     Session["ADMLogado"] = user.login;
+                    
                 }
                 if (user.permissao == 2)
                 {
@@ -42,7 +56,7 @@ namespace SmartUP.Controllers
                     Session["MoradorLogado"] = user.login;
                 }
                 ViewBag.Nome = user.login;
-                return RedirectToAction("Dash", "Home");
+                return RedirectToAction("Dash", "Home", user);
             }
             else
             {

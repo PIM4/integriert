@@ -1,0 +1,78 @@
+<section class="content" style="top:50px; position: relative;">
+	<div class="row">
+		<div class="col s12 compensa">
+			<div class="col s12" style="padding: 0 20px;">
+				<style type="text/css">
+					.span_forms{ padding: 0 10px; font-size: 16px;}
+					.span_forms.ativo{ color: #444; }
+					.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected, .picker__date-display{background: #039be5;}
+				</style>
+				<ul class="tab" style="margin-top: 0;">
+					<li class="tab col s12 " style="background-color: #f6f6f6; padding: 10px 5px; border-radius: 10px;" >
+                        <a class="" href="@Url.Action("Dash", "Home")">
+                            <span class="span_forms">Home</span>
+                        </a>
+						/
+						<a class="" href="@Url.Action("frmBuscaVisita")">
+							<span class="span_forms">Buscar visita</span>
+						</a>	
+						/						
+						<a class="span_forms ativo" href="#">
+							<span class="span_forms">Cadastrar visita</span>
+						</a>					
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col s12 " style="padding: 22px;">
+					<div class="cadastroForm">
+                        <form action="@Url.Action("CadastraVisita")" method="post">
+                            <h5 style="">Cadastro de visita</h5>
+                            <div class="row">
+                                <div class="input-field col s12 m3 l3">
+                                    <select id="obj.visitante" name="obj.visitante" required>
+                                        <option value="" disabled selected>Selecione o visitante</option>
+                                        @foreach (var obj in ViewBag.lstVisitante)
+                                        {
+                                            <option value="@obj.id_visitante">@obj.nome</option>
+                                        }
+                                    </select>
+                                    <label for="obj.visitante" style="display:none;">Selecione o visitante</label>
+                                </div>
+
+                                <div class="input-field col s12 m3 l3">
+                                    <select id="obj.unidade" name="obj.unidade" required>
+                                        <option value="" disabled selected>Selecione o unidade</option>
+                                        @foreach (var obj in ViewBag.lstUnidade)
+                                        {
+                                            <option value="@obj.id_unidade">@obj.identificacao</option>
+                                        }
+                                    </select>
+                                    <label for="obj.unidade" style="display:none;">Selecione o unidade</label>
+                                </div>
+
+                                <div class="input-field col s12 m3">
+                                    <input id="obj.dtChegada" type="text" class="validate datetime">
+                                    <label for="obj.dtChegada">Data / Horario de entrada</label>
+                                </div>
+
+                                <div class="input-field col s12 m3">
+                                    <input id="obj.dtSaida" type="text" class="validate datetime">
+                                    <label for="obj.dtSaida">Data / Horario de saída</label>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col s3">
+                                    <button class="btn botao">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="fundo"></div>

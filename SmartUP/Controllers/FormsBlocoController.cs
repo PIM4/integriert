@@ -11,7 +11,7 @@ namespace SmartUP.Controllers
     public class FormsBlocoController : Controller
     {
         #region Bloco
-        public ActionResult FrmBuscarBloco()
+        public ActionResult frmBuscaBloco()
         {
             UnidadeDAO unidadeDAO = new UnidadeDAO();
             List<Unidade> totUni = unidadeDAO.busca();
@@ -34,13 +34,13 @@ namespace SmartUP.Controllers
             ViewBag.lstBloco = lstBloco;
             return View();
         }
-        public ActionResult FrmCadastrarBloco()
+        public ActionResult frmCadastraBloco()
         {
             CondominioDAO dao = new CondominioDAO();
             ViewBag.lstCond = dao.busca();
             return View();
         }
-        public ActionResult FrmAlterarBloco(Bloco obj)
+        public ActionResult FrmAlteraBloco(Bloco obj)
         {
             //if (obj != null)
             //{
@@ -67,15 +67,21 @@ namespace SmartUP.Controllers
             return View();
 
             //}
-            //return RedirectToAction("frmBuscarBloco");
+            //return RedirectToAction("frmBuscaBloco");
         }
         public ActionResult CadastrarBloco(Bloco obj)
         {
             BlocoDAO dao = new BlocoDAO();
             dao.cadastra(obj);
-            return RedirectToAction("frmBuscarBloco");
+            return RedirectToAction("frmBuscaBloco");
         }
-        
+        public ActionResult AlteraBloco(Bloco obj)
+        {
+            BlocoDAO dao = new BlocoDAO();
+            dao.altera(obj);
+            return RedirectToAction("frmBuscaBloco");
+        }
+
         #endregion
     }
 }

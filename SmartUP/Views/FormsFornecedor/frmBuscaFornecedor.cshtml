@@ -1,0 +1,86 @@
+<section class="content " style="top:50px; position: relative;">
+	<div class="row">
+		<div class="col s12 compensa">
+			<div class="col s12" style="padding: 0 20px;">
+				<style type="text/css">
+					.span_forms{ padding: 0 10px; font-size: 16px;}
+					.span_forms.ativo{ color: #444; }
+				</style>
+				<ul class="tab" style="margin-top: 0;">
+					<li class="tab col s12 " style="background-color: #f6f6f6; padding: 10px 5px; border-radius: 10px;" >
+                        <a class="" href="@Url.Action("Dash", "Home")">
+                            <span class="span_forms">Home</span>
+                        </a>
+						/
+						<a class="span_forms ativo" >
+							<span class="span_forms">Buscar fornecedor</span>
+						</a>					
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div >
+
+	<div class=" compensa">
+		<section class="row gutter_form">
+			<div class="row">
+				<div class="col s12 " style="padding: 10px 0px; border-radius: 10px;">
+					<div class="col s12" style="">
+						<form class="">
+							<div class="row">
+								<div class="input-field col s12 m6 l4" style="top: 10px; position: relative;">
+									<i class="material-icons prefix" style="font-size: 38px;">search</i>
+									<input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Procure pelo nome</label>
+								</div>
+							</div>
+						</form>
+						<div class="input-field col s5 m4 l3" style="top: -10px; position: relative;">
+							<a  href="@Url.Action("frmCadastrarFornecedor", "FormsFinancas")" class="btn botao" >Novo</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m12 l12 ">
+					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
+						<table class="striped datatable">
+							<thead>
+								<tr>
+									<th>Nome da empresa</th>
+									<th>Ramo</th>
+									<th>CNPJ</th>
+									<th>Endereço</th>
+									<th>Telefone</th>
+								</tr>
+							</thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Nome da empresa</th>
+                                    <th>Ramo</th>
+                                    <th>CNPJ</th>
+                                    <th>Endereço</th>
+                                    <th>Telefone</th>
+                                </tr>
+                            </tfoot>
+							<tbody>
+                                @foreach (var fornecedor in ViewBag.lstFornecedor)
+                                {
+                                    <tr>
+                                        <td>@fornecedor.nomeEmpresa</td>
+                                        <td>@fornecedor.ramo</td>
+                                        <td>@fornecedor.cnpj</td>
+                                        <td>@fornecedor.endereco</td>
+                                        <td>@fornecedor.telefone</td>
+                                    </tr>
+                                }
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</div>
+</section>
+<div class="fundo"></div>
