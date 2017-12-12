@@ -30,7 +30,7 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                terceiro.id_pessoa = dao.cadastra(terceiro.nome, terceiro.cpf, terceiro.rg, terceiro.data_nasc);
+                terceiro.id_pessoa = dao.cadastra(terceiro.nome, terceiro.cpf, terceiro.rg);
                 query = "INSERT INTO TERCEIRO (ID_TIPO_SERVICO, ID_FORNECEDOR, ID_PESSOA, STS_ATIVO) VALUES (" +
                         terceiro.id_servico.ToString() + ", " + terceiro.fornecedor.id_fornecedor.ToString() +
                         ", " + terceiro.id_pessoa.ToString() + ", 1);";

@@ -34,7 +34,7 @@ namespace Model.DAO.Especifico
             query = null;
             try
             {
-                funcionario.id_funcionario = ps.cadastra(funcionario.nome, funcionario.cpf, funcionario.rg, funcionario.data_nasc);
+                funcionario.id_funcionario = ps.cadastra(funcionario.nome, funcionario.cpf, funcionario.rg);
                 query = "INSERT INTO FUNCIONARIO (ID_CARGO, ID_PESSOA, STS_ATIVO) VALUES ("
                         + (funcionario.cargo).ToString() + ", " 
                         + (funcionario.id_pessoa).ToString() 

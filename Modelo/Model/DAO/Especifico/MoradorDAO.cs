@@ -32,7 +32,7 @@ namespace Model.DAO.Especifico
             try
             {
                 
-                morador.id_pessoa = Pessoadao.cadastra(morador.nome, morador.cpf, morador.rg, morador.data_nasc);
+                morador.id_pessoa = Pessoadao.cadastra(morador.nome, morador.cpf, morador.rg);
                 query = "INSERT INTO MORADOR (ID_PESSOA, ID_UNIDADE, STS_ATIVO) VALUES (" +
                         morador.id_pessoa.ToString() + ", " +
                         morador.unidade.id_unidade.ToString() + ", 1);";

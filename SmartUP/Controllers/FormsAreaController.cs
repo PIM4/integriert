@@ -21,7 +21,7 @@ namespace SmartUP.Controllers
         {
             return View();
         }
-        public ActionResult FrmAlterarArea(Area area)
+        public ActionResult FrmAlteraArea(Area area)
         {
             ViewBag.area = area;
             return View();
@@ -30,6 +30,13 @@ namespace SmartUP.Controllers
         {
             AreaDAO areaDAO = new AreaDAO();
             areaDAO.cadastra(area);
+            return RedirectToAction("frmBuscarArea");
+        }
+
+        public ActionResult AlteraArea(Area area)
+        {
+            AreaDAO areaDAO = new AreaDAO();
+            areaDAO.altera(area);
             return RedirectToAction("frmBuscarArea");
         }
         #endregion

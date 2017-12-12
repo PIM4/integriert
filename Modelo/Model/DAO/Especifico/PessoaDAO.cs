@@ -25,16 +25,15 @@ namespace Model.DAO.Especifico
 
         #region CRUD
 
-        public int cadastra(string nome, string cpf, string rg, DateTime data_nasc)
+        public int cadastra(string nome, string cpf, string rg)
 		{
             query = null;
             try
             {
-                query = "INSERT INTO PESSOA (NOME, CPF, RG, DT_NASC, STS_ATIVO) VALUES ('"
+                query = "INSERT INTO PESSOA (NOME, CPF, RG, STS_ATIVO) VALUES ('"
                         +nome + "', '"
                         +cpf + "', '"
-                        +rg + "', '"
-                        +data_nasc.ToString()
+                        +rg 
                         + "', 1);";
                 banco.MetodoNaoQuery(query);
                 List<Pessoa> listPessoa = buscaPorRg(rg);
@@ -111,7 +110,6 @@ namespace Model.DAO.Especifico
                 query = "UPDATE PESSOA SET NOME = '" + nome + 
                         "', CPF = '" + cpf + 
                         "', RG = '" + rg +
-                        "', DT_NASC = '" + datanasc.ToShortDateString() + 
                         "' WHERE ID_PESSOA = " + id.ToString() + ";";
                 banco.MetodoNaoQuery(query);
                 return true;
@@ -160,7 +158,7 @@ namespace Model.DAO.Especifico
                         obj.nome = Convert.ToString(dr["NOME"].ToString());
                         obj.cpf = Convert.ToString(dr["CPF"].ToString());
                         obj.rg = Convert.ToString(dr["RG"].ToString());
-                        obj.data_nasc = Convert.ToDateTime(dr["DT_NASC"].ToString());
+                        //obj.data_nasc = Convert.ToDateTime(dr["DT_NASC"].ToString());
                         obj.ativo = Convert.ToBoolean(dr["STS_ATIVO"].ToString());
                         
                         lstPessoa.Add(obj);
