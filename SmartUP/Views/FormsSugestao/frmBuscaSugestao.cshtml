@@ -47,6 +47,7 @@
 						<table class="striped datatable">
                             <thead>
                             <tr>
+                                <th width="30">Editar</th>
                                 <th>Titulo</th>
                                 <th>Autor</th>
                                 <th>data</th>
@@ -54,6 +55,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th class="colunaFooter"></th>
                                     <th>Titulo</th>
                                     <th>Autor</th>
                                     <th>data</th>
@@ -63,6 +65,7 @@
                                 @foreach (var sugest in ViewBag.lstSugest)
                                 {
                                     <tr>
+                                        <td style="text-align: center"><a href="@Url.Action("frmAlteraSugestao", "FormsSugestao", sugest)"><i class="material-icons">edit</i></a> </td>
                                         <td>@sugest.titulo</td>
                                         <td>@sugest.autor</td>
                                         <td>@sugest.data</td>

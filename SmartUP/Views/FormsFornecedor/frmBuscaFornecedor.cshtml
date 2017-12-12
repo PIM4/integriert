@@ -47,6 +47,7 @@
 						<table class="striped datatable">
 							<thead>
 								<tr>
+                                    <th width="30">Editar</th>
 									<th>Nome da empresa</th>
 									<th>Ramo</th>
 									<th>CNPJ</th>
@@ -56,6 +57,7 @@
 							</thead>
                             <tfoot>
                                 <tr>
+                                    <th class="colunaFooter"></th>
                                     <th>Nome da empresa</th>
                                     <th>Ramo</th>
                                     <th>CNPJ</th>
@@ -67,6 +69,7 @@
                                 @foreach (var fornecedor in ViewBag.lstFornecedor)
                                 {
                                     <tr>
+                                        <td style="text-align: center"><a href="@Url.Action("frmAlteraFornecedor", "FormsFornecedor", fornecedor)"><i class="material-icons">edit</i></a> </td>
                                         <td>@fornecedor.nomeEmpresa</td>
                                         <td>@fornecedor.ramo</td>
                                         <td>@fornecedor.cnpj</td>

@@ -47,6 +47,7 @@
 						<table class="striped datatable">
 							<thead>
 								<tr>
+                                    <th width="30">Editar</th>
 									<th>Titulo</th>
 									<th>Autor</th>
 									<th>data</th>
@@ -54,6 +55,7 @@
 							</thead>
                             <tfoot>
                                 <tr>
+                                    <th class="colunaFooter"></th>
                                     <th>Titulo</th>
                                     <th>Autor</th>
                                     <th>data</th>
@@ -63,6 +65,7 @@
                                 @foreach (var reclam in ViewBag.lstReclam)
                                 {
                                     <tr>
+                                        <td style="text-align: center"><a href="@Url.Action("frmAlteraReclamacao", "FormsReclamacao", reclam)"><i class="material-icons">edit</i></a> </td>
                                         <td>@reclam.titulo</td>
                                         <td>@reclam.autor</td>
                                         <td>@reclam.data</td>

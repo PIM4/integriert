@@ -45,7 +45,8 @@
 				<div class="col s12 m12 l12 ">
 					<div style="padding: 0 22px; overflow: scroll;" class="table_form" >
 						<table class="striped datatable">
-							<thead>
+							@*// Cabeçalho da tabela*@
+                            <thead>
 								<tr>
                                     <th width="30">Editar</th>
 									<th>Nome</th>
@@ -53,26 +54,33 @@
                                     <th>Total de unidades</th>
 								</tr>
 							</thead>
+                            @*// Fim Cabeçalho da tabela
+                           
+                             // Rodapé da tabela*@
                             <tfoot>
                                 <tr>
      @*//////////////////////////////DISPLAY NONE NAS THS QUE NAO FOREM SER USADAS DE FILTRO////////////////////////////////////////////////////*@
-                                    <th style="display:none"></th>
+                                    <th class="colunaFooter"></th>
                                     <th>Nome</th>
                                     <th>Condominio</th>
                                     <th></th>
                                 </tr>
                             </tfoot>
-							<tbody>
+                            @*// Fim Rodapé da tabela
+							
+                            // Corpo da Tabela*@
+                            <tbody>
 								@foreach (var bl in ViewBag.lstBloco)
                                 {
                                     <tr>
-                                        <td style="text-align: center"><a href="@Url.Action("frmAlterarBloco", "FormsBloco", bl)"><i class="material-icons">edit</i></a> </td>
+                                        <td style="text-align: center"><a href="@Url.Action("frmAlteraBloco", "FormsBloco", bl)"><i class="material-icons">edit</i></a> </td>
                                         <td>@bl.nome</td>
                                         <td>@bl.cond.nome</td>
                                         <td>@bl.totUnidade</td>
                                     </tr>
                                 }
 							</tbody>
+                            @*// Fim Corpo da Tabela*@
 						</table>
 					</div>
 				</div>

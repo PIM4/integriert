@@ -47,6 +47,7 @@
 						<table class="striped datatable">
 							<thead>
                                 <tr>
+                                    <th width="30">Editar</th>
                                     <th>Nome</th>
                                     <th>RG</th>
                                     <th>CPF</th>
@@ -55,6 +56,7 @@
 							</thead>
                             <tfoot>
                                 <tr>
+                                    <th class="colunaFooter"></th>
                                     <th>Nome</th>
                                     <th>RG</th>
                                     <th>CPF</th>
@@ -65,6 +67,7 @@
                                 @foreach (var terceiro in ViewBag.lstTerceiro)
                                 {
                                     <tr>
+                                        <td style="text-align: center"><a href="@Url.Action("frmAlteraTerceiro", "FormsTerceiro", terceiro)"><i class="material-icons">edit</i></a> </td>
                                         <td>@terceiro.nome</td>
                                         <td>@terceiro.rg</td>
                                         <td>@terceiro.cpf</td>
