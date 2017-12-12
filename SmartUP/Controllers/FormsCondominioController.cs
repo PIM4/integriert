@@ -17,10 +17,8 @@ namespace SmartUP.Controllers
             ViewBag.lstCond = condominioDAO.busca();
             return View();
             }
-        public ActionResult frmCadastraCondominio(Condominio obj)
+        public ActionResult frmCadastraCondominio()
         {
-            PessoaDAO dao = new PessoaDAO();
-            ViewBag.lstPessoa = dao.busca();
             return View();
         }
         public ActionResult frmAlteraCondominio(Condominio obj)
